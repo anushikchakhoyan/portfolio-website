@@ -1,24 +1,19 @@
-import { useTranslations } from "next-intl";
+import EssentialSkills from "@/components/custom/essential-skills";
+import VisionMission from "@/components/custom/vision-mission";
+import WhyChooseUs from "@/components/custom/why-choose-us";
+import Subscribe from "@/components/custom/subscribe";
+import About from "@/components/custom/about";
 
-const About: React.FC = () => {
-  const t = useTranslations('About');
-
+const AboutPage: React.FC = () => {
   return (
-    <div>
-      about
-    </div>
+    <>
+      <About />
+      <EssentialSkills />
+      <WhyChooseUs />
+      <VisionMission />
+      <Subscribe />
+    </>
   );
-
-  // <MainLayout>
-  //   <About />
-  //   <EssentialSkills />
-  //   <WhyChooseUs />
-  //   <VisionMission />
-  //   {/* <Skills /> */}
-  //   {/* <Experiences /> */}
-  //   {/* <h1>{t('efficientAndTransparentProcesses')}</h1> */}
-  //   <Subscribe />
-  // </MainLayout>
 }
 
-export default About
+export default AboutPage

@@ -5,7 +5,7 @@ import UnderlineText from "@/components/custom/underline-text";
 import PageLayout from "@/components/custom/page-layout";
 import { EMAIL } from "@/lib/constants";
 
-import SocialMedia from "../social-media";
+import SocialMedia from "../../../components/custom/social-media";
 import ContactForm from "./form";
 
 const ContactUs: React.FC = () => {

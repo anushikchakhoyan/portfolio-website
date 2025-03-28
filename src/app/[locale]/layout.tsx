@@ -7,9 +7,9 @@ import { ColorProvider } from '@/contexts/ColorContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
 import Header from '@/components/custom/header';
+import Footer from '@/components/custom/footer';
 
 import './global.css';
-
 
 const JosefinSans = Josefin_Sans({
     variable: "--font-josefin-sans",
@@ -53,7 +53,8 @@ export default async function LocaleLayout({
                     <ThemeProvider>
                         <ColorProvider>
                             <Header />
-                            {children}
+                            <main className='pt-20'>{children}</main>
+                            <Footer />
                         </ColorProvider>
                     </ThemeProvider>
                 </NextIntlClientProvider>

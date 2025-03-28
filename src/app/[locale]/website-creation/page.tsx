@@ -1,52 +1,47 @@
-import * as React from "react";
-// import { graphql, Link } from "gatsby";
-// import loadable from "@loadable/component";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { SERVICES_CATEGORY } from "@/lib/constants";
 
-// import { SERVICES_CATEGORY } from "@lib/constants";
-// import { useTranslations } from "next-intl";
-
-// import { GeneralTextBlock } from "@base/";
-// import { Button } from "@ui/button";
-
-// const ServicesSection = loadable(() => import("@features/services"));
-// const WebsiteTypes = loadable(() => import("@features/website-types"));
-// const Subscribe = loadable(() => import("@features/subscribe"));
-// const MainLayout = loadable(() => import("@features/layout"));
-// const Workflow = loadable(() => import("@features/workflow"));
-// const Benefits = loadable(() => import("@features/benefits"));
-// const Seo = loadable(() => import("@features/seo"));
+import GeneralTextBlock from "@/components/custom/general-text-block";
+import ServicesSection from "@/components/custom/services-section";
+import WebsiteTypes from "@/components/custom/website-types";
+import Subscribe from "@/components/custom/subscribe";
+import Benefits from "@/components/custom/benefits";
+import Workflow from "@/components/custom/workflow";
+import { Button } from "@/components/ui/button";
 
 const WebsiteCreationPage = () => {
-  //   const { t } = useTranslations();
-  //   const type = SERVICES_CATEGORY.website;
+  const t = useTranslations("Workflows");
+  const tWebsiteTypes = useTranslations("WebsiteTypes");
+  const tHeader = useTranslations("Header");
+  const type = SERVICES_CATEGORY.website;
 
-  //   return (
-  //     <MainLayout>
-  //       <GeneralTextBlock
-  //         title={t("websiteWorkflow")}
-  //         subtitle={t("buildYourDreamWebsite")}
-  //         description={t("fromConceptToLaunch")}
-  //         descrptionClasses="px-4"
-  //       />
-  //       <ServicesSection type={type} />
-  //       <Workflow type={type} />
-  //       <WebsiteTypes />
-
-  //       <GeneralTextBlock
-  //         title={t("priceProposal")}
-  //         subtitle={t("websitePrice")}
-  //         description={t("websitePriceDescription")}
-  //       >
-  //         <Link to="/contact-us">
-  //           <Button size="lg">
-  //             {t("contact")}
-  //           </Button>
-  //         </Link>
-  //       </GeneralTextBlock>
-  //       <Benefits type={type} />
-  //       <Subscribe />
-  //     </MainLayout>
-  //   )
+  return (
+    <>
+      <GeneralTextBlock
+        title={t("websiteWorkflow")}
+        subtitle={t("buildYourDreamWebsite")}
+        description={t("fromConceptToLaunch")}
+        descrptionClasses="px-4"
+      />
+      <ServicesSection type={type} />
+      <Workflow type={type} />
+      <WebsiteTypes />
+      <GeneralTextBlock
+        title={tWebsiteTypes("priceProposal")}
+        subtitle={tWebsiteTypes("websitePrice")}
+        description={tWebsiteTypes("websitePriceDescription")}
+      >
+        <Link href="/contact-us">
+          <Button size="lg">
+            {tHeader("contact")}
+          </Button>
+        </Link>
+      </GeneralTextBlock>
+      <Benefits type={type} />
+      <Subscribe />
+    </>
+  )
 }
 
 export default WebsiteCreationPage

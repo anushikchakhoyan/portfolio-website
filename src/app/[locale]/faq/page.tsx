@@ -7,7 +7,7 @@ import PageLayout from "@/components/custom/page-layout";
 
 interface FAQItem {
   title: string | any,
-  description: string | React.ReactNode,
+  description: any | React.ReactNode,
 }
 
 const FaqList: React.FC = () => {
@@ -17,7 +17,7 @@ const FaqList: React.FC = () => {
     return {
       title: t(`faqTitle${data}` as any),
       description: t.rich(`faqDesc${data}`, {
-        strong: (chunks) => <b>{chunks}</b>
+        strong: (chunks: string) => <b>{chunks}</b>
       })
     };
   });

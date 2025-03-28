@@ -1,25 +1,21 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import loadable from "@loadable/component";
+
 import { useTranslations } from "next-intl";
 
-import { SERVICES_CATEGORY } from "@lib/constants";
-import { GeneralTextBlock } from "@base/";
+import { SERVICES_CATEGORY } from "@/lib/constants";
 
-const ServicesSection = loadable(() => import("@features/services"));
-const WhyChooseUs = loadable(() => import("@features/why-choose-us"));
-const Subscribe = loadable(() => import("@features/subscribe"));
-const MainLayout = loadable(() => import("@features/layout"));
-const Workflow = loadable(() => import("@features/workflow"));
-const Benefits = loadable(() => import("@features/benefits"));
-const Seo = loadable(() => import("@features/seo"));
+import GeneralTextBlock from "@/components/custom/general-text-block";
+import ServicesSection from "@/components/custom/services-section";
+import WhyChooseUs from "@/components/custom/why-choose-us";
+import Subscribe from "@/components/custom/subscribe";
+import Benefits from "@/components/custom/benefits";
+import Workflow from "@/components/custom/workflow";
 
 const CollaborationPage: React.FC = () => {
-  const { t } = useTranslations();
+  const t = useTranslations("Workflows");
   const type = SERVICES_CATEGORY.collaboration;
 
   return (
-    <MainLayout>
+    <>
       <GeneralTextBlock
         title={t("collaborationAndCommunication")}
         subtitle={t("workingTogether")}
@@ -31,7 +27,7 @@ const CollaborationPage: React.FC = () => {
       <WhyChooseUs />
       <Benefits type={type} />
       <Subscribe />
-    </MainLayout>
+    </>
   )
 }
 

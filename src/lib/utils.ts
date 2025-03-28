@@ -13,11 +13,11 @@ export function getFormattedIndex(index: number): string {
 }
 
 export const generateSteps = (stepKeys: string[]) => {
-  const t = useTranslations();
+  const t = useTranslations("Workflows");
   return stepKeys.map((key, index) => ({
     id: index + 1,
-    // title: t(key),
-    // description: t(`${key}Desc`),
+    title: t(key as any),
+    description: t(`${key}Desc` as any),
   }));
 };
 

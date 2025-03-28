@@ -23,15 +23,15 @@ export default function useInfoData(type: Service) {
             },
             {
                 title: t('whoCanParticipateTitle'),
-                // items: t('whoCanParticipateItems', { returnObjects: true }) as string[],
+                items: t.raw('whoCanParticipateItems') as string[],
             },
             {
                 title: t('goalsTitle'),
-                // items: t('goalsItems', { returnObjects: true }) as string[],
+                items: t.raw('goalsItems') as string[],
             },
             {
                 title: t('mentorshipProgramBenefitsTitle'),
-                // items: t('mentorshipProgramBenefitsItems', { returnObjects: true }) as string[],
+                items: t.raw('mentorshipProgramBenefitsItems') as string[],
             },
         ],
     }

@@ -80,16 +80,20 @@ export type Color = {
 }
 
 export type Info = {
-    title?: string | any;
-    description?: string | any;
+    title?: string;
+    description?: string;
     items?: string[];
 }
 
-
 export type PlanType = {
     title: string;
-    features?: string[];
+    features?: string[] | undefined;
     popular: boolean;
+}
+
+export type SelectedPlanType = {
+    title: string,
+    service: Service
 }
 
 export type PackageType = {

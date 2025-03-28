@@ -4,26 +4,27 @@ import { useTranslations } from "next-intl";
 
 export default function usePackagesData() {
     const t = useTranslations("Packages");
+    const tMentorship = useTranslations("Header");
 
     const packages: PackageType[] = [
         {
-            title: t('mentorship'),
+            title: tMentorship('mentorship'),
             desc: t('packagesDesc2'),
             service: SERVICES_CATEGORY.mentorship,
             plan: [
                 {
                     title: t("classic"),
-                    // features: t('classicItems', { returnObjects: true }) as string[],
+                    features: t.raw('classicItems') as string[],
                     popular: false,
                 },
                 {
                     title: t("pro"),
-                    // features: t('proItems', { returnObjects: true }) as string[],
+                    features: t.raw('proItems') as string[],
                     popular: true,
                 },
                 {
                     title: t("enterprise"),
-                    // features: t('enterpriseItems', { returnObjects: true }) as string[],
+                    features: t.raw('enterpriseItems') as string[],
                     popular: false,
                 }
             ],

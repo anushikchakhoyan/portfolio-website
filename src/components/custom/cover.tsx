@@ -1,9 +1,10 @@
 import Title from "@/components/custom/title";
+import { StaticImageData } from "next/image";
 
 type CoverSectionProps = {
     title: string,
-    coverImage: string,
     children: React.ReactNode
+    coverImage: StaticImageData,
 }
 
 const CoverSection: React.FC<CoverSectionProps> = ({ title, coverImage, children }) => {

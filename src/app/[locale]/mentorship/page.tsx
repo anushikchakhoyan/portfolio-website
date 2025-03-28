@@ -1,25 +1,21 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import loadable from "@loadable/component";
 import { useTranslations } from "next-intl";
 
-import { SERVICES_CATEGORY } from "@lib/constants";
-import { GeneralTextBlock } from "@base/";
+import { SERVICES_CATEGORY } from "@/lib/constants";
 
-const ServicesSection = loadable(() => import("@features/services"));
-const InfoBlock = loadable(() => import("@features/benefits/info"));
-const Subscribe = loadable(() => import("@features/subscribe"));
-const MainLayout = loadable(() => import("@features/layout"));
-const Workflow = loadable(() => import("@features/workflow"));
-const Benefits = loadable(() => import("@features/benefits"));
-const Seo = loadable(() => import("@features/seo"));
+import GeneralTextBlock from "@/components/custom/general-text-block";
+import ServicesSection from "@/components/custom/services-section";
+import InfoBlock from "@/components/custom/benefits/info";
+import Subscribe from "@/components/custom/subscribe";
+import Benefits from "@/components/custom/benefits";
+import Workflow from "@/components/custom/workflow";
 
 const MentorshipPage: React.FC = () => {
-  const { t } = useTranslations();
+  const t = useTranslations("Workflows");
+  const tMentorshipPlan = useTranslations("MentorshipPlan");
   const type = SERVICES_CATEGORY.mentorship;
 
   return (
-    <MainLayout>
+    <>
       <GeneralTextBlock
         title={t("mentorshipWorkflow")}
         subtitle={t("guidedGrowth")}
@@ -30,8 +26,10 @@ const MentorshipPage: React.FC = () => {
       <Workflow type={type} />
       <InfoBlock type={type} />
       <Benefits type={type} />
-      <Subscribe text={t('callToAction')} />
-    </MainLayout>
+      <Subscribe
+        text={tMentorshipPlan('callToAction')}
+      />
+    </>
   )
 }
 
