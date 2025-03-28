@@ -30,6 +30,7 @@ type SubscribeTypes = {
 
 const ContactForm: React.FC = () => {
     const t = useTranslations("Contact");
+    const tService = useTranslations("Service");
     const searchParams = useSearchParams();
     const selectedPlan = searchParams.get("plan");
     const userEmail = searchParams.get("email");
@@ -120,15 +121,15 @@ const ContactForm: React.FC = () => {
                         <InputField name="name" label={t("fullName")} />
                         <InputField name="email" label={t("email")} />
                         <PhoneField name="phone" label={t("phone")} />
-                        {/* <SelectField
+                        <SelectField
                             name="service"
-                            label={t("services")}
+                            label={tService("services")}
                             options={[
-                                { value: "website", label: t('websiteCreation') },
-                                { value: "mentorship", label: t("mentorship") },
-                                { value: "collab", label: t("collaboration") },
+                                { value: "website", label: tService('websiteCreation') },
+                                { value: "mentorship", label: tService("mentorship") },
+                                { value: "collab", label: tService("collaboration") },
                             ]}
-                        /> */}
+                        />
                         <InputField
                             as={Textarea}
                             name="message"
