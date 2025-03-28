@@ -10,5 +10,5 @@ export default function PageLayout({ children, id }: Props) {
         <article className='w-full max-w-8xl rounded-lg mx-auto px-4 py-12 lg:py-16' id={id}>
             {children}
         </article>
-git branch - M main    );
+    );
 }
