@@ -58,7 +58,7 @@ const AboutWebSite: React.FC = () => {
                             {section.heading.emphasis}
                         </p>
                     </h3>
-                    <div className={clsx("px-3 space-y-5", section.alignment === 'right' ? 'text-end' : '')}>
+                    <div className={clsx("px-3 flex flex-col gap-5", section.alignment === 'right' ? 'text-end' : '')}>
                         {section.paragraphs.map((paragraph, index) => (
                             <p key={index} className="text-sm text-zinc-700 dark:text-gray-300">
                                 {paragraph}

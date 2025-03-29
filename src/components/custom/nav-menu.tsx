@@ -11,13 +11,13 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import useNavigationData from "@/hooks/custom/use-nav-data";
+import useIsMobile from "@/hooks/custom/use-mobile";
 import { NavigationType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
     const t = useTranslations();
-    // const isMobile = useIsMobile();
-    const isMobile = false;
+    const isMobile = useIsMobile();
     const navigations = useNavigationData();
 
     return (
@@ -41,26 +41,24 @@ const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
                         ) : (
                             <>
                                 <NavigationMenuTrigger className="dark:text-zinc-200">{title}</NavigationMenuTrigger>
-                                <NavigationMenuContent className="dark:bg-zinc-800">
+                                <NavigationMenuContent className="dark:bg-zinc-800 !p-0">
                                     <ul className="grid gap-1 p-3 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] dark:bg-zinc-800">
                                         {intro && (
                                             <li className="row-span-3">
-                                                <NavigationMenuLink>
-                                                    <a
-                                                        className="flex h-full w-full select-none flex-col justify-end rounded-md 
-                                                        bg-primary-400 hover:bg-primary/90 dark:bg-primary/50 hover:dark:bg-primary/40
-                                                        p-6 no-underline outline-none focus:shadow-md transition-colors"
-                                                        href="/"
-                                                    >
-                                                        <span className="pt-5 font-italiana text-2xl text-white font-bold uppercase tracking-widest">Anush</span>
-
-                                                        <div className="pb-1 pt-4 text-sm font-medium text-white">
-                                                            {intro.abbr}
-                                                        </div>
-                                                        <p className="text-xs leading-tight text-white">
-                                                            {intro.content}
-                                                        </p>
-                                                    </a>
+                                                <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-end rounded-md 
+                                                        bg-primary/90 hover:bg-primary/85 dark:bg-primary/50 hover:dark:bg-primary/45
+                                                        p-6 no-underline outline-hidden focus:shadow-md transition-colors"
+                                                    href="/"
+                                                >
+                                                    <span className="pt-5 font-italiana text-2xl text-white font-bold uppercase tracking-widest">
+                                                        Anush
+                                                    </span>
+                                                    <div className="pb-1 pt-4 text-sm font-medium text-white">
+                                                        {intro.abbr}
+                                                    </div>
+                                                    <p className="text-xs leading-tight text-white">
+                                                        {intro.content}
+                                                    </p>
                                                 </NavigationMenuLink>
                                             </li>
                                         )}
@@ -95,8 +93,8 @@ const ListItem = React.forwardRef<
                 <a
                     ref={ref}
                     className={cn(
-                        `block select-none space-y-1 rounded-md p-3 leading-none no-underline 
-                        outline-none transition-colors hover:bg-gray-50 hover:dark:bg-zinc-700/30`,
+                        `select-none flex flex-col gap-1 rounded-md p-3 leading-none no-underline
+                        outline-hidden transition-colors hover:bg-gray-50 hover:dark:bg-zinc-700/30`,
                         className
                     )}
                     {...props}

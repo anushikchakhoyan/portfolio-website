@@ -16,13 +16,13 @@ const CollaborationPage: React.FC = () => {
 
   return (
     <>
+      <ServicesSection type={type} />
       <GeneralTextBlock
         title={t("collaborationAndCommunication")}
         subtitle={t("workingTogether")}
         description={t("transparentAndEffectiveCollaboration")}
-        descrptionClasses="px-4"
+        descrptionClassName="px-4"
       />
-      <ServicesSection type={type} />
       <Workflow type={type} />
       <WhyChooseUs />
       <Benefits type={type} />

@@ -1,44 +1,18 @@
 import { useTranslations } from "next-intl";
+
 import { Benefit, Service } from "@/lib/types";
 import { SERVICES_CATEGORY } from "@/lib/constants";
+
+import benefit1 from "@/images/benefit/benefit1.jpg";
+import benefit2 from "@/images/benefit/benefit2.jpg";
+import benefit3 from "@/images/benefit/benefit3.jpg";
+import benefit4 from "@/images/benefit/benefit4.jpg";
+import benefit5 from "@/images/benefit/benefit5.jpg";
+import benefit6 from "@/images/benefit/benefit6.jpg";
 
 export default function useBenefitsData(type: Service) {
   const t = useTranslations("Benefits");
 
-  // const data = useStaticQuery(graphql`
-  //       query {
-  //         benefit1: file(relativePath: { eq: "benefit/benefit1.jpg" }) {
-  //           childImageSharp {
-  //             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-  //           }
-  //         }
-  //         benefit2: file(relativePath: { eq: "benefit/benefit2.jpg" }) {
-  //           childImageSharp {
-  //             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-  //           }
-  //         }
-  //         benefit3: file(relativePath: { eq: "benefit/benefit3.jpg" }) {
-  //           childImageSharp {
-  //             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-  //           }
-  //         }
-  //         benefit4: file(relativePath: { eq: "benefit/benefit4.jpg" }) {
-  //           childImageSharp {
-  //             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-  //           }
-  //         }
-  //         benefit5: file(relativePath: { eq: "benefit/benefit5.jpg" }) {
-  //           childImageSharp {
-  //             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-  //           }
-  //         }
-  //         benefit6: file(relativePath: { eq: "benefit/benefit6.jpg" }) {
-  //           childImageSharp {
-  //             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-  //           }
-  //         }
-  //       }
-  // `);
 
   const benefits: Record<Service, Benefit[]> = {
     [SERVICES_CATEGORY.website]: [
@@ -46,13 +20,13 @@ export default function useBenefitsData(type: Service) {
         id: 1,
         title: t('onTimeDelivery'),
         desc: t('onTimeDeliveryDesc'),
-        // image: getImage(data.benefit1.childImageSharp.gatsbyImageData),
+        image: benefit1,
       },
       {
         id: 2,
         title: t('multifunctionalSolutions'),
         desc: t('multifunctionalSolutionsDesc'),
-        // image: getImage(data.benefit2.childImageSharp.gatsbyImageData),
+        image: benefit2,
       }
     ],
     [SERVICES_CATEGORY.mentorship]: [
@@ -60,13 +34,13 @@ export default function useBenefitsData(type: Service) {
         id: 1,
         title: t('personalizedGuidance'),
         desc: t('personalizedGuidanceDesc'),
-        // image: getImage(data.benefit3.childImageSharp.gatsbyImageData),
+        image: benefit3,
       },
       {
         id: 2,
         title: t('availability'),
         desc: t('availabilityDesc'),
-        // image: getImage(data.benefit4.childImageSharp.gatsbyImageData),
+        image: benefit4,
       }
     ],
     [SERVICES_CATEGORY.collaboration]: [
@@ -74,13 +48,13 @@ export default function useBenefitsData(type: Service) {
         id: 1,
         title: t('freelanceProjects'),
         desc: t('freelanceProjectsDesc'),
-        // image: getImage(data.benefit5.childImageSharp.gatsbyImageData),
+        image: benefit5,
       },
       {
         id: 2,
         title: t('openAnyIdea'),
         desc: t('openAnyIdeaDesc'),
-        // image: getImage(data.benefit6.childImageSharp.gatsbyImageData),
+        image: benefit6,
       }
     ]
   }

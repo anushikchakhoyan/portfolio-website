@@ -131,6 +131,81 @@
   --container-6xl: 72rem;
   --container-7xl: 80rem;
   --container-8xl: 90rem;
+  --primary-shimmer: linear-gradient(to left,
+      hsl(var(--primary) / 7%) 8%,
+      hsl(var(--primary) / 15%) 18%,
+      hsl(var(--primary) / 7%) 33%);
+}
+
+@keyframes slider-shape {
+
+  0%,
+  100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+
+  34% {
+    border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+    transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+  }
+}
+
+@keyframes scroll-linear-right {
+  from {
+    transform: translateX(-100%)
+  }
+
+  to {
+    transform: translateX(0%)
+  }
+}
+
+@keyframes scroll-linear-left {
+  from {
+    transform: translateX(0%)
+  }
+
+  to {
+    transform: translateX(-100%)
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -1200px 0
+  }
+
+  to {
+    background-position: 1200px 0
+  }
+}
+
+@utility animate-shimmer {
+  background-image: var(--primary-shimmer);
+  background-size: 1200px 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+
+@utility animate-slider-shape {
+  animation: slider-shape 5s linear infinite;
+}
+
+@utility animate-scroll-linear-right {
+  animation: scroll-linear-right 80s linear infinite;
+}
+
+@utility animate-scroll-linear-left {
+  animation: scroll-linear-left 80s linear infinite;
 }
 
 @layer base {
@@ -139,12 +214,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-josefin-sans;
   }
-}
-
-body {
-  font-family: var(--font-josefin-sans);
 }
 
 .PhoneInputInput {

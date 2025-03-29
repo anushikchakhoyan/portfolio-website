@@ -37,8 +37,8 @@ const createWorkflowComponent = ({ titleKey, subtitleKey, stepKeys }: WorkflowCo
 
 const WorkflowSection: React.FC<WorkflowProps> = ({ title, subtitle, steps }) => {
     return (
-        <div className="space-y-8">
-            <div className="space-y-2">
+        <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-2">
                 <Title title={title} className="text-2xl sm:text-4xl md:text-4xl text-start" />
                 <p className="text-base">{subtitle}</p>
             </div>

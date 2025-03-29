@@ -1,20 +1,14 @@
 
+"use client"
 import { useTranslations } from "next-intl";
+import useIsMobile from "@/hooks/custom/use-mobile";
+
 import CircleThumb from "../circle-thumb";
+import meImage from "@/images/about/me4.jpg";
 
 const Heading: React.FC = () => {
   const t = useTranslations("About");
-  // const isMobile = useIsMobile();
-
-  // const data = useStaticQuery(graphql`
-  //    query {
-  //      me: file(relativePath: { eq: "about/me4.jpg" }) {
-  //        childImageSharp {
-  //          gatsbyImageData(layout: FULL_WIDTH)
-  //        }
-  //      },
-  //     }
-  //   `);
+  const isMobile = useIsMobile();
 
   return (
     <div className="flex flex-col md:flex-row items-center md:items-end justify-center gap-2 md:gap-10 lg:gap-8 md:h-96 w-full
@@ -22,8 +16,8 @@ const Heading: React.FC = () => {
       <HeadingTitle>{t("itsMe")}</HeadingTitle>
       <CircleThumb
         className="relative md:top-24"
-      // size={isMobile ? "md" : "lg"}
-      // bgImage={getImage(data.me.childImageSharp.gatsbyImageData)} 
+        size={isMobile ? "md" : "lg"}
+        imageSrc={meImage}
       />
       <HeadingTitle>
         <p><code className="text-zinc-800 dark:text-white font-italiana">{"<Engineer />"}</code></p>

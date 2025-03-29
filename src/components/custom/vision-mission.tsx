@@ -25,8 +25,8 @@ const VisionMission = () => {
         <PageLayout id="mission">
             <div className="gap-6 flex flex-col md:flex-row justify-center mx-auto lg:w-5/6">
                 {data.map(({ title, desc, Icon }, index) => (
-                    <div key={title} className="px-8 py-12 space-y-6 rounded-xl
-                     bg-white dark:bg-zinc-800/30 shadow-sm border border-primary/20 group hover:bg-primary-200/10">
+                    <div key={title} className="px-8 py-12 flex flex-col gap-6 rounded-xl
+                     bg-white dark:bg-zinc-800/30 shadow-xs border border-primary/20 group hover:bg-primary-200/10">
                         <div className="flex flex-col items-start gap-1 text-primary dark:text-primary">
                             <Icon className={clsx("w-8 h-8",
                                 index === 0 && "group-hover:translate-x-5 group-hover:-translate-y-4 transition-all duration-300",

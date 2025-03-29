@@ -13,7 +13,7 @@ const InputField: React.FC<InputProps> = ({ name, label, className, ...props }) 
     const [field, meta, helpers] = useField<string>(name);
 
     return (
-        <div className="w-full space-y-2">
+        <div className="w-full flex flex-col gap-2">
             <Field
                 as={Input}
                 {...field}

@@ -31,7 +31,11 @@ const SelectedPlan: React.FC<PlanTypes> = ({ title, service, onSubmit, onChooseP
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>
-                <Button variant="outline" onClick={() => onChoosePlan({ title, service })}>
+                <Button
+                    size="lg"
+                    variant="ghost"
+                    onClick={() => onChoosePlan({ title, service })}
+                    className="bg-white dark:bg-zinc-600 hover:dark:bg-zinc-600/70 rounded-full px-8 py-3 cursor-pointer">
                     {t("choose")}
                 </Button>
             </AlertDialogTrigger>

@@ -5,7 +5,7 @@ import AboutWebSite from "./about-web-site";
 import WhatWeDo from "./what-we-do";
 import Heading from "./heading";
 
-import aboutCover from "../../../../public/images/about/cover-1.jpg";
+import aboutCover from "@/images/about/cover-1.jpg";
 import CoverSection from "../cover";
 import Rates from "./rates";
 

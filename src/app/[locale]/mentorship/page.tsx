@@ -16,13 +16,13 @@ const MentorshipPage: React.FC = () => {
 
   return (
     <>
+      <ServicesSection type={type} />
       <GeneralTextBlock
         title={t("mentorshipWorkflow")}
         subtitle={t("guidedGrowth")}
         description={t("personalizedMentorshipJourney")}
-        descrptionClasses="px-4"
+        descrptionClassName="px-4"
       />
-      <ServicesSection type={type} />
       <Workflow type={type} />
       <InfoBlock type={type} />
       <Benefits type={type} />

@@ -16,7 +16,7 @@ const CoverSection: React.FC<CoverSectionProps> = ({ title, coverImage, children
             }}
         >
             <Title title={title} className="text-zinc-50 text-4xl md:text-5xl font-bold text-center font-italiana" />
-            <div className="space-y-8 max-w-5xl w-full mx-auto p-6 bg-zinc-800/40 backdrop-blur-sm rounded-lg shadow-lg">
+            <div className="flex flex-col gap-8 max-w-5xl w-full mx-auto p-6 bg-zinc-800/40 backdrop-blur-xs rounded-lg shadow-lg">
                 {children}
             </div>
         </div>

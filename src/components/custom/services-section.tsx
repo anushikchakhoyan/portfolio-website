@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from "next/link";
 import { AiFillMessage } from "react-icons/ai";
 import { Service, ServiceType } from "@/lib/types";
@@ -24,29 +25,29 @@ const ServicesContent: React.FC<ServiceType> = (
   { id, title, hint, description, contactMe, image }
 ) => {
   return (
-    <PageLayout
-      className="gap-4 flex flex-col-reverse md:flex-row h-3/5"
-    >
-      <div className="w-full md:w-1/2 px-4 md:px-5 flex items-start flex-col gap-8">
+    <div
+      className="gap-4 flex flex-col-reverse md:flex-row relative h-3/5">
+      <div className="w-full lg:w-1/2 px-0 md:px-5 flex items-start flex-col gap-8">
         <Title title={title} className="md:text-4xl" />
         <UnderlineText text={hint} className="max-w-md" />
         <p>{description}</p>
-        <Button asChild>
+        <Button asChild variant="outline">
           <Link href="/contact-us" className="flex items-center gap-2">
             <AiFillMessage /> {contactMe}
           </Link>
         </Button>
       </div>
-      <div className="w-full md:w-1/2 px-4 md:px-5">
-        {/* {image && (
-          <GatsbyImage
-            image={image}
+      <div className="bg-primary/80 w-3/4 lg:w-1/2 h-96 rounded-t-full absolute -z-10 -top-[150px] -right-[60px] transform rotate-180" />
+      <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
+        <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden relative">
+          <Image
+            src={image}
             alt={title}
-            className="w-full h-full rounded-lg shadow-lg"
+            className="w-full h-full object-cover"
           />
-        )} */}
+        </div>
       </div>
-    </PageLayout>
+    </div>
   )
 };
 ServicesContent.displayName = "ServicesContent";

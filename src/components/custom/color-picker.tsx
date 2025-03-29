@@ -42,9 +42,9 @@ const ColorPicker = () => {
                         return (
                             <div
                                 key={color.name}
-                                className={cn(`p-2 group rounded flex items-center justify-between gap-4 cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-700`,
+                                className={cn(`p-2 group rounded-sm flex items-center justify-between gap-4 cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-700`,
                                     {
-                                        "dark:bg-zinc-700 border border-zinc-100 animate-shimmer bg-shimmer bg-[length:1200px_100%]":
+                                        "dark:bg-zinc-700 border border-zinc-100 animate-shimmer":
                                             currentTheme,
                                     })}
                                 aria-label={`Select ${color.name} color`}

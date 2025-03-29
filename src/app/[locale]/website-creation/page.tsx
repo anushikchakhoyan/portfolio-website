@@ -18,13 +18,13 @@ const WebsiteCreationPage = () => {
 
   return (
     <>
+      <ServicesSection type={type} />
       <GeneralTextBlock
         title={t("websiteWorkflow")}
         subtitle={t("buildYourDreamWebsite")}
         description={t("fromConceptToLaunch")}
-        descrptionClasses="px-4"
+        descrptionClassName="px-4"
       />
-      <ServicesSection type={type} />
       <Workflow type={type} />
       <WebsiteTypes />
       <GeneralTextBlock

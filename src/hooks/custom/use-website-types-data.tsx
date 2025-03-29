@@ -1,5 +1,15 @@
 import { useTranslations } from "next-intl";
 
+import businessImage from "@/images/types/business.png";
+import landingPageImage from "@/images/types/landing-page.webp";
+import corporateImage from "@/images/types/corporate.jpg";
+import ecommerceImage from "@/images/types/ecommerce.jpg";
+import newsImage from "@/images/types/news.webp";
+import adminImage from "@/images/types/admin.webp";
+import wordpressImage from "@/images/types/wordpress.webp";
+import govImage from "@/images/types/gov.jpg";
+import customImage from "@/images/types/custom.png";
+
 type Website = {
     key: string;
     descKey: string;
@@ -9,100 +19,50 @@ type Website = {
 export default function useWebsiteTypeaData() {
     const t = useTranslations("WebsiteTypes");
 
-    // const data = useStaticQuery(graphql`
-    //     query {
-    //         business: file(relativePath: { eq: "types/business.png" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         landingPage: file(relativePath: { eq: "types/landing-page.webp" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         corporate: file(relativePath: { eq: "types/corporate.jpg" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         ecommerce: file(relativePath: { eq: "types/ecommerce.jpg" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         news: file(relativePath: { eq: "types/news.webp" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         admin: file(relativePath: { eq: "types/admin.webp" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         wordpress: file(relativePath: { eq: "types/wordpress.webp" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         gov: file(relativePath: { eq: "types/gov.jpg" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //         custom: file(relativePath: { eq: "types/custom.png" }) {
-    //             childImageSharp {
-    //                 gatsbyImageData(layout: FULL_WIDTH)
-    //             }
-    //         }
-    //     }
-    // `);
-
     const websiteTypes: Website[] = [
         {
             key: "businessCard",
             descKey: "businessCardDesc",
-            // img: getImage(data.business)
+            img: businessImage
         },
         {
             key: "landingPage", descKey: "landingPageDesc",
-            // img: getImage(data.landingPage)
+            img: landingPageImage
         },
         {
             key: "corporateWebsite",
             descKey: "corporateWebsiteDesc",
-            // img: getImage(data.corporate)
+            img: corporateImage
         },
         {
             key: "wordPressWebsite",
             descKey: "wordPressWebsiteDesc",
-            // img: getImage(data.wordpress)
+            img: wordpressImage
         },
         {
             key: "ecommerce",
             descKey: "ecommerceDesc",
-            // img: getImage(data.ecommerce)
+            img: ecommerceImage
         },
         {
             key: "newsPortal",
             descKey: "newsPortalDesc",
-            // img: getImage(data.news)
+            img: newsImage
         },
         {
             key: "adminPanel",
             descKey: "adminPanelDesc",
-            // img: getImage(data.admin)
+            img: adminImage
         },
         {
             key: "govWebsite",
             descKey: "govWebsiteDesc",
-            // img: getImage(data.gov)
+            img: govImage
         },
         {
             key: "customWebsite",
             descKey: "customWebsiteDesc",
-            // img: getImage(data.custom)
+            img: customImage
         },
     ];
 

@@ -8,6 +8,7 @@ import { useLocale, useTranslations } from "next-intl";
 import GeneralTextBlock from "@/components/custom/general-text-block";
 import usePackagesData from "@/hooks/custom/use-packages-data";
 import { PlanType, SelectedPlanType } from "@/lib/types";
+import PageLayout from "@/components/custom/page-layout";
 import Title from "@/components/custom/title";
 import { LANGUAGE } from "@/lib/constants";
 import SelectedPlan from "./selected-plan";
@@ -28,12 +29,12 @@ const PackagesPage: React.FC = () => {
   };
 
   return (
-    <section id="packages" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <PageLayout id="packages" className="!pt-0">
       <GeneralTextBlock
         title={t("ourPackages")}
         subtitle={t("chooseTheRightPlanForYou")}
         description={t("packagesDesc")}
-        descrptionClasses="max-w-2xl"
+        descrptionClassName="max-w-2xl"
       />
       <div className="max-w-7xl mx-auto px-4 py-20">
         {packages.map(({ plan, title, desc, service }) => (
@@ -45,10 +46,11 @@ const PackagesPage: React.FC = () => {
                 <div
                   key={title}
                   className={clsx(
-                    `min-h-96 max-w-96 lg:max-w-full w-full relative overflow-hidden bg-[length:1200px_100%] cursor-pointer
-                                       rounded-lg shadow-sm py-8 px-4 xl:px-6 border border-primary/40 flex flex-col justify-between items-center 
-                                       hover:scale-105 hover:shadow-lg hover:border-primary/60 hover:animate-shimmer hover:bg-shimmer
-                                       `,
+                    `min-h-96 max-w-96 lg:max-w-full w-full relative overflow-hidden cursor-pointer
+                     rounded-lg shadow-xs py-8 px-4 xl:px-6 border border-primary/40 
+                     flex flex-col justify-between items-center bg-zinc-50 dark:bg-zinc-800
+                     hover:scale-105 hover:shadow-lg hover:border-primary/60 hover:animate-shimmer
+                    `,
                     popular && 'scale-105 border-primary/60 shadow-lg',
                   )}
                 >
@@ -85,7 +87,7 @@ const PackagesPage: React.FC = () => {
           </div>
         ))}
       </div>
-    </section>
+    </PageLayout>
   );
 };
 

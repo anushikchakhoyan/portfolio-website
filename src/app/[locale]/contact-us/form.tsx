@@ -30,7 +30,7 @@ type SubscribeTypes = {
 
 const ContactForm: React.FC = () => {
     const t = useTranslations("Contact");
-    const tService = useTranslations("Service");
+    const tService = useTranslations("Header");
     const searchParams = useSearchParams();
     const selectedPlan = searchParams.get("plan");
     const userEmail = searchParams.get("email");

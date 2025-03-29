@@ -21,7 +21,7 @@ const SelectField: React.FC<SelectProps> = ({ name, label, options }) => {
     const [field, meta, helpers] = useField<string>(name);
 
     return (
-        <div className="space-y-2">
+        <div className="flex flex-col gap-2">
             <Select
                 value={field.value}
                 onValueChange={(value) => {

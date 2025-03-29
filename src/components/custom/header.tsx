@@ -30,7 +30,7 @@ const Header: React.FC = () => {
     }, [isMobile]);
 
     return (
-        <header className="fixed z-20 top-0 left-0 right-0 shadow bg-background">
+        <header className="fixed z-20 top-0 left-0 right-0 shadow-sm bg-background">
             <div className="w-full max-w-8xl mx-auto px-4 py-3 flex justify-between lg:justify-center">
                 <Link href="/" className="flex items-center font-bold text-xl xl:text-2xl font-italiana">
                     {t('im')}

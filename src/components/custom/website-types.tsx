@@ -1,6 +1,7 @@
 
 "use client"
 import clsx from "clsx";
+import Image from 'next/image';
 import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
@@ -26,7 +27,7 @@ const WebsiteTypes: React.FC = () => {
                 modules={[Mousewheel, Pagination]}
                 className="w-full h-full">
                 <SwiperSlide className="relative !flex items-center justify-center bg-zinc-50 dark:bg-zinc-800 rounded-lg">
-                    <div className="text-center xl:px-8 space-y-8 w-full lg:w-4/5 relative z-10">
+                    <div className="text-center xl:px-8 flex flex-col gap-8 w-full lg:w-4/5 relative z-10">
                         <h3 className="text-2xl xl:text-4xl font-medium text-primary">{t('websiteTypesTitle')}</h3>
                         <p className="text-xl xl:text-2xl font-medium text-zinc-800 dark:text-gray-200">{t('websiteTypesDescription')}</p>
                     </div>
@@ -39,13 +40,13 @@ const WebsiteTypes: React.FC = () => {
                             : 'bg-gradient-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800'
                     )}>
                         <div className="w-4/5 lg:w-5/12 xl:w-1/2">
-                            {/* <GatsbyImage
-                                image={img}
+                            <Image
+                                src={img}
                                 alt={key}
                                 className="w-full h-full rounded-lg shadow-lg bg-secondary"
-                            /> */}
+                            />
                         </div>
-                        <div className="text-center xl:px-8 space-y-8 w-full lg:w-5/12 xl:w-1/2">
+                        <div className="text-center xl:px-8 flex flex-col gap-8 w-full lg:w-5/12 xl:w-1/2">
                             <h3 className="text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{t(key)}</h3>
                             <p className="text-xl xl:text-2xl font-medium text-gray-700 dark:text-gray-200">{t(descKey)}</p>
                         </div>

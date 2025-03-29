@@ -35,7 +35,7 @@ const InfoBlock: React.FC<{ type: Service }> = ({ type }) => {
                                 : 'bg-gradient-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800'
                         )}
                     >
-                        <div className="xl:px-8 space-y-8 w-full lg:w-3/5 z-10">
+                        <div className="xl:px-8 flex flex-col gap-8 w-full lg:w-3/5 z-10">
                             {title && (
                                 <h3 className="text-center text-2xl xl:text-5xl font-medium text-primary">
                                     {title}

@@ -1,16 +1,16 @@
-import { cn } from "@/lib/utils";
-// import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import clsx from "clsx";
+import Image from "next/image";
 
 type CircleThumbTypes = {
   className?: string;
   size?: "sm" | "md" | "lg";
-  bgImage?: any;
+  imageSrc?: any;
 }
 
 const CircleThumb: React.FC<CircleThumbTypes> = ({
   className,
   size = "md",
-  bgImage,
+  imageSrc,
 }) => {
   const sizeOptions = {
     sm: "w-[200px] h-[200px]",
@@ -20,14 +20,14 @@ const CircleThumb: React.FC<CircleThumbTypes> = ({
 
   return (
     <div
-      className={cn(`absolute top-0 left-0 overflow-hidden z-10 rounded-[62%_47%_82%_35%/45%_45%_80%_66%] animate-slider-shape`,
+      className={clsx(`absolute top-0 left-0 overflow-hidden z-10 rounded-[62%_47%_82%_35%/45%_45%_80%_66%] animate-slider-shape`,
         sizeOptions[size], className)}
     >
-      {/* <GatsbyImage
-        image={bgImage}
-        alt="Background"
+      <Image
+        src={imageSrc}
+        alt="Profile picture"
         className="w-full h-full object-cover"
-      /> */}
+      />
     </div>
   )
 }

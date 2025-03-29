@@ -1,13 +1,13 @@
 "use client"
-import { Service } from "@/lib/types";
-import { useTranslations } from "next-intl";
+import Image from 'next/image';
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
+import { Service } from "@/lib/types";
 import useBenefitsData from "@/hooks/custom/use-benefits-data";
 
 import PageLayout from "../page-layout";
 import Title from "../title";
-
 
 const Benefits: React.FC<{ type: Service }> = ({ type }) => {
     const t = useTranslations("Benefits");
@@ -29,11 +29,11 @@ const Benefits: React.FC<{ type: Service }> = ({ type }) => {
                                     : "bg-gray-100 text-zinc-800 flex-row lg:flex-col"
                                 }`}
                         >
-                            {/* <GatsbyImage
-                                image={item.image}
+                            <Image
+                                src={item.image}
                                 alt={item.image}
                                 className="w-full h-full hidden sm:block max-h-60 md:max-h-[30rem]"
-                            /> */}
+                            />
                             <div className="p-5 lg:p-10 min-h-44 gap-4 flex flex-col items-center justify-center">
                                 <h3 className="text-xl lg:text-xl">{item.title}</h3>
                                 <p className="text-xs lg:text-sm sm:max-w-xs">{item.desc}</p>
