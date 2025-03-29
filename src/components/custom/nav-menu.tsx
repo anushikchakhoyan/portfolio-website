@@ -41,8 +41,8 @@ const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
                         ) : (
                             <>
                                 <NavigationMenuTrigger className="dark:text-zinc-200">{title}</NavigationMenuTrigger>
-                                <NavigationMenuContent className="dark:bg-zinc-800 !p-0">
-                                    <ul className="grid gap-1 p-3 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] dark:bg-zinc-800">
+                                <NavigationMenuContent className="!p-0">
+                                    <ul className="grid gap-1 p-3 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                         {intro && (
                                             <li className="row-span-3">
                                                 <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-end rounded-md 

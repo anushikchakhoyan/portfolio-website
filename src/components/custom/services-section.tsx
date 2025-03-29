@@ -26,20 +26,20 @@ const ServicesContent: React.FC<ServiceType> = (
 ) => {
   return (
     <div
-      className="gap-4 flex flex-col-reverse md:flex-row relative h-3/5">
+      className="gap-4 flex flex-col-reverse md:flex-row relative min-h-96">
       <div className="w-full lg:w-1/2 px-0 md:px-5 flex items-start flex-col gap-8">
-        <Title title={title} className="md:text-4xl" />
+        <Title title={title} className="md:text-4xl text-primary uppercase" />
         <UnderlineText text={hint} className="max-w-md" />
         <p>{description}</p>
-        <Button asChild variant="outline">
+        <Button size="lg" asChild>
           <Link href="/contact-us" className="flex items-center gap-2">
             <AiFillMessage /> {contactMe}
           </Link>
         </Button>
       </div>
-      <div className="bg-primary/80 w-3/4 lg:w-1/2 h-96 rounded-t-full absolute -z-10 -top-[150px] -right-[60px] transform rotate-180" />
+      <div className="bg-primary/80 w-3/4 lg:w-1/2 h-96 rounded-t-full absolute -z-10 -top-[150px] -right-[20px] transform rotate-180" />
       <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
-        <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden relative">
+        <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden">
           <Image
             src={image}
             alt={title}

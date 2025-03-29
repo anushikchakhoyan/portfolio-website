@@ -15,7 +15,6 @@ import SelectedPlan from "./selected-plan";
 
 const PackagesPage: React.FC = () => {
   const t = useTranslations("Packages");
-  const language = useLocale();
   const packages = usePackagesData();
   const [selectedPlan, setSelectedPlan] = useState<SelectedPlanType | null>(null);
 
@@ -30,12 +29,7 @@ const PackagesPage: React.FC = () => {
 
   return (
     <PageLayout id="packages" className="!pt-0">
-      <GeneralTextBlock
-        title={t("ourPackages")}
-        subtitle={t("chooseTheRightPlanForYou")}
-        description={t("packagesDesc")}
-        descrptionClassName="max-w-2xl"
-      />
+      <PackagesHeader />
       <div className="max-w-7xl mx-auto px-4 py-20">
         {packages.map(({ plan, title, desc, service }) => (
           <div key={title}>
@@ -47,37 +41,21 @@ const PackagesPage: React.FC = () => {
                   key={title}
                   className={clsx(
                     `min-h-96 max-w-96 lg:max-w-full w-full relative overflow-hidden cursor-pointer
-                     rounded-lg shadow-xs py-8 px-4 xl:px-6 border border-primary/40 
-                     flex flex-col justify-between items-center bg-zinc-50 dark:bg-zinc-800
+                     rounded-lg shadow-xs py-8 px-4 xl:px-6 border-2 border-primary/30 
+                     flex flex-col justify-between items-center bg-white dark:bg-zinc-800
                      hover:scale-105 hover:shadow-lg hover:border-primary/60 hover:animate-shimmer
                     `,
                     popular && 'scale-105 border-primary/60 shadow-lg',
                   )}
                 >
                   {popular && (
-                    <div className="absolute top-[35px] -right-[80px] transform rotate-45
-                                         bg-yellow-500 px-20 py-2 z-10">
-                      <span className="text-white text-xs xl:text-sm font-medium whitespace-nowrap">{t("mostPopular")}</span>
-                    </div>
+                    <PackagePopularLabel />
                   )}
-                  <div className="py-5">
-                    <Title title={title} className="text-xl md:text-3xl font-normal" />
-                    <ul className="py-5">
-                      {features.map((feature: string) => (
-                        <li key={feature} className="flex items-center py-1">
-                          <GoDotFill className="w-2 h-2 text-zinc-800 mr-2" />
-                          <span className={clsx(`text-gray-600 dark:text-gray-300`,
-                            language === LANGUAGE.en ? "text-base" : "text-sm"
-                          )}>
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <PackageContent title={title} features={features} />
                   <SelectedPlan
                     title={title}
                     service={service}
+                    popular={popular}
                     onSubmit={handleSubmit}
                     onChoosePlan={handleChoosePlan}
                   />
@@ -92,3 +70,63 @@ const PackagesPage: React.FC = () => {
 };
 
 export default PackagesPage;
+
+
+const PackagesHeader: React.FC = () => {
+  const t = useTranslations("Packages");
+
+  return (
+    <div className="gap-4 flex flex-col-reverse md:flex-row relative min-h-96">
+      <GeneralTextBlock
+        title={t("ourPackages")}
+        subtitle={t("chooseTheRightPlanForYou")}
+        description={t("packagesDesc")}
+      />
+      <div className="bg-primary/80 w-3/4 lg:w-1/2 h-96 rounded-t-full absolute -z-10 -top-[150px] -right-[20px] transform rotate-180" />
+      <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
+        <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden">
+          {/* <Image
+            src={coverImage}
+            alt={t("getInTouch")}
+            className="w-full h-full object-cover"
+          /> */}
+        </div>
+      </div>
+    </div>
+  )
+};
+PackagesHeader.displayName = "PackagesHeader";
+
+const PackagePopularLabel: React.FC = () => {
+  const t = useTranslations("Packages");
+  return (
+    <div className="absolute top-[35px] -right-[80px] transform rotate-45 bg-yellow-500 px-20 py-2 z-10">
+      <span className="text-white text-xs xl:text-sm font-medium whitespace-nowrap">{t("mostPopular")}</span>
+    </div>
+  )
+}
+PackagePopularLabel.displayName = "PackagePopularLabel";
+
+const PackageContent = ({ title, features }: PlanType) => {
+  const language = useLocale();
+
+  return (
+    <div className="py-5">
+      <Title title={title} className="text-xl md:text-3xl leading-relaxed tracking-wider" />
+
+      <ul className="py-5">
+        {features?.map((feature) => (
+          <li key={feature} className="flex items-center py-1">
+            <GoDotFill className="w-2 h-2 text-zinc-800 mr-2" />
+            <span className={clsx(`text-gray-600 dark:text-gray-300`,
+              language === LANGUAGE.en ? "text-base" : "text-sm"
+            )}>
+              {feature}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+PackageContent.displayName = "PackageContent";

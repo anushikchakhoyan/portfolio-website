@@ -88,7 +88,7 @@ export type Info = {
 export type PlanType = {
     title: string;
     features?: string[] | undefined;
-    popular: boolean;
+    popular?: boolean;
 }
 
 export type SelectedPlanType = {

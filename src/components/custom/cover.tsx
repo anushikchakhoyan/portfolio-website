@@ -1,18 +1,22 @@
 import Title from "@/components/custom/title";
+import clsx from "clsx";
 import { StaticImageData } from "next/image";
 
 type CoverSectionProps = {
     title: string,
-    children: React.ReactNode
+    children?: React.ReactNode
     coverImage: StaticImageData,
+    className: string,
 }
 
-const CoverSection: React.FC<CoverSectionProps> = ({ title, coverImage, children }) => {
+const CoverSection: React.FC<CoverSectionProps> = ({ title, coverImage, children, className }) => {
     return (
         <div
-            className="bg-cover bg-no-repeat bg-center bg-fixed h-screen flex flex-col items-center justify-center gap-10"
+            className={clsx("bg-cover bg-no-repeat bg-center bg-fixed h-screen flex flex-col items-center justify-center gap-10",
+                className
+            )}
             style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${coverImage})`,
+                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${coverImage.src})`,
             }}
         >
             <Title title={title} className="text-zinc-50 text-4xl md:text-5xl font-bold text-center font-italiana" />

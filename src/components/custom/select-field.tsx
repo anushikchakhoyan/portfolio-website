@@ -21,14 +21,14 @@ const SelectField: React.FC<SelectProps> = ({ name, label, options }) => {
     const [field, meta, helpers] = useField<string>(name);
 
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-full">
             <Select
                 value={field.value}
                 onValueChange={(value) => {
                     helpers.setValue(value);
                 }}
             >
-                <SelectTrigger id={name} className={`h-12 ${meta.touched && meta.error ? "border-red-500" : ""}`}>
+                <SelectTrigger id={name} className={`w-full !h-12 ${meta.touched && meta.error ? "border-red-500" : ""}`}>
                     <SelectValue placeholder={label} />
                 </SelectTrigger>
                 <SelectContent>

@@ -1,48 +1,19 @@
-import { useTranslations } from "next-intl";
 import Link from "next/link";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import UnderlineText from "@/components/custom/underline-text";
+import SocialMedia from "@/components/custom/social-media";
+import ContactForm from "@/components/custom/contact-form";
 import PageLayout from "@/components/custom/page-layout";
+import coverImage from "@/images/contact-cover.jpg";
+import Title from "@/components/custom/title";
 import { EMAIL } from "@/lib/constants";
 
-import SocialMedia from "../../../components/custom/social-media";
-import ContactForm from "./form";
-
-const ContactUs: React.FC = () => {
-  const t = useTranslations("Header");
-
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     coverImage: file(relativePath: { eq: "contact-cover.jpg" }) {
-  //       childImageSharp {
-  //         gatsbyImageData(
-  //           layout: FULL_WIDTH
-  //           placeholder: BLURRED
-  //           formats: [AUTO, WEBP, AVIF, JPG]
-  //           aspectRatio: 1.77
-  //           width: 1200
-  //         )
-  //       }
-  //     }
-  //   }
-  // `);
-
-  // const coverImage = getImage(data.coverImage) as IGatsbyImageData;
-
-  return (
-    <PageLayout id="contact">
-      <div className="relative h-96 w-full flex items-end justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/45 z-10 flex items-end justify-center">
-          <h2 className="text-4xl text-white font-bold py-20 uppercase font-italiana">
-            {t("getInTouch")}
-          </h2>
-        </div>
-        {/* <GatsbyImage
-          image={coverImage}
-          alt={t("itsMe")}
-          className="w-full h-full object-cover"
-        /> */}
-      </div>
+const ContactUs: React.FC = () => (
+  <>
+    <ContactHeader />
+    <PageLayout id="contact" className="!py-0">
       <div className="py-10 w-full flex flex-col items-center justify-center gap-10 max-w-6xl mx-auto">
         <ContactTitle />
         <div className="w-full flex flex-col md:flex-row items-start justify-center gap-10">
@@ -51,8 +22,8 @@ const ContactUs: React.FC = () => {
         </div>
       </div>
     </PageLayout>
-  );
-};
+  </>
+);
 
 export default ContactUs;
 
@@ -107,3 +78,26 @@ const ContactTitle: React.FC<{}> = (() => {
 });
 ContactTitle.displayName = "ContactTitle";
 
+
+const ContactHeader: React.FC = () => {
+  const t = useTranslations("Header");
+
+  return (
+    <div className="gap-4 flex flex-col-reverse md:flex-row relative min-h-96">
+      <div className="w-full lg:w-1/2 px-0 md:px-5 flex items-center justify-center">
+        <Title title={t("getInTouch")} className="md:text-5xl text-primary uppercase" />
+      </div>
+      <div className="bg-primary/80 w-3/4 lg:w-1/2 h-96 rounded-t-full absolute -z-10 -top-[150px] -right-[20px] transform rotate-180" />
+      <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
+        <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden">
+          <Image
+            src={coverImage}
+            alt={t("getInTouch")}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  )
+};
+ContactHeader.displayName = "ContactHeader";

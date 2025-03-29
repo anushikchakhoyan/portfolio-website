@@ -20,11 +20,12 @@ import Title from "@/components/custom/title";
 type PlanTypes = {
     title: string,
     service: Service,
+    popular?: boolean,
     onSubmit: (values: FormikValues) => Promise<void>;
     onChoosePlan: ({ title, service }: SelectedPlanType) => Promise<void>;
 }
 
-const SelectedPlan: React.FC<PlanTypes> = ({ title, service, onSubmit, onChoosePlan }) => {
+const SelectedPlan: React.FC<PlanTypes> = ({ title, service, onSubmit, popular, onChoosePlan }) => {
     const t = useTranslations("Packages");
     const tContact = useTranslations("Contact");
 
@@ -33,9 +34,9 @@ const SelectedPlan: React.FC<PlanTypes> = ({ title, service, onSubmit, onChooseP
             <AlertDialogTrigger asChild>
                 <Button
                     size="lg"
-                    variant="ghost"
+                    variant={popular ? 'default' : 'outline'}
                     onClick={() => onChoosePlan({ title, service })}
-                    className="bg-white dark:bg-zinc-600 hover:dark:bg-zinc-600/70 rounded-full px-8 py-3 cursor-pointer">
+                    className="rounded-full px-8 py-3 cursor-pointer">
                     {t("choose")}
                 </Button>
             </AlertDialogTrigger>

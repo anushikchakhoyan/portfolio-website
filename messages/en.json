@@ -175,18 +175,18 @@
   "WhatWeOffer": {
     "ourExpertise": "Our Expertise",
     "transformYourVisionIntoReality": "Transform your vision into reality \n with our tailored solutions.",
-    "fromStrategyToExecution": "From strategy to execution, I help individuals and businesses bring their ideas to life with expert guidance, seamless collaboration, and top-notch development.",
+    "fromStrategyToExecution": "From strategy to execution, We help individuals and businesses bring their ideas to life with expert guidance, seamless collaboration, and top-notch development.",
     "websiteCreationTitle": "Website Creation",
     "websiteCreationHint": "Your Digital Presence Matters. Crafting High-Performance, Visually Stunning Websites for Your Brand",
-    "websiteCreationDescription": "A well-crafted website is crucial for success. I specialize in building fast, responsive, and visually compelling websites that align with your brand identity and business goals. Whether it's an e-commerce platform, a portfolio, or a corporate site, I bring ideas to life with clean and efficient code.",
+    "websiteCreationDescription": "A well-crafted website is crucial for success. We specialize in building fast, responsive, and visually compelling websites that align with your brand identity and business goals. Whether it's an e-commerce platform, a portfolio, or a corporate site, We bring ideas to life with clean and efficient code.",
     "websiteCreationContact": "Let's build your website today!",
     "mentorshipTitle": "Mentorship",
     "mentorshipHint": "Guidance for Your Growth. Empowering You with Knowledge, Skills, and Industry Insights",
-    "mentorshipDescription": "Receive personalized mentorship tailored to your unique journey. Whether you're just starting in tech or looking to advance your career, I'll provide expert insights, career advice, and hands-on guidance to help you grow with confidence.",
+    "mentorshipDescription": "Receive personalized mentorship tailored to your unique journey. Whether you're just starting in tech or looking to advance your career, We'll provide expert insights, career advice, and hands-on guidance to help you grow with confidence.",
     "mentorshipContact": "Contact me to get started!",
     "collabTitle": "Collaboration",
     "collabHint": "Let's Build Something Together. Bringing Innovative Minds Together to Build Outstanding Projects",
-    "collabDescription": "Collaboration is key to innovation. If you have an idea, startup, or project that needs a creative and technical partner, let's connect. I bring experience in front-end development, UI/UX design, and strategic execution to ensure success.",
+    "collabDescription": "Collaboration is key to innovation. If you have an idea, startup, or project that needs a creative and technical partner, let's connect. We bring experience in front-end development, UI/UX design, and strategic execution to ensure success.",
     "collabContact": "Reach out to discuss your project!"
   },
   "Footer": {
@@ -195,10 +195,10 @@
     "followUs": "Follow Us"
   },
   "Packages": {
-    "ourPackages": "Our Packages",
+    "ourPackages": "Our Service Packages",
     "chooseTheRightPlanForYou": "Choose the plan that suits your needs",
-    "packagesDesc": "I offer a range of packages designed to meet your unique requirements. Each package is crafted to deliver high-quality results while keeping your budget and timeline in mind.",
-    "packagesDesc2": "Explore the options below to find the perfect solution for your project,\nor contact me to discuss a custom solution.",
+    "packagesDesc": "We offer a range of packages designed to meet your unique requirements. Each package is crafted to deliver high-quality results while keeping your budget and timeline in mind.",
+    "packagesDesc2": "Explore the options below to find the perfect solution for your project,\n or contact me to discuss a custom solution.",
     "classic": "Starter",
     "classicItems": [
       "1-on-1 meetings (2 meetings/month)",
