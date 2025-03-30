@@ -1,5 +1,5 @@
 "use client"
-import clsx from "clsx";
+import { cn } from "@/lib/utils"
 import { GoDotFill } from "react-icons/go";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
@@ -28,7 +28,7 @@ const InfoBlock: React.FC<{ type: Service }> = ({ type }) => {
                 {data.map(({ title, description, items }, index) => (
                     <SwiperSlide
                         key={title}
-                        className={clsx(
+                        className={cn(
                             `px-8 gap-6 xl:gap-4 rounded-lg !flex flex-col-reverse lg:flex-row items-center justify-center`,
                             index % 2 === 0
                                 ? 'bg-gradient-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900'

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 import { useField, useFormikContext } from "formik";
 import PhoneInput from "react-phone-number-input";
 
@@ -9,11 +9,12 @@ type PhoneProps = {
     label: string,
 }
 
-const PhoneField: React.FC<PhoneProps> = ({ name, label, ...props }) => {
+const PhoneField: React.FC<PhoneProps> = ({ name, ...props }) => {
     const { setFieldValue } = useFormikContext();
     const [field, meta] = useField(name);
 
-    const handleChange = (value: any) => {
+    const handleChange = (value: string | undefined) => {
+        console.log(typeof value);
         setFieldValue(field.name, value);
     };
 

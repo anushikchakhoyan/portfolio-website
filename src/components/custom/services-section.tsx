@@ -22,7 +22,7 @@ const ServicesSection: React.FC<{ type: Service }> = ({ type }) => {
 export default ServicesSection;
 
 const ServicesContent: React.FC<ServiceType> = (
-  { id, title, hint, description, contactMe, image }
+  { title, hint, description, contactMe, image }
 ) => {
   return (
     <div
@@ -41,7 +41,7 @@ const ServicesContent: React.FC<ServiceType> = (
       <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
         <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden">
           <Image
-            src={image}
+            src={image ?? ''}
             alt={title}
             className="w-full h-full object-cover"
           />

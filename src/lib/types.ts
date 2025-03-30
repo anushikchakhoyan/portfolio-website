@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { LANGUAGE, SERVICES_CATEGORY, THEME_MODE } from "./constants";
 
 export type Theme = keyof typeof THEME_MODE; // "light" | "dark"
@@ -31,14 +32,14 @@ export type ServiceType = {
     hint: string;
     description: string;
     contactMe: string;
-    image?: any;
+    image?: StaticImageData | string;
 }
 
 export type Benefit = {
     id: number;
     title: string;
     desc: string;
-    image?: any;
+    image?: StaticImageData | string;
 }
 
 export type ColorShades = {

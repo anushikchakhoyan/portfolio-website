@@ -1,7 +1,6 @@
 
-import clsx from "clsx";
+import { cn } from "@/lib/utils"
 import Link from "next/link";
-import { useTranslations } from "next-intl";
 import { IoLogoGithub } from "react-icons/io5";
 import { BiLogoMedium } from "react-icons/bi";
 import { FaInstagram, FaLinkedin, FaTelegram } from "react-icons/fa";
@@ -23,17 +22,15 @@ const socialLinks = [
 ];
 
 const SocialMedia: React.FC<SocialMediaType> = ({ iconSize, className }) => {
-    const t = useTranslations();
-
     return (
         <TooltipProvider>
-            <div className={clsx("flex align-baseline gap-5 py-1", className)}>
+            <div className={cn("flex align-baseline gap-5 py-1", className)}>
                 {socialLinks.map(({ url, Icon, name }) => (
                     <Tooltip key={url}>
                         <TooltipTrigger asChild>
                             <Link href={url}>
                                 <Icon
-                                    className={clsx("text-xl text-zinc-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400", iconSize)} />
+                                    className={cn("text-xl text-zinc-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400", iconSize)} />
                             </Link>
                         </TooltipTrigger>
                         <TooltipContent>

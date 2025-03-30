@@ -1,6 +1,5 @@
 'use client';
 
-import clsx from 'clsx';
 import { Locale } from 'next-intl';
 import { useTransition } from 'react';
 import { routing } from '@/i18n/routing';
@@ -8,13 +7,13 @@ import { useParams } from 'next/navigation';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { LANGUAGE } from '@/lib/constants';
-
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { cn } from '@/lib/utils';
 
 const LanguageSwitcher = () => {
     const t = useTranslations();
-    const [_, startTransition] = useTransition();
+    const [, startTransition] = useTransition();
 
     const locale = useLocale();
     const router = useRouter();
@@ -53,7 +52,7 @@ const LanguageSwitcher = () => {
                         onClick={() => onSelectChange(cur)}
                         className="flex items-center gap-2 hover:bg-zinc-100 p-2 cursor-pointer appearance-none">
                         <div
-                            className={clsx("h-5 w-5 p-0 rounded-full bg-cover bg-center",
+                            className={cn("h-5 w-5 p-0 rounded-full bg-cover bg-center",
                                 cur === 'en' && "bg-[url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg')]",
                                 cur === 'hy' && "bg-[url('https://upload.wikimedia.org/wikipedia/commons/2/2f/Flag_of_Armenia.svg')]"
                             )}

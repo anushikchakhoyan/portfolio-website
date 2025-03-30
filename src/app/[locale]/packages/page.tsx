@@ -1,5 +1,5 @@
 'use client'
-import clsx from "clsx";
+import { cn } from "@/lib/utils"
 import { useState } from "react";
 import { FormikValues } from "formik";
 import { GoDotFill } from "react-icons/go";
@@ -14,7 +14,6 @@ import { LANGUAGE } from "@/lib/constants";
 import SelectedPlan from "./selected-plan";
 
 const PackagesPage: React.FC = () => {
-  const t = useTranslations("Packages");
   const packages = usePackagesData();
   const [selectedPlan, setSelectedPlan] = useState<SelectedPlanType | null>(null);
 
@@ -39,7 +38,7 @@ const PackagesPage: React.FC = () => {
               {plan.map(({ title, features, popular }: PlanType) => (
                 <div
                   key={title}
-                  className={clsx(
+                  className={cn(
                     `min-h-96 max-w-96 lg:max-w-full w-full relative overflow-hidden cursor-pointer
                      rounded-lg shadow-xs py-8 px-4 xl:px-6 border-2 border-primary/30 
                      flex flex-col justify-between items-center bg-white dark:bg-zinc-800
@@ -118,7 +117,7 @@ const PackageContent = ({ title, features }: PlanType) => {
         {features?.map((feature) => (
           <li key={feature} className="flex items-center py-1">
             <GoDotFill className="w-2 h-2 text-zinc-800 mr-2" />
-            <span className={clsx(`text-gray-600 dark:text-gray-300`,
+            <span className={cn(`text-gray-600 dark:text-gray-300`,
               language === LANGUAGE.en ? "text-base" : "text-sm"
             )}>
               {feature}

@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cn } from '@/lib/utils';
 import { ReactNode } from 'react';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 
 export default function PageLayout({ children, id, className }: Props) {
     return (
-        <article id={id} className={clsx("w-full max-w-8xl rounded-lg mx-auto px-4 py-12 lg:py-16", className)} >
+        <article id={id} className={cn("w-full max-w-8xl rounded-lg mx-auto px-4 py-12 lg:py-16", className)} >
             {children}
         </article>
     );

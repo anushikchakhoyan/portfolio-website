@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils"
 
 import {
     NavigationMenu,
@@ -13,10 +13,9 @@ import {
 import useNavigationData from "@/hooks/custom/use-nav-data";
 import useIsMobile from "@/hooks/custom/use-mobile";
 import { NavigationType } from "@/lib/types";
-import { cn } from "@/lib/utils";
+
 
 const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
-    const t = useTranslations();
     const isMobile = useIsMobile();
     const navigations = useNavigationData();
 

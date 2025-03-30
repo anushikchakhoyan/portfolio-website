@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 import SocialMedia from "./social-media";
 import PageLayout from "./page-layout";
 
-const Subscribe: React.FC<{ text?: string | any }> = ({ text }) => {
+const Subscribe: React.FC<{ text?: string }> = ({ text }) => {
   const t = useTranslations("Subscribe");
   const tContact = useTranslations("Header");
 

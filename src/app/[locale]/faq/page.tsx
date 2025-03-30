@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslations } from "next-intl";
 
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
@@ -6,18 +5,20 @@ import GeneralTextBlock from "@/components/custom/general-text-block";
 import PageLayout from "@/components/custom/page-layout";
 
 interface FAQItem {
-  title: string | any,
-  description: any | React.ReactNode,
+  title: string,
+  description: React.ReactNode;
 }
+
+type FaqKeys = `faqDesc${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}`;
 
 const FaqList: React.FC = () => {
   const t = useTranslations("Faq");
 
-  const items: FAQItem[] = Array.from({ length: 10 }, (_, index) => index + 1).map((data) => {
+  const items = Array.from({ length: 10 }, (_, index) => index + 1).map((item) => {
     return {
-      title: t(`faqTitle${data}` as any),
-      description: t.rich(`faqDesc${data}`, {
-        strong: (chunks: string) => <b>{chunks}</b>
+      title: t(`faqTitle${item}` as `faqTitle${1}`),
+      description: t.rich(`faqDesc${item}` as FaqKeys, {
+        strong: (chunks: React.ReactNode) => <strong>{chunks}</strong>
       })
     };
   });

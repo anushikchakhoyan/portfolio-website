@@ -94,7 +94,7 @@ export const ColorProvider = ({ children }: { children: React.ReactNode }) => {
             `--secondary`,
             `${state.secondary.hue} ${state.secondary.saturation}% ${state.secondary.lightness}%`
         );
-    }, [state.primary, state.shades]);
+    }, [state.primary, state.shades, state.secondary]);
 
     return (
         <ColorContext.Provider value={{ state, dispatch }}>

@@ -1,16 +1,16 @@
-import clsx from "clsx";
-import Image from "next/image";
+import { cn } from "@/lib/utils"
+import Image, { StaticImageData } from "next/image";
 
 type CircleThumbTypes = {
   className?: string;
   size?: "sm" | "md" | "lg";
-  imageSrc?: any;
+  imageSrc?: string | StaticImageData;
 }
 
 const CircleThumb: React.FC<CircleThumbTypes> = ({
   className,
   size = "md",
-  imageSrc,
+  imageSrc = "",
 }) => {
   const sizeOptions = {
     sm: "w-[200px] h-[200px]",
@@ -20,7 +20,7 @@ const CircleThumb: React.FC<CircleThumbTypes> = ({
 
   return (
     <div
-      className={clsx(`absolute top-0 left-0 overflow-hidden z-10 rounded-[62%_47%_82%_35%/45%_45%_80%_66%] animate-slider-shape`,
+      className={cn(`absolute top-0 left-0 overflow-hidden z-10 rounded-[62%_47%_82%_35%/45%_45%_80%_66%] animate-slider-shape`,
         sizeOptions[size], className)}
     >
       <Image

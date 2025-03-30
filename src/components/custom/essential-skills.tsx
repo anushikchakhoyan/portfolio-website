@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils"
 
 import { useEssentialSkillsData, useSkillsData } from "@/hooks/custom/use-skills-data";
 import PageLayout from "./page-layout";
@@ -13,7 +13,7 @@ const EssentialSkills: React.FC = () => {
                 {[0, 1].map((index) => {
                     const items = index % 2 === 0 ? [...essentials, ...essentials] : [...techSkills, ...techSkills];
                     return (
-                        <div key={`scroll-container-${index}`} className={clsx(
+                        <div key={`scroll-container-${index}`} className={cn(
                             'flex gap-3 whitespace-nowrap',
                             index % 2 === 0
                                 ? 'animate-scroll-linear-left'

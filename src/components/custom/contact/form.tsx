@@ -110,7 +110,7 @@ const ContactForm: React.FC = () => {
                     </AlertDescription>
                 </Alert>
             )}
-            <Formik
+            <Formik<FormikValues>
                 enableReinitialize
                 onSubmit={handleSubmit}
                 initialValues={initialValues}

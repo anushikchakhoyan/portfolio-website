@@ -1,6 +1,6 @@
 
 "use client"
-import clsx from "clsx";
+import { cn } from "@/lib/utils"
 import Image from 'next/image';
 import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,7 +33,7 @@ const WebsiteTypes: React.FC = () => {
                     </div>
                 </SwiperSlide>
                 {websites.map(({ key, descKey, img }, index) => (
-                    <SwiperSlide key={key} className={clsx(`px-8 gap-6 xl:gap-4 rounded-lg
+                    <SwiperSlide key={key} className={cn(`px-8 gap-6 xl:gap-4 rounded-lg
                    !flex flex-col-reverse lg:flex-row items-center justify-center`,
                         index % 2 === 0
                             ? 'bg-gradient-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900'
@@ -41,14 +41,14 @@ const WebsiteTypes: React.FC = () => {
                     )}>
                         <div className="w-4/5 lg:w-5/12 xl:w-1/2">
                             <Image
-                                src={img}
+                                src={img ?? ""}
                                 alt={key}
                                 className="w-full h-full rounded-lg shadow-lg bg-secondary"
                             />
                         </div>
                         <div className="text-center xl:px-8 flex flex-col gap-8 w-full lg:w-5/12 xl:w-1/2">
-                            <h3 className="text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{t(key)}</h3>
-                            <p className="text-xl xl:text-2xl font-medium text-gray-700 dark:text-gray-200">{t(descKey)}</p>
+                            <h3 className="text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{key}</h3>
+                            <p className="text-xl xl:text-2xl font-medium text-gray-700 dark:text-gray-200">{descKey}</p>
                         </div>
                     </SwiperSlide>
                 ))}

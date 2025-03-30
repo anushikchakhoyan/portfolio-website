@@ -2,7 +2,6 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 import { ColorShades, Hsl } from "./types";
-import { useTranslations } from "next-intl";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -11,16 +10,6 @@ export function cn(...inputs: ClassValue[]) {
 export function getFormattedIndex(index: number): string {
   return index.toString().padStart(2, '0');
 }
-
-export const generateSteps = (stepKeys: string[]) => {
-  const t = useTranslations("Workflows");
-  return stepKeys.map((key, index) => ({
-    id: index + 1,
-    title: t(key as any),
-    description: t(`${key}Desc` as any),
-  }));
-};
-
 
 export const generateHSLShades = ({ hue, saturation, lightness }: Hsl): ColorShades => {
   return {

@@ -1,5 +1,5 @@
 "use client"
-import clsx from "clsx";
+import { cn } from "@/lib/utils"
 import { useState } from "react";
 import { useLocale } from "next-intl";
 
@@ -40,7 +40,7 @@ const Stepper: React.FC<StepperProps> = ({ steps, className }) => {
 
     return (
         <TooltipProvider>
-            <div className={clsx(`w-full flex items-center lg:h-96`, className)}>
+            <div className={cn(`w-full flex items-center lg:h-96`, className)}>
                 <div className="gap-5 xl:gap-0 flex-col xl:flex-row relative flex items-center justify-between w-full">
                     <StepperLine />
                     {steps.map((step, index) => (
@@ -76,7 +76,7 @@ const StepCircle: React.FC<StepCircleProps> = (({ step, isActive, handleStepClic
         <Tooltip>
             <TooltipTrigger>
                 <div
-                    className={clsx(
+                    className={cn(
                         `w-8 h-8 flex items-center justify-center rounded-full border-2 mx-[1.1rem] xl:mx-0
                         shadow-md text-sm font-bold cursor-pointer transition-all duration-300 relative z-10
                         hover:ring-2 hover:ring-primary-200 dark:hover:ring-primary-400/30`,
@@ -107,7 +107,7 @@ StepCircle.displayName = "StepCircle";
 
 const StepTitle: React.FC<StepTitleProps> = (({ title, description, even }) => {
     return (
-        <div className={clsx(
+        <div className={cn(
             "xl:absolute w-full text-start xl:text-center transition-all order-3",
             even
                 ? "-top-28 text-zinc-700 dark:text-zinc-300"
@@ -120,12 +120,11 @@ const StepTitle: React.FC<StepTitleProps> = (({ title, description, even }) => {
 });
 StepTitle.displayName = "StepTitle";
 
-
 const VerticalConnectorLine: React.FC<VerticalConnectorProps> = (({ even, isActive, handleStepClick }) => {
     return (
         <div
             onClick={handleStepClick}
-            className={clsx(
+            className={cn(
                 `hidden xl:block absolute rounded-full w-0.5 transition-all order-2
                  hover:opacity-80 cursor-pointer`,
                 even ? "-top-7 h-6 rtgrtgrtgr" : "top-9 h-6",
@@ -138,7 +137,7 @@ const VerticalConnectorLine: React.FC<VerticalConnectorProps> = (({ even, isActi
 });
 VerticalConnectorLine.displayName = "VerticalConnectorLine";
 
-const StepperLine: React.FC<{}> = (() => {
+const StepperLine: React.FC = (() => {
     return (
         <div className="hidden xl:block absolute rounded-full w-full h-2 bg-zinc-200 dark:bg-zinc-800 
                         top-1/2 left-0 -translate-y-1/2 z-0" />

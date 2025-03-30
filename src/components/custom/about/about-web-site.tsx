@@ -1,9 +1,9 @@
 
-import clsx from "clsx";
 import { useLocale, useTranslations } from "next-intl";
 
 import { LANGUAGE } from "@/lib/constants";
 import PageLayout from "../page-layout";
+import { cn } from "@/lib/utils"
 
 const AboutWebSite: React.FC = () => {
     const t = useTranslations("About");
@@ -45,7 +45,7 @@ const AboutWebSite: React.FC = () => {
             {sectionsData.map((section) => (
                 <div key={section.id} className="grid lg:grid-cols-2 items-end gap-3 xl:gap-5">
                     <h3
-                        className={clsx(
+                        className={cn(
                             "px-3 capitalize",
                             section.heading.alignment,
                             language === LANGUAGE.en ? "text-4xl lg:text-6xl" : "text-2xl lg:text-[40px] lg:leading-10",
@@ -58,7 +58,7 @@ const AboutWebSite: React.FC = () => {
                             {section.heading.emphasis}
                         </p>
                     </h3>
-                    <div className={clsx("px-3 flex flex-col gap-5", section.alignment === 'right' ? 'text-end' : '')}>
+                    <div className={cn("px-3 flex flex-col gap-5", section.alignment === 'right' ? 'text-end' : '')}>
                         {section.paragraphs.map((paragraph, index) => (
                             <p key={index} className="text-sm text-zinc-700 dark:text-gray-300">
                                 {paragraph}

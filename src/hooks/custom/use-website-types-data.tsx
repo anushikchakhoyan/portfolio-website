@@ -1,19 +1,20 @@
 import { useTranslations } from "next-intl";
+import { StaticImageData } from "next/image";
 
-import businessImage from "@/images/types/business.png";
 import landingPageImage from "@/images/types/landing-page.webp";
+import wordpressImage from "@/images/types/wordpress.webp";
 import corporateImage from "@/images/types/corporate.jpg";
 import ecommerceImage from "@/images/types/ecommerce.jpg";
-import newsImage from "@/images/types/news.webp";
-import adminImage from "@/images/types/admin.webp";
-import wordpressImage from "@/images/types/wordpress.webp";
-import govImage from "@/images/types/gov.jpg";
+import businessImage from "@/images/types/business.png";
 import customImage from "@/images/types/custom.png";
+import adminImage from "@/images/types/admin.webp";
+import newsImage from "@/images/types/news.webp";
+import govImage from "@/images/types/gov.jpg";
 
 type Website = {
     key: string;
     descKey: string;
-    img?: any;
+    img?: StaticImageData | string;
 }
 
 export default function useWebsiteTypeaData() {
@@ -21,47 +22,48 @@ export default function useWebsiteTypeaData() {
 
     const websiteTypes: Website[] = [
         {
-            key: "businessCard",
-            descKey: "businessCardDesc",
+            key: t("businessCard"),
+            descKey: t("businessCardDesc"),
             img: businessImage
         },
         {
-            key: "landingPage", descKey: "landingPageDesc",
+            key: t("landingPage"),
+            descKey: t("landingPageDesc"),
             img: landingPageImage
         },
         {
-            key: "corporateWebsite",
-            descKey: "corporateWebsiteDesc",
+            key: t("corporateWebsite"),
+            descKey: t("corporateWebsiteDesc"),
             img: corporateImage
         },
         {
-            key: "wordPressWebsite",
-            descKey: "wordPressWebsiteDesc",
+            key: t("wordPressWebsite"),
+            descKey: t("wordPressWebsiteDesc"),
             img: wordpressImage
         },
         {
-            key: "ecommerce",
-            descKey: "ecommerceDesc",
+            key: t("ecommerce"),
+            descKey: t("ecommerceDesc"),
             img: ecommerceImage
         },
         {
-            key: "newsPortal",
-            descKey: "newsPortalDesc",
+            key: t("newsPortal"),
+            descKey: t("newsPortalDesc"),
             img: newsImage
         },
         {
-            key: "adminPanel",
-            descKey: "adminPanelDesc",
+            key: t("adminPanel"),
+            descKey: t("adminPanelDesc"),
             img: adminImage
         },
         {
-            key: "govWebsite",
-            descKey: "govWebsiteDesc",
+            key: t("govWebsite"),
+            descKey: t("govWebsiteDesc"),
             img: govImage
         },
         {
-            key: "customWebsite",
-            descKey: "customWebsiteDesc",
+            key: t("customWebsite"),
+            descKey: t("customWebsiteDesc"),
             img: customImage
         },
     ];

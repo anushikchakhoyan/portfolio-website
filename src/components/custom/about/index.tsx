@@ -29,7 +29,7 @@ const About: React.FC = () => {
         <p
           className="text-sm md:text-base text-zinc-50 whitespace-break-spaces">
           {t.markup('visionDescription', {
-            span: (chunks) => `<span className="font-medium">${chunks}</b>`
+            span: (chunks) => `<span className="font-medium">${chunks}</span>`
           })}
         </p>
       </CoverSection>

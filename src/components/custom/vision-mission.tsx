@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils"
 import { useTranslations } from "next-intl";
 
 import PageLayout from "./page-layout";
@@ -28,7 +28,7 @@ const VisionMission = () => {
                     <div key={title} className="px-8 py-12 flex flex-col gap-6 rounded-xl
                      bg-white dark:bg-zinc-800/30 shadow-xs border border-primary/20 group hover:bg-primary-200/10">
                         <div className="flex flex-col items-start gap-1 text-primary dark:text-primary">
-                            <Icon className={clsx("w-8 h-8",
+                            <Icon className={cn("w-8 h-8",
                                 index === 0 && "group-hover:translate-x-5 group-hover:-translate-y-4 transition-all duration-300",
                                 index === 1 && "group-hover:scale-125 transition-all duration-300"
                             )} />

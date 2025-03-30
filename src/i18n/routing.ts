@@ -8,6 +8,8 @@ export const routing = defineRouting({
         '/': '/',
         '/pathnames': {
             hy: '/pfadnamen'
-        }
+        },
+        '/contact-us': '/contact-us',
+        '/faq': '/faq',
     }
 });

@@ -1,11 +1,13 @@
 import * as React from "react";
 import { useTranslations } from "next-intl";
-
-import { Step } from "@/lib/types";
-import { generateSteps } from "@/lib/utils";
-
-import Title from "../title";
 import Stepper from "../stepper";
+import Title from "../title";
+
+interface Step {
+    id: number;
+    title: string;
+    description: string;
+}
 
 interface WorkflowProps {
     title: string;
@@ -13,41 +15,92 @@ interface WorkflowProps {
     steps: Step[];
 }
 
-interface WorkflowComponentProps {
+interface WorkflowConfig {
     titleKey: string;
     subtitleKey: string;
     stepKeys: string[];
 }
 
-// factory function
-const createWorkflowComponent = ({ titleKey, subtitleKey, stepKeys }: WorkflowComponentProps): React.FC => {
-    return () => {
+type WorkflowTranslationKeys =
+    | "workingWithClient"
+    | "buildingWebsite"
+    | "mentorshipSteps"
+    | "guidingMentee"
+    | "collaborationSteps"
+    | "workingOnProject"
+    | "discoveryConsultation"
+    | "discoveryConsultationDesc"
+    | "planningStrategy"
+    | "planningStrategyDesc"
+    | "designDevelopment"
+    | "designDevelopmentDesc"
+    | "testingFeedback"
+    | "testingFeedbackDesc"
+    | "launchSupport"
+    | "launchSupportDesc"
+    | "initialMeeting"
+    | "initialMeetingDesc"
+    | "personalizedLearningPlan"
+    | "personalizedLearningPlanDesc"
+    | "guidedPractice"
+    | "guidedPracticeDesc"
+    | "progressReview"
+    | "progressReviewDesc"
+    | "careerGuidanceFinalEvaluation"
+    | "careerGuidanceFinalEvaluationDesc"
+    | "projectDiscussion"
+    | "projectDiscussionDesc"
+    | "communicationSetup"
+    | "communicationSetupDesc"
+    | "executionCoordination"
+    | "executionCoordinationDesc"
+    | "taskDistribution"
+    | "taskDistributionDesc"
+    | "testing"
+    | "testingDesc"
+    | "finalization"
+    | "finalizationDesc";
+
+const WorkflowSection: React.FC<WorkflowProps> = React.memo(({ title, subtitle, steps }) => (
+    <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
+            <Title title={title} className="text-2xl sm:text-4xl md:text-4xl text-start" />
+            <p className="text-base">{subtitle}</p>
+        </div>
+        <Stepper steps={steps} />
+    </div>
+));
+WorkflowSection.displayName = "WorkflowSection";
+
+/**
+ * Factory function to generate workflow components dynamically.
+ */
+const createWorkflowComponent = ({ titleKey, subtitleKey, stepKeys }: WorkflowConfig): React.FC => {
+    const WorkflowComponent: React.FC = () => {
         const t = useTranslations("Workflows");
-        const steps = React.useMemo(() => generateSteps(stepKeys), [stepKeys, t]);
+
+        const steps: Step[] = React.useMemo(
+            () =>
+                stepKeys.map((key, index) => ({
+                    id: index + 1,
+                    title: t(key as WorkflowTranslationKeys),
+                    description: t(`${key}Desc` as WorkflowTranslationKeys),
+                })),
+            [t]
+        );
 
         return (
             <WorkflowSection
-                title={t(titleKey)}
-                subtitle={t(subtitleKey)}
+                title={t(titleKey as WorkflowTranslationKeys)}
+                subtitle={t(subtitleKey as WorkflowTranslationKeys)}
                 steps={steps}
             />
         );
     };
-};
 
-const WorkflowSection: React.FC<WorkflowProps> = ({ title, subtitle, steps }) => {
-    return (
-        <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-2">
-                <Title title={title} className="text-2xl sm:text-4xl md:text-4xl text-start" />
-                <p className="text-base">{subtitle}</p>
-            </div>
-            <Stepper steps={steps} />
-        </div>
-    )
+    WorkflowComponent.displayName = `WorkflowComponent(${titleKey})`;
+    return React.memo(WorkflowComponent);
 };
-WorkflowSection.displayName = "WorkflowSection";
-
 
 const BuildWebsite = createWorkflowComponent({
     titleKey: "workingWithClient",
@@ -60,7 +113,6 @@ const BuildWebsite = createWorkflowComponent({
         "launchSupport",
     ],
 });
-BuildWebsite.displayName = "BuildWebsite";
 
 const Mentorship = createWorkflowComponent({
     titleKey: "mentorshipSteps",
@@ -73,7 +125,6 @@ const Mentorship = createWorkflowComponent({
         "careerGuidanceFinalEvaluation",
     ],
 });
-Mentorship.displayName = "Mentorship";
 
 const Collaboration = createWorkflowComponent({
     titleKey: "collaborationSteps",
@@ -87,6 +138,5 @@ const Collaboration = createWorkflowComponent({
         "finalization",
     ],
 });
-Collaboration.displayName = "Collaboration";
 
 export { BuildWebsite, Mentorship, Collaboration };

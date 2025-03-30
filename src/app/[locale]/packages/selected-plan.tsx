@@ -15,7 +15,6 @@ import { Button } from "@/components/ui/button";
 
 import type { SelectedPlanType, Service } from "@/lib/types";
 import InputField from "@/components/custom/input-field";
-import Title from "@/components/custom/title";
 
 type PlanTypes = {
     title: string,
@@ -42,8 +41,9 @@ const SelectedPlan: React.FC<PlanTypes> = ({ title, service, onSubmit, popular, 
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>
-                        <Title title={t("choosePlanCta")} className="!text-2xl mb-5" />
+                    <AlertDialogTitle className="text-center tracking-wide text-xl md:text-2xl
+                                                 font-italiana font-medium">
+                        {t("choosePlanCta")}
                     </AlertDialogTitle>
                 </AlertDialogHeader>
                 <Formik
