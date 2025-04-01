@@ -1,5 +1,5 @@
 import { FiArrowUpRight } from "react-icons/fi";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 type ExternalLinkProps = {
   to: string;

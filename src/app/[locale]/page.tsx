@@ -41,19 +41,25 @@ export default function IndexPage() {
     }, [startYear, endYear, duration]);
 
     return (
-        <div id="main" className="h-[calc(100svh-theme(spacing.12))] flex flex-col z-10 items-center justify-center">
-            <div className="flex flex-col gap-4 mx-auto">
-                <h1 className="flex items-center justify-center mb-2 text-foreground">
-                    <span className="text-5xl md:text-9xl m-0">Port
-                        <span className="font-dancing-script text-primary">f</span>olio.
-                    </span>
-                    <sup className="text-xl md:text-2xl font-bold inline-block text-primary">{yearsExperience}</sup>
-                </h1>
-                <div className="flex flex-row-wrap gap-4 m-0 px-3">
-                    {externalLinks.map(({ url, text }) => (
-                        <ExternalLink key={url} to={url} text={text} />
-                    ))}
-                </div>
+        <div className="flex flex-col items-center justify-center overflow-hidden h-[calc(100vh-120px)]">
+            <div className="hidden w-screen h-px md:block animate-fade-left bg-gradient-to-r from-zinc-700/0
+             via-zinc-700/50 to-zinc-700/0" />
+
+            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-zinc-700 dark:bg-white 
+                           cursor-default text-edge-outline animate-title font-display sm:text-6xl 
+                           md:text-9xl whitespace-nowrap bg-clip-text font-italiana flex items-start max-w-md">
+                Portfolio
+                <sub className="text-xl md:text-2xl font-medium animate-title font-josefin-sans text-primary">
+                    {yearsExperience}
+                </sub>
+            </h1>
+            <div className="hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-700/0
+             via-zinc-700/50 to-zinc-700/0" />
+
+            <div className="my-6 animate-fade-in duration-500 flex flex-row-wrap gap-4 max-w-md w-full">
+                {externalLinks.map(({ url, text }) => (
+                    <ExternalLink key={url} to={url} text={text} />
+                ))}
             </div>
         </div>
     );
