@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
+import AnimatedCircleEffect from "../animated-circle-effect";
 import coverImage from "@/images/contact-cover.jpg";
 import Title from "../title";
 
@@ -9,21 +12,31 @@ const ContactHeader = () => {
 
     return (
         <div className="gap-4 flex flex-col-reverse md:flex-row relative min-h-96">
-            <div className="w-full lg:w-1/2 px-0 md:px-5 flex items-center justify-center">
+            <motion.div
+                className="w-full lg:w-1/2 px-0 md:px-5 flex items-center justify-center"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+            >
                 <Title title={t("getInTouch")} className="md:text-5xl text-primary uppercase" />
-            </div>
-            <div className="bg-primary/80 w-3/4 lg:w-1/2 h-96 rounded-t-full absolute -z-10 -top-[150px] -right-[20px] transform rotate-180" />
+            </motion.div>
+            <AnimatedCircleEffect />
             <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
-                <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden">
+                <motion.div
+                    className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                >
                     <Image
                         src={coverImage}
                         alt={t("getInTouch")}
                         className="w-full h-full object-cover"
                     />
-                </div>
+                </motion.div>
             </div>
         </div>
-    )
+    );
 };
 
 export default ContactHeader;

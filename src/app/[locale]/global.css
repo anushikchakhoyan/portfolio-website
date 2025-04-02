@@ -307,3 +307,7 @@
   outline: none;
   background-color: transparent !important;
 }
+
+.title-character {
+  will-change: transform, opacity;
+}
