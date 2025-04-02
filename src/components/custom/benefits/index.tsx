@@ -19,11 +19,6 @@ const containerVariants = {
     },
 };
 
-const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-};
-
 const imageVariants = (isEven: boolean) => ({
     hidden: { x: isEven ? -100 : 100, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 0.6 } },
