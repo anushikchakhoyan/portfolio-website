@@ -1,6 +1,7 @@
 'use client'
 import { cn } from "@/lib/utils"
 import { useState } from "react";
+import Image from "next/image";
 import { FormikValues } from "formik";
 import { motion } from "framer-motion";
 import { GoDotFill } from "react-icons/go";
@@ -14,6 +15,7 @@ import PageLayout from "@/components/custom/page-layout";
 import Title from "@/components/custom/title";
 import { LANGUAGE } from "@/lib/constants";
 import SelectedPlan from "./selected-plan";
+import coverImage from "@/images/payment.jpg";
 
 const PackagesPage: React.FC = () => {
   const packages = usePackagesData();
@@ -77,12 +79,11 @@ const PackagesHeader: React.FC = () => {
   const t = useTranslations("Packages");
 
   return (
-    <div className="gap-4 flex flex-col-reverse md:flex-row relative min-h-96">
+    <div className="gap-6 flex flex-col-reverse lg:flex-row relative min-h-[60vh] md:min-h-96 px-4 sm:px-6 items-center">
       <motion.div
-        className="w-full lg:w-1/2 px-0 md:px-5 flex items-center justify-center"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        className="w-full lg:w-1/2 flex flex-col gap-6 md:gap-8"
+        initial="hidden"
+        animate="visible"
       >
         <GeneralTextBlock
           title={t("ourPackages")}
@@ -90,20 +91,24 @@ const PackagesHeader: React.FC = () => {
           description={t("packagesDesc")}
         />
       </motion.div>
-      {/* <GeneralTextBlock
-        title={t("ourPackages")}
-        subtitle={t("chooseTheRightPlanForYou")}
-        description={t("packagesDesc")}
-      /> */}
-      <AnimatedCircleEffect />
-      <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
-        <div className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden">
-          {/* <Image
-            src={coverImage}
-            alt={t("getInTouch")}
+
+      <div className="w-full lg:w-1/2 flex justify-center relative">
+        <AnimatedCircleEffect />
+        <motion.div
+          className="w-full max-w-xs lg:max-w-sm aspect-square rounded-t-full overflow-hidden border-4 border-white dark:border-zinc-900"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <Image
+            src={coverImage ?? ''}
+            alt={t("ourPackages")}
+            width={400}
+            height={400}
             className="w-full h-full object-cover"
-          /> */}
-        </div>
+            priority
+          />
+        </motion.div>
       </div>
     </div>
   )

@@ -90,7 +90,7 @@ const ServicesContent: React.FC<ServiceType> = (
       <div className="w-full lg:w-1/2 flex justify-center relative">
         <AnimatedCircleEffect />
         <motion.div
-          className="w-full max-w-xs lg:max-w-sm aspect-square rounded-t-full overflow-hidden border-4 border-white"
+          className="w-full max-w-xs lg:max-w-sm aspect-square rounded-t-full overflow-hidden border-4 border-white dark:border-zinc-900"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
