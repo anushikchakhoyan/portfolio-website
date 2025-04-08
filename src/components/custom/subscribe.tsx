@@ -1,18 +1,14 @@
 "use client"
 import { useTranslations } from "next-intl";
 
-import { MEDIUM_SUBSCRIBE } from "@/lib/constants";
 import { Button } from "../ui/button";
 import SocialMedia from "./social-media";
 import PageLayout from "./page-layout";
+import { Link } from "@/i18n/navigation";
 
 const Subscribe: React.FC<{ text?: string }> = ({ text }) => {
   const t = useTranslations("Subscribe");
   const tContact = useTranslations("Header");
-
-  const handleSubscribeClick = () => {
-    window.open(MEDIUM_SUBSCRIBE, "_blank")
-  }
 
   return (
     <PageLayout
@@ -30,9 +26,11 @@ const Subscribe: React.FC<{ text?: string }> = ({ text }) => {
             )}
           </p>
           <SocialMedia className="dark:text-zinc-300 hover:dark:text-primary" />
-          <Button onClick={handleSubscribeClick}>
-            {tContact("contact")}
-          </Button>
+          <Link href="/contact-us" className="cursor-pointer">
+            <Button size="lg">
+              {tContact("contact")}
+            </Button>
+          </Link>
         </div>
       </div>
     </PageLayout>

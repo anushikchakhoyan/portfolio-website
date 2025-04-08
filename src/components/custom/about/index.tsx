@@ -20,16 +20,16 @@ const About: React.FC = () => {
         title={tHeader("about")}
         coverImage={aboutCover}
       >
-        <p className="text-sm md:text-base text-zinc-50 whitespace-break-spaces">{t('aboutDescription1')}</p>
-        <p className="text-sm md:text-base text-zinc-50 whitespace-break-spaces">{t('aboutDescription2')}</p>
+        <p className="text-sm md:text-base whitespace-break-spaces">{t('aboutDescription1')}</p>
+        <p className="text-sm md:text-base whitespace-break-spaces">{t('aboutDescription2')}</p>
         <p
-          className="text-sm md:text-base text-zinc-50 whitespace-break-spaces">
+          className="text-sm md:text-base whitespace-break-spaces">
           {t('myFocusDescription')}
         </p>
         <p
-          className="text-sm md:text-base text-zinc-50 whitespace-break-spaces">
-          {t.markup('visionDescription', {
-            span: (chunks) => `<span className="font-medium">${chunks}</span>`
+          className="text-sm md:text-base whitespace-break-spaces">
+          {t.rich('visionDescription', {
+            span: (chunks) => <span className="font-bold">{chunks}</span>
           })}
         </p>
       </CoverSection>

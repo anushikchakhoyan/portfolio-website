@@ -25,16 +25,16 @@ const ServicesSection: React.FC<{ type: Service }> = ({ type }) => {
 export default ServicesSection;
 
 const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { staggerChildren: 0.2, duration: 1.3, ease: "easeOut" },
+    transition: { staggerChildren: 0.15, duration: 0.8, ease: "easeOut" },
   },
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -42,42 +42,66 @@ const ServicesContent: React.FC<ServiceType> = (
   { title, hint, description, contactMe, image }
 ) => {
   return (
-    <div
-      className="gap-4 flex flex-col-reverse md:flex-row relative min-h-96">
+    <div className="gap-6 flex flex-col-reverse lg:flex-row relative min-h-[60vh] md:min-h-96 px-4 sm:px-6 items-center">
       <motion.div
-        className="w-full lg:w-1/2 px-0 md:px-5 flex items-start flex-col gap-8"
+        className="w-full lg:w-1/2 flex flex-col gap-6 md:gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.div variants={childVariants}>
-          <Title title={title} className="md:text-4xl text-primary uppercase" />
+          <Title
+            title={title}
+            className="text-2xl sm:text-3xl md:text-4xl text-primary uppercase"
+          />
         </motion.div>
 
         <motion.div variants={childVariants}>
-          <UnderlineText text={hint} className="max-w-md" />
+          <UnderlineText text={hint} className="max-w-md text-base md:text-lg" />
         </motion.div>
-        <motion.p variants={childVariants}>{description}</motion.p>
+
+        <motion.p
+          variants={childVariants}
+          className="text-sm sm:text-base"
+        >
+          {description}
+        </motion.p>
+
         <motion.div variants={childVariants}>
-          <Button size="lg" asChild>
-            <Link href="/contact-us" className="flex items-center gap-2">
-              <AiFillMessage /> {contactMe}
+          <Button
+            asChild
+            className="
+              relative overflow-hidden group
+              bg-gradient-to-r from-primary to-primary/90
+              text-white px-8 py-5 rounded-full
+              shadow-md hover:shadow-lg
+              transition-all duration-300
+              hover:-translate-y-0.5
+            "
+          >
+            <Link href="/contact-us" className="flex items-center gap-3 font-medium">
+              <AiFillMessage size={18} className="transition-transform group-hover:scale-110" />
+              <span>{contactMe}</span>
             </Link>
           </Button>
         </motion.div>
       </motion.div>
-      <AnimatedCircleEffect />
-      <div className="w-full lg:w-1/2 px-0 md:px-5 hidden lg:block">
+
+      <div className="w-full lg:w-1/2 flex justify-center relative">
+        <AnimatedCircleEffect />
         <motion.div
-          className="w-full lg:w-3/4 xl:w-2/3 h-full rounded-t-full overflow-hidden"
+          className="w-full max-w-xs lg:max-w-sm aspect-square rounded-t-full overflow-hidden border-4 border-white"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <Image
             src={image ?? ''}
             alt={title}
+            width={400}
+            height={400}
             className="w-full h-full object-cover"
+            priority
           />
         </motion.div>
       </div>

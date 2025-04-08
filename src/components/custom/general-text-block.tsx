@@ -16,8 +16,8 @@ const GeneralTextBlock: React.FC<GeneralTextBlockProps> = ({
 }) => {
 
     return (
-        <div className="flex-1 flex items-center justify-center">
-            <div className="w-full md:w-2/3 flex flex-col items-center gap-4 md:px-5">
+        <div className="flex-1 flex items-center justify-center px-5">
+            <div className="w-full md:w-2/3 flex flex-col items-center gap-4">
                 <h2 className="text-sm font-medium">{title}</h2>
                 <Title title={subtitle}
                     className={cn("text-2xl md:text-2xl lg:text-4xl font-medium !text-primary")} />

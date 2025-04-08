@@ -45,8 +45,8 @@ export default function IndexPage() {
             <div className="hidden w-screen h-px md:block animate-fade-left bg-gradient-to-r from-zinc-700/0
              via-zinc-700/50 to-zinc-700/0" />
 
-            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-zinc-700 dark:bg-white 
-                           cursor-default text-edge-outline animate-title font-display sm:text-6xl 
+            <h1 className="z-10 text-transparent duration-1000 bg-zinc-700 dark:bg-white 
+                           cursor-default text-edge-outline animate-title font-display text-6xl 
                            md:text-9xl whitespace-nowrap bg-clip-text font-italiana flex items-start max-w-md">
                 Portfolio
                 <sub className="text-xl md:text-2xl font-medium animate-title font-josefin-sans text-primary">
@@ -56,7 +56,7 @@ export default function IndexPage() {
             <div className="hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-700/0
              via-zinc-700/50 to-zinc-700/0" />
 
-            <div className="my-6 animate-fade-in duration-500 flex flex-row-wrap gap-4 max-w-md w-full">
+            <div className="my-6 animate-fade-in duration-500 flex flex-row-wrap justify-center md:justify-start gap-4 max-w-md w-full">
                 {externalLinks.map(({ url, text }) => (
                     <ExternalLink key={url} to={url} text={text} />
                 ))}

@@ -8,7 +8,7 @@ const ContactTitle = () => {
 
     return (
         <>
-            <h3 className="text-xl lg:text-3xl font-italiana max-w-4xl text-center">
+            <h3 className="text-xl lg:text-3xl font-italiana max-w-xl lg:max-w-4xl text-center">
                 {t("contactDescription")}
             </h3>
             <h5 className="max-w-sm text-sm font-medium text-center space-x-1">

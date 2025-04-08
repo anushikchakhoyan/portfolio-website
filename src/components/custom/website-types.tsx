@@ -27,9 +27,9 @@ const WebsiteTypes: React.FC = () => {
                 modules={[Mousewheel, Pagination]}
                 className="w-full h-full">
                 <SwiperSlide className="relative !flex items-center justify-center bg-zinc-50 dark:bg-zinc-800 rounded-lg">
-                    <div className="text-center xl:px-8 flex flex-col gap-8 w-full lg:w-4/5 relative z-10">
-                        <h3 className="text-2xl xl:text-4xl font-medium text-primary">{t('websiteTypesTitle')}</h3>
-                        <p className="text-xl xl:text-2xl font-medium text-zinc-800 dark:text-gray-200">{t('websiteTypesDescription')}</p>
+                    <div className="text-center px-6 xl:px-8 flex flex-col gap-8 w-full lg:w-4/5 relative z-10">
+                        <h3 className="text-xl md:text-2xl xl:text-4xl font-medium text-primary">{t('websiteTypesTitle')}</h3>
+                        <p className="text-lg md:text-xl xl:text-2xl font-medium text-zinc-800 dark:text-gray-200">{t('websiteTypesDescription')}</p>
                     </div>
                 </SwiperSlide>
                 {websites.map(({ key, descKey, img }, index) => (
@@ -46,9 +46,9 @@ const WebsiteTypes: React.FC = () => {
                                 className="w-full h-full rounded-lg shadow-lg bg-secondary"
                             />
                         </div>
-                        <div className="text-center xl:px-8 flex flex-col gap-8 w-full lg:w-5/12 xl:w-1/2">
-                            <h3 className="text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{key}</h3>
-                            <p className="text-xl xl:text-2xl font-medium text-gray-700 dark:text-gray-200">{descKey}</p>
+                        <div className="text-center xl:px-8 flex flex-col gap-4 md:gap-8 w-full lg:w-5/12 xl:w-1/2">
+                            <h3 className="text-lg md:text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{key}</h3>
+                            <p className="text-base md:text-xl xl:text-2xl font-medium text-gray-700 dark:text-gray-200">{descKey}</p>
                         </div>
                     </SwiperSlide>
                 ))}

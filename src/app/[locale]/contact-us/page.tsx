@@ -5,18 +5,16 @@ import ContactTitle from "@/components/custom/contact/title";
 import PageLayout from "@/components/custom/page-layout";
 
 const ContactUs = () => (
-  <>
+  <PageLayout id="contact" className="!py-0">
     <ContactHeader />
-    <PageLayout id="contact" className="!py-0">
-      <div className="py-10 w-full flex flex-col items-center justify-center gap-10 max-w-6xl mx-auto">
-        <ContactTitle />
-        <div className="w-full flex flex-col md:flex-row items-start justify-center gap-10">
-          <ContactForm />
-          <ContactInfo />
-        </div>
+    <div className="py-10 w-full flex flex-col items-center justify-center gap-10 max-w-6xl mx-auto">
+      <ContactTitle />
+      <div className="w-full flex flex-col md:flex-row items-start justify-center gap-10">
+        <ContactForm />
+        <ContactInfo />
       </div>
-    </PageLayout>
-  </>
+    </div>
+  </PageLayout>
 );
 
 export default ContactUs;

@@ -29,7 +29,7 @@ const InfoBlock: React.FC<{ type: Service }> = ({ type }) => {
                     <SwiperSlide
                         key={title}
                         className={cn(
-                            `px-8 gap-6 xl:gap-4 rounded-lg !flex flex-col-reverse lg:flex-row items-center justify-center`,
+                            `px-2 lg:px-8 gap-6 xl:gap-4 rounded-lg !flex flex-col-reverse lg:flex-row items-center justify-center`,
                             index % 2 === 0
                                 ? 'bg-gradient-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900'
                                 : 'bg-gradient-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800'
@@ -37,12 +37,12 @@ const InfoBlock: React.FC<{ type: Service }> = ({ type }) => {
                     >
                         <div className="xl:px-8 flex flex-col gap-8 w-full lg:w-3/5 z-10">
                             {title && (
-                                <h3 className="text-center text-2xl xl:text-5xl font-medium text-primary">
+                                <h3 className="text-center text-lg lg:text-2xl xl:text-5xl font-medium text-primary">
                                     {title}
                                 </h3>
                             )}
                             {description && (
-                                <p className="text-xl xl:text-2xl text-zinc-700 dark:text-gray-300 whitespace-break-spaces">
+                                <p className="text-sm lg:text-xl xl:text-2xl text-zinc-700 dark:text-gray-300 whitespace-break-spaces">
                                     {description}
                                 </p>
                             )}
@@ -50,12 +50,12 @@ const InfoBlock: React.FC<{ type: Service }> = ({ type }) => {
                                 <ul>
                                     {items.map((item: string, index: number) => (
                                         <li key={index} className="flex items-baseline py-3">
-                                            <p className="w-5 leading-6">
+                                            <div className="w-3 lg:w-5 leading-6 mx-1 hidden md:block">
                                                 <GoDotFill className="text-primary" />
-                                            </p>
+                                            </div>
                                             <p
                                                 dangerouslySetInnerHTML={{ __html: item as string }}
-                                                className="max-w-2xl text-zinc-800 dark:text-zinc-100 text-xl" />
+                                                className="max-w-2xl text-zinc-800 dark:text-zinc-100 text-xs lg:text-xl" />
                                         </li>
                                     ))}
                                 </ul>
