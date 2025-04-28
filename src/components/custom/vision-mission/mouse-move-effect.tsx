@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { cn } from "@/lib/utils";
 import { PURPOSE } from "@/lib/constants";
 import { IconType } from "react-icons/lib";
@@ -25,7 +25,7 @@ const MouseMoveEffect: React.FC<MouseMoveEffectProps> = ({ items }) => {
     const [coords, setCoords] = useState({ x: 50, y: 50 });
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleMouseMove = (e: any) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
         const y = ((e.clientY - rect.top) / rect.height) * 100;
