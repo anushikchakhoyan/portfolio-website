@@ -1,5 +1,5 @@
 'use client'
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { PURPOSE } from "@/lib/constants";
 import { IconType } from "react-icons/lib";
