@@ -2,12 +2,13 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { PURPOSE } from "@/lib/constants";
+import { IconType } from "react-icons/lib";
 
 type MouseMoveEffectProps = {
     items: {
         title: string;
         desc: string;
-        Icon?: any;
+        Icon?: IconType;
         type: string;
     }
 }

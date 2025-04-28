@@ -1,8 +1,8 @@
 import { Color } from "@/lib/types";
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 
 export default function useColorsData() {
-    const t = useTranslations("Colors");
+    // const t = useTranslations("Colors");
 
     const colorSets: Color[] = [
         // 1. Burgundy & Cream

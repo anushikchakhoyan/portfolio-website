@@ -75,7 +75,7 @@ export const DEFAULT_SECONDARY_COLOR: Hsl = {
 
 export type Color = {
     name: string;
-    desc: string;
+    desc?: string;
     primary: Hsl;
     secondary: Hsl;
 }
