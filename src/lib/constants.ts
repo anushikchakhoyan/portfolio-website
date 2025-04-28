@@ -31,3 +31,8 @@ export const LANGUAGE = {
     en: "en",
     hy: "hy",
 } as const;
+
+export const PURPOSE = {
+    mission: "mission",
+    vision: "vision",
+} as const;

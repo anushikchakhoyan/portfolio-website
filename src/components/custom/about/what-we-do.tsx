@@ -12,7 +12,7 @@ const WhatWeDo: React.FC = () => {
                     {t("welcome")}
                 </p>
                 <div className="relative group">
-                    <div className="absolute inset-0 bg-primary dark:bg-primary/60 mx-4
+                    <div className="absolute inset-0 bg-secondary dark:bg-primary/60 mx-4
                     transform -skew-y-2 scale-105 group-hover:scale-110 transition-all duration-300" />
                     <p className="relative text-center text-xl lg:text-2xl xl:text-3xl font-italiana 
                      text-zinc-50 leading-snug px-6 py-4">{t('whereSimplicityIsKey')}</p>

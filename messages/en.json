@@ -265,7 +265,9 @@
     "golden": "Warm golds for luxury and optimism.",
     "mauve": "Subtle purples for sophistication and calm.",
     "slate": "Neutral grays for versatility and focus.",
-    "gray": "Classic grays for minimalism and elegance."
+    "gray": "Classic grays for minimalism and elegance.",
+    "oliveDrab": "",
+    "birch": ""
   },
   "MissionVision": {
     "visionTitle": "Our Vision",

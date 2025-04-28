@@ -22,6 +22,7 @@ const CollaborationPage: React.FC = () => {
         subtitle={t("workingTogether")}
         description={t("transparentAndEffectiveCollaboration")}
         descrptionClassName="px-4"
+        wrapperClassName="py-10"
       />
       <Workflow type={type} />
       <WhyChooseUs />

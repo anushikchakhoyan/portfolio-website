@@ -45,7 +45,7 @@ const Benefits: React.FC<{ type: Service }> = ({ type }) => {
                             className={cn(
                                 `overflow-hidden flex cursor-pointer`,
                                 index % 2 === 0
-                                    ? "bg-zinc-800 text-white flex-row lg:flex-col-reverse"
+                                    ? "bg-secondary text-white flex-row lg:flex-col-reverse"
                                     : "bg-gray-100 text-zinc-800 flex-row lg:flex-col"
                             )}
                         >

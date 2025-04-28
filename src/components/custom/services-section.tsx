@@ -16,7 +16,7 @@ const ServicesSection: React.FC<{ type: Service }> = ({ type }) => {
   const data = useServicesData(type);
 
   return (
-    <PageLayout id="services">
+    <PageLayout id="services" className='max-w-auto bg-secondary/5 !py-0 px-8'>
       <ServicesContent {...data} />
     </PageLayout>
   )
@@ -43,8 +43,10 @@ const ServicesContent: React.FC<ServiceType> = (
 ) => {
   return (
     <div className="gap-6 flex flex-col-reverse lg:flex-row relative min-h-[60vh] md:min-h-96 px-4 sm:px-6 items-center">
+      <AnimatedCircleEffect />
+
       <motion.div
-        className="w-full lg:w-1/2 flex flex-col gap-6 md:gap-8"
+        className="w-full lg:w-1/2 flex flex-col gap-6 md:gap-8 py-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -55,18 +57,15 @@ const ServicesContent: React.FC<ServiceType> = (
             className="text-2xl sm:text-3xl md:text-4xl text-primary uppercase"
           />
         </motion.div>
-
         <motion.div variants={childVariants}>
           <UnderlineText text={hint} className="max-w-md text-base md:text-lg" />
         </motion.div>
-
         <motion.p
           variants={childVariants}
           className="text-sm sm:text-base"
         >
           {description}
         </motion.p>
-
         <motion.div variants={childVariants}>
           <Button
             asChild
@@ -87,8 +86,7 @@ const ServicesContent: React.FC<ServiceType> = (
         </motion.div>
       </motion.div>
 
-      <div className="w-full lg:w-1/2 flex justify-center relative">
-        <AnimatedCircleEffect />
+      <div className="w-full lg:w-1/2 flex justify-center">
         <motion.div
           className="w-full max-w-xs lg:max-w-sm aspect-square rounded-t-full overflow-hidden border-4 border-white dark:border-zinc-900"
           initial={{ opacity: 0, scale: 0.95 }}

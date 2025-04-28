@@ -8,15 +8,16 @@ interface GeneralTextBlockProps {
     subtitle: string;
     description: string;
     descrptionClassName?: string;
+    wrapperClassName?: string;
     children?: React.ReactNode,
 }
 
 const GeneralTextBlock: React.FC<GeneralTextBlockProps> = ({
-    title, subtitle, description, descrptionClassName, children
+    title, subtitle, description, descrptionClassName, children, wrapperClassName
 }) => {
 
     return (
-        <div className="flex-1 flex items-center justify-center px-5">
+        <div className={cn(`flex-1 flex items-center justify-center px-5`, wrapperClassName)}>
             <div className="w-full md:w-2/3 flex flex-col items-center gap-4">
                 <h2 className="text-sm font-medium">{title}</h2>
                 <Title title={subtitle}

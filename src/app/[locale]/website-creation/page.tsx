@@ -24,6 +24,7 @@ const WebsiteCreationPage = () => {
         subtitle={t("buildYourDreamWebsite")}
         description={t("fromConceptToLaunch")}
         descrptionClassName="px-4"
+        wrapperClassName="py-10"
       />
       <Workflow type={type} />
       <WebsiteTypes />

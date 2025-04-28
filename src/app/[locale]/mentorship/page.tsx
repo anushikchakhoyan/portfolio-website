@@ -22,6 +22,7 @@ const MentorshipPage: React.FC = () => {
         subtitle={t("guidedGrowth")}
         description={t("personalizedMentorshipJourney")}
         descrptionClassName="px-4"
+        wrapperClassName="py-10"
       />
       <Workflow type={type} />
       <InfoBlock type={type} />

@@ -53,7 +53,7 @@ export default async function LocaleLayout({
                     <ThemeProvider>
                         <ColorProvider>
                             <Header />
-                            <main className='pt-20'>{children}</main>
+                            <main className='pt-16'>{children}</main>
                             <Footer />
                         </ColorProvider>
                     </ThemeProvider>
