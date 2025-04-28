@@ -8,7 +8,7 @@ type MouseMoveEffectProps = {
     items: {
         title: string;
         desc: string;
-        Icon?: IconType;
+        Icon?: IconType | undefined;
         type: string;
     }
 }
@@ -55,10 +55,10 @@ const Content: React.FC<MouseMoveEffectProps> = (({ items }) => {
     return (
         <div className="relative z-10">
             <div className="flex flex-col items-start gap-1 text-primary dark:text-primary">
-                <Icon className={cn("w-8 h-8",
+                {Icon && <Icon className={cn("w-8 h-8",
                     type === PURPOSE.vision && "group-hover:translate-x-5 group-hover:-translate-y-4 transition-all duration-300",
                     type === PURPOSE.mission && "group-hover:scale-125 transition-all duration-300"
-                )} />
+                )} />}
                 <h2 className="text-xl lg:text-2xl font-medium tracking-wider font-italiana">
                     {title}
                 </h2>
