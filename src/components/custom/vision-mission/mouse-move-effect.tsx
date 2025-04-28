@@ -36,7 +36,7 @@ const MouseMoveEffect: React.FC<MouseMoveEffectProps> = ({ items }) => {
             className="px-4 lg:px-8 py-8 lg:py-12 flex flex-col gap-4 lg:gap-6 rounded-xl relative overflow-hidden
                      bg-white dark:bg-zinc-800/30 shadow-xs border border-primary/20 
                        group hover:bg-primary-200/10 transition-all duration-1000 ease-in-out 
-                       hover:border-primary hover:dark:bg-primary"
+                       hover:border-primary"
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}

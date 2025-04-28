@@ -72,9 +72,9 @@ const ColorPicker = () => {
                                             <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300 truncate capitalize">
                                                 {color.name}
                                             </p>
-                                            <p className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-2">
+                                            {/* <p className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-2">
                                                 {color.desc}
-                                            </p>
+                                            </p> */}
                                         </div>
                                     )}
                                 </div>

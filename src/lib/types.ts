@@ -62,15 +62,15 @@ export type Hsl = {
 }
 
 export const DEFAULT_COLOR: Hsl = {
-    hue: 334.65,
-    saturation: 27.84,
-    lightness: 50,
+    hue: 345,
+    saturation: 60,
+    lightness: 35,
 };
 
 export const DEFAULT_SECONDARY_COLOR: Hsl = {
-    hue: 246,
-    saturation: 63,
-    lightness: 71
+    hue: 45,
+    saturation: 20,
+    lightness: 90,
 };
 
 export type Color = {

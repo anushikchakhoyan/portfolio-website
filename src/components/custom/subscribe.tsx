@@ -26,8 +26,8 @@ const Subscribe: React.FC<{ text?: string }> = ({ text }) => {
             )}
           </p>
           <SocialMedia className="dark:text-zinc-300 hover:dark:text-primary" />
-          <Link href="/contact-us" className="cursor-pointer">
-            <Button size="lg">
+          <Link href="/contact-us">
+            <Button size="lg" className="cursor-pointer">
               {tContact("contact")}
             </Button>
           </Link>

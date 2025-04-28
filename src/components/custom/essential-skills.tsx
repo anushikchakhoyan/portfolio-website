@@ -22,9 +22,9 @@ const EssentialSkills: React.FC = () => {
                             {items.map((item, innerIndex) => (
                                 <div
                                     key={`skill-${item}-${index}-${innerIndex}`}
-                                    className="text-sm md:text-base px-7 py-3 rounded-xl transition-all duration-300 text-center
+                                    className="text-sm md:text-base px-7 py-3 rounded-xl text-center
                                         bg-white hover:bg-primary hover:text-white dark:bg-zinc-800/30 dark:hover:bg-primary
-                                         shadow-xs border border-primary/20 hover:scale-105"
+                                         shadow-xs border border-primary/20 hover:scale-105 transition-all duration-1000 ease-in-out"
                                 >
                                     {item}
                                 </div>
