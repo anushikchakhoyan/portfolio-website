@@ -95,8 +95,9 @@
   --card: oklch(0.21 0.034 264.665);
   --card-foreground: oklch(0.985 0.002 247.839);
   /* Popover color changed */
-  --popover: oklch(0.27 0.0062 0.5);
+  --popover: oklch(0.2 0 0);
   --popover-foreground: oklch(0.985 0.002 247.839);
+  /* end */
   --primary: oklch(0.928 0.006 264.531);
   --primary-foreground: oklch(0.21 0.034 264.665);
   --secondary: oklch(0.278 0.033 256.848);
@@ -137,6 +138,7 @@
       hsl(var(--primary) / 7%) 8%,
       hsl(var(--primary) / 15%) 18%,
       hsl(var(--primary) / 7%) 33%);
+  --gray-800: hsl(var(--color-background));
 }
 
 @keyframes slider-shape {

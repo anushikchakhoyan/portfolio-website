@@ -1,28 +1,49 @@
+"use client"
 import { useTranslations } from "next-intl";
+import useIsMobile from "@/hooks/custom/use-mobile";
 
 import PageLayout from "../page-layout";
+import CircleThumb from "../circle-thumb";
+import meImage from "@/images/about/me4.jpg";
 
 const WhatWeDo: React.FC = () => {
     const t = useTranslations("About");
+    const isMobile = useIsMobile();
 
     return (
-        <PageLayout id="about-what-we-do" className="flex items-center justify-center md:!pt-40 px-4">
-            <div className="w-full md:w-1/2 lg:w-2/4 flex flex-col items-center gap-6">
-                <p className="text-2xl lg:text-3xl text-center font-medium font-italiana text-primary-700 dark:text-zinc-50 uppercase tracking-widest">
+        <PageLayout id="about-what-we-do" className="flex flex-col gap-10 md:gap-0 md:flex-row items-center justify-center px-4">
+            <div className="flex flex-1 justify-center">
+                <CircleThumb
+                    className="relative"
+                    size={isMobile ? "md" : "lg"}
+                    imageSrc={meImage}
+                />
+            </div>
+            <div className="flex-1">
+                <p className="py-4 text-2xl lg:text-3xl text-center text-primary font-medium font-italiana uppercase tracking-widest">
                     {t("welcome")}
                 </p>
-                <div className="relative group">
-                    <div className="absolute inset-0 bg-zinc-50 dark:bg-[#202020] mx-4
-                    transform -skew-y-2 scale-105 group-hover:scale-110 transition-all duration-300" />
-                    <p className="relative text-center text-xl lg:text-2xl xl:text-3xl font-italiana 
-                     text-zinc-800 dark:text-zinc-50 leading-snug px-6 py-4">{t('whereSimplicityIsKey')}</p>
+                <div className="px-6 py-4 space-y-3 text-start text-base font-normal text-zinc-800 dark:text-gray-300">
+                    <p>{t('whereSimplicityIsKey')}</p>
+                    <p> {t("aboutPurposeOfWork")}</p>
                 </div>
-                <p className="text-center text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-                    {t("aboutPurposeOfWork")}
-                </p>
+                {/* <HeadingTitle>
+                    <p><code className="text-zinc-800 dark:text-white font-italiana">{"<Engineer />"}</code></p>
+                    <p><code className="text-zinc-800 dark:text-white font-italiana">{"<Thinker />"}</code></p>
+                </HeadingTitle> */}
             </div>
         </PageLayout>
     )
 }
 
-export default WhatWeDo
+export default WhatWeDo;
+
+// const HeadingTitle: React.FC<{ children?: React.ReactNode }> = (({ children }) => {
+//     return (
+//         <h2 className="text-center text-3xl md:text-lg xl:text-xl font-italiana whitespace-break-spaces
+//                 tracking-wide text-zinc-800 dark:text-white flex-1">
+//             {children}
+//         </h2>
+//     )
+// });
+// HeadingTitle.displayName = "HeadingTitle";

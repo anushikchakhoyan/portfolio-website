@@ -8,7 +8,7 @@ const EssentialSkills: React.FC = () => {
     const techSkills = useSkillsData();
 
     return (
-        <PageLayout id="essentialSkills" className="lg:py-0 px-0 max-w-full">
+        <PageLayout id="essentialSkills" className="px-0 max-w-full">
             <div className="w-screen overflow-hidden flex flex-col gap-5">
                 {[0, 1].map((index) => {
                     const items = index % 2 === 0 ? [...essentials, ...essentials] : [...techSkills, ...techSkills];

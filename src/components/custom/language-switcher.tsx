@@ -50,7 +50,7 @@ const LanguageSwitcher = () => {
                     <div
                         key={cur}
                         onClick={() => onSelectChange(cur)}
-                        className="flex items-center gap-2 hover:bg-zinc-100 p-2 cursor-pointer appearance-none">
+                        className="flex items-center gap-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 p-2 cursor-pointer appearance-none">
                         <div
                             className={cn("h-5 w-5 p-0 rounded-full bg-cover bg-center",
                                 cur === 'en' && "bg-[url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg')]",
