@@ -1,4 +1,3 @@
-import VisionMission from "@/components/custom/vision-mission/";
 import Subscribe from "@/components/custom/subscribe";
 import About from "@/components/custom/about";
 
