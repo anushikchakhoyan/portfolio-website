@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
 
 import PageLayout from "../page-layout";
 import about1 from "@/images/about/about-1.jpg";
@@ -70,7 +70,7 @@ const fadeInScale = {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
 };
 
-const CircleItem: React.FC<{ className: string, imageSrc: any }> = ({ className, imageSrc, ...props }) => {
+const CircleItem: React.FC<{ className: string, imageSrc: StaticImageData }> = ({ className, imageSrc, ...props }) => {
     return (
         <div
             className={cn("absolute overflow-hidden", className)}
