@@ -3,7 +3,6 @@ import AboutWebSite from "./about-web-site";
 import Rates from "./rates";
 import AboutMe from "./about-me";
 import EssentialSkills from "../essential-skills";
-import WhyChooseUs from "../why-choose-us";
 import VisionMission from "../vision-mission";
 import OurFounders from "./founders";
 import AboutHeader from "./about-header";
