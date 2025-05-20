@@ -27,12 +27,12 @@ const AboutHeader: React.FC = () => {
     return (
         <PageLayout id="about-what-we-do" className="flex px-4 max-w-5xl mx-auto relative">
             <CircleThumb
-                className="w-[500px] h-[500px] static bg-secondary"
+                className="w-80 lg:w-[500px] h-80 lg:h-[500px] static bg-secondary"
                 size={isMobile ? "md" : "lg"}
             />
-            <div className="grid gap-10 px-6 absolute w-full max-w-3xl z-10 translate-y-1/2 translate-x-52">
+            <div className="grid gap-10 px-6 absolute w-full max-w-xl lg:max-w-3xl z-10 translate-y-10 md:translate-y-1/2 translate-x-0 md:translate-x-52">
                 <motion.h4
-                    className="text-2xl lg:text-3xl xl:text-6xl text-zinc-800 dark:text-zinc-100 font-medium font-italiana tracking-widest"
+                    className="text-5xl xl:text-6xl text-zinc-800 dark:text-zinc-100 font-medium font-italiana tracking-widest"
                     initial="hidden"
                     animate="visible"
                     variants={{
@@ -45,7 +45,7 @@ const AboutHeader: React.FC = () => {
                 </motion.h4>
 
                 <motion.div
-                    className="grid gap-2 text-start text-lg font-normal text-zinc-800 dark:text-zinc-100"
+                    className="grid gap-2 text-start text-base lg:text-lg font-normal text-zinc-800 dark:text-zinc-100"
                     initial="hidden"
                     animate="visible"
                     variants={{
@@ -67,13 +67,3 @@ const AboutHeader: React.FC = () => {
 }
 
 export default AboutHeader;
-
-// const HeadingTitle: React.FC<{ children?: React.ReactNode }> = (({ children }) => {
-//     return (
-//         <h2 className="text-center text-3xl md:text-lg xl:text-xl font-italiana whitespace-break-spaces
-//                 tracking-wide text-zinc-800 dark:text-white flex-1">
-//             {children}
-//         </h2>
-//     )
-// });
-// HeadingTitle.displayName = "HeadingTitle";

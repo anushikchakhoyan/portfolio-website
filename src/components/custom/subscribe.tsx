@@ -13,7 +13,7 @@ const Subscribe: React.FC<{ text?: string }> = ({ text }) => {
   return (
     <PageLayout
       id="contact"
-      className="bg-gradient-to-b from-zinc-50 to-white transition-colors duration-300 dark:from-zinc-800/30 dark:to-zinc-900"
+      className="transition-colors duration-300"
     >
       <div className="flex items-center justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center gap-6 px-4">

@@ -136,7 +136,7 @@ const ContactForm: React.FC = () => {
                             label={t("tellUsYourself")}
                             className="resize-none h-28" />
                         <Button
-                            size="xl"
+                            size="lg"
                             type="submit"
                             disabled={isSubmitting}
                             className="mt-4 text-lg"

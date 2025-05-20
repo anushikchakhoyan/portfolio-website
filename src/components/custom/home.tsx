@@ -50,7 +50,7 @@ export default function HomePage() {
             <h1 className="z-10 text-transparent duration-1000 bg-zinc-700 dark:bg-white 
                            cursor-default text-edge-outline animate-title font-display text-6xl 
                            md:text-9xl whitespace-nowrap bg-clip-text font-italiana flex items-start max-w-2xl">
-                {t('portfolio')}
+                {t('name')}
                 <sub className="text-xl md:text-2xl font-medium animate-title font-josefin-sans text-primary">
                     {yearsExperience}
                 </sub>
