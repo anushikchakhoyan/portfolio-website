@@ -38,15 +38,12 @@ const Benefits: React.FC<{ type: Service }> = ({ type }) => {
                 variants={containerVariants}
             >
                 <Title title={t("benefits")} />
-                <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
                     {benefits.map((item, index) => (
                         <div
                             key={item.title}
                             className={cn(
-                                `overflow-hidden flex cursor-pointer`,
-                                index % 2 === 0
-                                    ? "bg-secondary text-white flex-row lg:flex-col-reverse"
-                                    : "bg-gray-100 text-zinc-800 flex-row lg:flex-col"
+                                `overflow-hidden flex flex-col items-center cursor-pointer`,
                             )}
                         >
                             <motion.div
@@ -54,16 +51,16 @@ const Benefits: React.FC<{ type: Service }> = ({ type }) => {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: false }}
-                                className="w-full h-full hidden sm:block max-h-60 md:max-h-[30rem]"
+                                className="w-[250px] h-full hidden sm:block max-h-60 md:max-h-[30rem]"
                             >
                                 <Image
                                     src={item.image ?? ""}
                                     alt={item.title}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover rounded-full"
                                 />
                             </motion.div>
                             <motion.div
-                                className="p-5 lg:p-10 min-h-44 gap-4 flex flex-col items-center justify-center"
+                                className="p-5 lg:p-6 min-h-44 gap-4 flex flex-col items-center justify-center"
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: false }}
@@ -80,7 +77,7 @@ const Benefits: React.FC<{ type: Service }> = ({ type }) => {
                                     {item.title}
                                 </motion.h3>
                                 <motion.p
-                                    className="text-xs lg:text-sm sm:max-w-xs"
+                                    className="text-xs lg:text-sm w-full"
                                     variants={{
                                         hidden: { opacity: 0, y: 15 },
                                         visible: { opacity: 1, y: 0 }

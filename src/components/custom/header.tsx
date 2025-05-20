@@ -42,7 +42,7 @@ const Header: React.FC = () => {
                     <ModeSwitcher />
                     {!isMobile && (
                         <Link href="/contact-us">
-                            <Button variant="outline">
+                            <Button>
                                 {t('getInTouch')}
                             </Button>
                         </Link>
