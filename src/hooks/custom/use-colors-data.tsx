@@ -17,7 +17,7 @@ export default function useColorsData() {
         // 3. Navy Blue & Sky
         {
             name: 'navy',
-            primary: { hue: 220, saturation: 60, lightness: 30 },    // oklch(35% 0.15 220)
+            primary: { hue: 198.75, saturation: 36.36, lightness: 43.14 },    // oklch(35% 0.15 220)
             secondary: { hue: 200, saturation: 40, lightness: 80 },   // oklch(85% 0.08 200)
         },
     ];
