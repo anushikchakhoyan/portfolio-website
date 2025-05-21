@@ -51,7 +51,7 @@ const Benefits: React.FC<{ type: Service }> = ({ type }) => {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: false }}
-                                className="w-[250px] h-full hidden sm:block max-h-60 md:max-h-[30rem]"
+                                className="w-[250px] h-full block max-h-60 md:max-h-[30rem]"
                             >
                                 <Image
                                     src={item.image ?? ""}

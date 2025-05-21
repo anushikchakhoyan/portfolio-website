@@ -42,7 +42,7 @@ const ServicesContent: React.FC<ServiceType> = (
   { title, hint, description, contactMe, image }
 ) => {
   return (
-    <div className="gap-6 flex flex-col-reverse lg:flex-row relative min-h-[60vh] md:min-h-96 px-4 sm:px-6 items-center">
+    <div className="gap-6 flex flex-col-reverse lg:flex-row relative min-h-[60vh] md:min-h-96 px-0 sm:px-6 items-center">
       <AnimatedCircleEffect />
 
       <motion.div

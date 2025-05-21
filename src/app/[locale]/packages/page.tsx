@@ -79,7 +79,7 @@ const PackagesHeader: React.FC = () => {
   const t = useTranslations("Packages");
 
   return (
-    <div className="gap-6 flex flex-col-reverse lg:flex-row relative min-h-[60vh] md:min-h-96 px-4 sm:px-6 items-center">
+    <div className="gap-6 flex flex-col-reverse lg:flex-row relative min-h-[60vh] md:min-h-96 px-0 sm:px-6 items-center">
       <motion.div
         className="w-full lg:w-1/2 flex flex-col gap-6 md:gap-8"
         initial="hidden"

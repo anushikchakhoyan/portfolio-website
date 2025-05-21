@@ -277,11 +277,11 @@
 }
 
 @utility animate-scroll-linear-right {
-  animation: scroll-linear-right 80s linear infinite;
+  animation: scroll-linear-right 40s linear infinite;
 }
 
 @utility animate-scroll-linear-left {
-  animation: scroll-linear-left 80s linear infinite;
+  animation: scroll-linear-left 40s linear infinite;
 }
 
 @utility animate-title {
