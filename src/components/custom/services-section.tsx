@@ -16,7 +16,7 @@ const ServicesSection: React.FC<{ type: Service }> = ({ type }) => {
   const data = useServicesData(type);
 
   return (
-    <PageLayout id="services" className='max-w-auto bg-secondary/5 !py-0 px-8'>
+    <PageLayout id="services" className='!py-0 px-8 bg-gradient-to-r from-transparent via-secondary/5 to-transparent'>
       <ServicesContent {...data} />
     </PageLayout>
   )
