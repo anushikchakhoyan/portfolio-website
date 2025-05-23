@@ -5,7 +5,8 @@ export default function useColorsData() {
         // 1. Burgundy & Cream
         {
             name: 'burgundy',
-            primary: { hue: 345, saturation: 60, lightness: 35 },    // oklch(40% 0.15 345)
+            // 355.14deg 83.57% 40.59 %
+            primary: { hue: 355.14, saturation: 83.57, lightness: 40.59 },    // oklch(40% 0.15 345)
             secondary: { hue: 346.88, saturation: 32.99, lightness: 61.96 },   // oklch(93% 0.02 45)
         },
         // 2. Dark Olive & Sage

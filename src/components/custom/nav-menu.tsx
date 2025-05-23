@@ -17,7 +17,7 @@ import { NavigationType } from "@/lib/types";
 
 const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
     const isMobile = useIsMobile();
-    const navigations = useNavigationData();
+    const navigations = useNavigationData().filter(section => !section.onlyInFooter);;
 
     return (
         <NavigationMenu

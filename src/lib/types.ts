@@ -23,7 +23,8 @@ export type NavigationType = {
         title: string;
         url: string;
         description: string;
-    }[]
+    }[],
+    onlyInFooter?: boolean
 }
 
 export type ServiceType = {

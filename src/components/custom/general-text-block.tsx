@@ -4,7 +4,7 @@ import Title from "./title";
 
 interface GeneralTextBlockProps {
     id?: string;
-    title: string;
+    title?: string;
     subtitle: string;
     description: string;
     descrptionClassName?: string;

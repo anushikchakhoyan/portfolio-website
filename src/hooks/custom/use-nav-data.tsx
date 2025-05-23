@@ -15,23 +15,15 @@ export default function useNavigationData() {
                 {
                     title: t("about"),
                     url: "/about",
-                    description: t("discoverMyJourney")
+                    description: t("discoverMyJourney"),
                 },
                 {
                     title: t("faq"),
                     url: "/faq",
-                    description: t("getInsightsMyWork")
+                    description: t("getInsightsMyWork"),
                 },
             ],
         },
-        // {
-        //     title: t("explore"),
-        //     intro: {
-        //         abbr: "overview/offer",
-        //         content: t("understandMyProcess"),
-        //     },
-        //     items: [],
-        // },
         {
             title: t("services"),
             intro: {
@@ -66,18 +58,27 @@ export default function useNavigationData() {
                 {
                     title: t("contact"),
                     url: "/contact-us",
-                    description: t("getInTouchForCollaborations")
+                    description: t("getInTouchForCollaborations"),
                 },
                 {
                     title: t("packages"),
                     url: "/packages",
-                    description: t("exploreMyPricing")
+                    description: t("exploreMyPricing"),
                 },
-                // {
-                //     title: t("blog"),
-                //     url: "/blog",
-                //     description: t("readInsightsAndArticles")
-                // },
+            ],
+        },
+        {
+            onlyInFooter: true,
+            title: t("legal"),
+            items: [
+                {
+                    title: t('privacyPolicy'),
+                    url: "/privacy-policy",
+                },
+                {
+                    title: t('termsOfUse'),
+                    url: "/terms",
+                },
             ],
         },
     ];

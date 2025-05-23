@@ -15,6 +15,7 @@ export const LG_BREAKPOINT = 1024;
 
 export const EMAIL = "anush.chakhoyan.work@gmail.com";
 export const PHONE = "094 615 685";
+export const WEBSITE = "https://anushchakhoyan.vercel.app/en/contact-us";
 
 export const THEME_MODE = {
     light: "light",
