@@ -1,17 +1,19 @@
 import { FiArrowUpRight } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type ExternalLinkProps = {
   to: string;
   text: string;
   Icon?: string;
+  className?: string;
 }
 
-const ExternalLink: React.FC<ExternalLinkProps> = ({ text, to, Icon = FiArrowUpRight }) => (
+const ExternalLink: React.FC<ExternalLinkProps> = ({ text, to, Icon = FiArrowUpRight, className }) => (
   <Button
     variant="link"
-    className="border border-gray-300 dark:border-gray-500 rounded-3xl transition-colors 
-               hover:border-p dark:hover:border-gray-700 group dark:hover:bg-white">
+    className={cn(`border border-gray-300 dark:border-gray-500 rounded-3xl transition-colors 
+               hover:border-p dark:hover:border-gray-700 group dark:hover:bg-white`, className)}>
     <a
       href={to}
       target="_blank"

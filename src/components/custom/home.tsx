@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, STARTED_CAREER_AT } from "@/lib/constants";
+import { INSTAGRAM_URL, LINKEDIN_URL, MEDIUM_URL, STARTED_CAREER_AT } from "@/lib/constants";
 import ExternalLink from '@/components/custom/external-link';
 
 type ExternalLink = {
@@ -12,8 +12,8 @@ type ExternalLink = {
 
 const externalLinks: ExternalLink[] = [
     { url: LINKEDIN_URL, text: "Linkedin" },
+    { url: INSTAGRAM_URL, text: "Instagram" },
     { url: MEDIUM_URL, text: "Medium" },
-    { url: GITHUB_URL, text: "GitHub" }
 ]
 
 export default function HomePage() {
@@ -49,20 +49,23 @@ export default function HomePage() {
 
             <h1 className="z-10 text-transparent duration-1000 bg-zinc-700 dark:bg-white 
                            cursor-default text-edge-outline animate-title font-display text-6xl 
-                           md:text-9xl whitespace-nowrap bg-clip-text font-italiana flex items-start max-w-2xl">
+                           md:text-9xl whitespace-nowrap bg-clip-text font-italiana relative">
                 {t('name')}
-                <sub className="text-xl md:text-2xl font-medium animate-title font-josefin-sans text-primary">
+                <sub className="text-lg sm:text-xl md:text-2xl font-medium animate-title 
+                                font-josefin-sans text-primary absolute top-0 -right-10 md:-right-14">
                     {yearsExperience}
                 </sub>
             </h1>
+
             <div className="hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-700/0
              via-zinc-700/50 to-zinc-700/0" />
 
-            <div className="my-6 animate-fade-in duration-500 flex flex-row-wrap justify-center md:justify-start gap-4 max-w-md w-full">
+            <div className="my-6 animate-fade-in duration-500 flex flex-col w-full md:flex-row items-center justify-center gap-4">
                 {externalLinks.map(({ url, text }) => (
-                    <ExternalLink key={url} to={url} text={text} />
+                    <ExternalLink key={url} to={url} text={text} className='max-w-52 md:max-w-36 w-full' />
                 ))}
             </div>
+
         </div>
     );
 }

@@ -46,7 +46,7 @@ const PrivacyPolicy: React.FC = () => {
 
                 <Text size="title">{t('contactUs')}</Text>
                 <Text>{t("anyQuestion")}</Text>
-                <Text className="flex gap-3">
+                <Text className="flex flex-col sm:flex-row gap-3">
                     <ExternalLink to={`mailto: ${EMAIL}`} text={t('byEmail')} />
                     <ExternalLink to={WEBSITE} text={t('byVisiting')} />
                 </Text>

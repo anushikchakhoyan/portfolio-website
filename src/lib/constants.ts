@@ -1,6 +1,6 @@
 export const API_BASE_URL = 'https://api.example.com';
 export const STARTED_CAREER_AT = 2018;
-export const INSTAGRAM_URL = 'https://www.instagram.com/anush_chakhoyan/';
+export const INSTAGRAM_URL = 'https://www.instagram.com/anush.tech/';
 export const TELEGRAM_URL = '@chakhoyan.anush';
 export const GITHUB_URL = 'https://github.com/anushikchakhoyan';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/anush-chakhoyan/';
