@@ -29,7 +29,7 @@ const PrivacyPolicy: React.FC = () => {
                 </ul>
                 <Text size='title'>{t("title2")}</Text>
                 <Text size='subTitle'>{t("title3")}</Text>
-                <Text className="">
+                <Text>
                     {t('description3')}
                     <span className='text-primary px-2'>{(t.raw('description3Items') as string[])?.join(', ')}</span>
                 </Text>
@@ -58,7 +58,7 @@ const PrivacyPolicy: React.FC = () => {
 const Text: React.FC<TextProps> = (({ size = 'base', className, children }) => {
     return (
         <p className={cn(
-            "font-josefin-sans text-zinc-800 py-4",
+            "font-josefin-sans text-zinc-800 dark:text-zinc-100 py-4",
             size === 'title' && 'text-2xl font-medium',
             size === 'subTitle' && 'text-lg font-medium',
             size === 'base' && 'text-base',

@@ -22,7 +22,7 @@ export type NavigationType = {
     items: {
         title: string;
         url: string;
-        description: string;
+        description?: string;
     }[],
     onlyInFooter?: boolean
 }

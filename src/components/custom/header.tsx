@@ -8,9 +8,9 @@ import { IoMenuOutline } from 'react-icons/io5'
 import { Button } from "@/components/ui/button";
 import useIsMobile from "@/hooks/custom/use-mobile";
 
-import LanguageSwitcher from "./language-switcher";
-import ModeSwitcher from "./mode-switcher";
-import ColorPicker from "./color-picker";
+import LanguageSwitcher from "./settings/language-switcher";
+import ColorPicker from "./settings/color-picker";
+import ModeSwitcher from "./settings/mode-switcher";
 import NavMenu from "./nav-menu";
 
 const Header: React.FC = () => {
@@ -40,9 +40,10 @@ const Header: React.FC = () => {
                     <LanguageSwitcher />
                     <ColorPicker />
                     <ModeSwitcher />
+                    {/* <Settings /> */}
                     {!isMobile && (
                         <Link href="/contact-us">
-                            <Button>
+                            <Button variant="outline">
                                 {t('getInTouch')}
                             </Button>
                         </Link>

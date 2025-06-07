@@ -18,9 +18,9 @@ export default function useNavigationData() {
                     description: t("discoverMyJourney"),
                 },
                 {
-                    title: t("faq"),
-                    url: "/faq",
-                    description: t("getInsightsMyWork"),
+                    title: t("blog"),
+                    url: "/blog",
+                    description: t("readInsightsAndArticles"),
                 },
             ],
         },
@@ -49,6 +49,25 @@ export default function useNavigationData() {
             ],
         },
         {
+            onlyInFooter: true,
+            title: t("legal"),
+            items: [
+                {
+                    title: t('privacyPolicy'),
+                    url: "/privacy-policy",
+                },
+                {
+                    title: t("faq"),
+                    url: "/faq",
+                    description: t("getInsightsMyWork"),
+                },
+                // {
+                //     title: t('termsOfUse'),
+                //     url: "/terms",
+                // },
+            ],
+        },
+        {
             title: t("connect"),
             intro: {
                 abbr: 'guide/offer',
@@ -64,20 +83,6 @@ export default function useNavigationData() {
                     title: t("packages"),
                     url: "/packages",
                     description: t("exploreMyPricing"),
-                },
-            ],
-        },
-        {
-            onlyInFooter: true,
-            title: t("legal"),
-            items: [
-                {
-                    title: t('privacyPolicy'),
-                    url: "/privacy-policy",
-                },
-                {
-                    title: t('termsOfUse'),
-                    url: "/terms",
                 },
             ],
         },
