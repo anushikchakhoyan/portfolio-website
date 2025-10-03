@@ -1,5 +1,6 @@
 {
     "languageSelector": "{language, select, en {English} hy {Հայերեն} other {Language}}",
+    "modeSelector": "{theme, select, dark {Գիշերային ռեժիմ} light {Լուսավոր ռեժիմ} other {} }",
     "Header": {
         "im": "Anush Chakhoyan",
         "name": "Anush.tech",
@@ -261,9 +262,8 @@
         "freelanceProjectsDesc": "Պետք է հմուտ մշակող կարճաժամկետ նախագծի համար: Մենք հասանելի ենք ֆրիլանս աշխատանքի համար՝ օգնելու ձեզ հասնել ձեր նպատակներին:"
     },
     "Colors": {
-        "currentTheme": "Ընթացիկ երանգ",
         "chooseColorPallete": "Գունային գամմա",
-        "currentThemeDescription": "Այս գամման կիրառվում է ամբողջ կայքում։",
+        "currentThemeDescription": "Ընտրված գունային սխեման կիրառվում է ամբողջ կայքում:",
         "pink": "Ջերմ և ստեղծագործական երանգներ՝ զգայական հարմարավետության համար։",
         "midnight": "Խորը կապույտ՝ վստահության և կենտրոնացման համար։",
         "forest": "Բնական կանաչ՝ հավասարակշռության և աճի համար։",
@@ -361,6 +361,7 @@
         "byVisiting": "Այցելելով այս էջը մեր կայքում՝ "
     },
     "Blog": {
-        "comingSoon": "Շուտով..."
+        "title": "Շուտով...",
+        "readingTime": "րոպե ընթերցանություն"
     }
 }

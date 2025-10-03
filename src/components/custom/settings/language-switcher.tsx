@@ -45,7 +45,7 @@ const LanguageSwitcher = () => {
                     `}
                 />
             </PopoverTrigger>
-            <PopoverContent className="max-w-xs !w-full p-0">
+            <PopoverContent className="!w-50 p-0">
                 {routing.locales.map((cur) => (
                     <div
                         key={cur}

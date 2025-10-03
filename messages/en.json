@@ -1,5 +1,6 @@
 {
   "languageSelector": "{language, select, en {English} hy {Հայերեն} other {Language}}",
+  "modeSelector": "{theme, select, dark {Dark mode} light {Light mode} other {} }",
   "Header": {
     "im": "Anush Chakhoyan",
     "name": "Anush.tech",
@@ -261,7 +262,6 @@
     "freelanceProjectsDesc": "Need a skilled developer for a short-term project? We’re available for freelance work to help you achieve your goals."
   },
   "Colors": {
-    "currentTheme": "Current Theme",
     "chooseColorPallete": "Choose Color Pallete",
     "currentThemeDescription": "This theme is applied across your site.",
     "pink": "Warm and nurturing tones for emotional comfort.",
@@ -361,6 +361,7 @@
     "byVisiting": "By visiting this page on our website: "
   },
   "Blog": {
-    "comingSoon": "Coming Soon..."
+    "title": "Coming Soon...",
+    "readingTime": "min read"
   }
 }

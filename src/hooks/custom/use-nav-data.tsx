@@ -17,11 +17,11 @@ export default function useNavigationData() {
                     url: "/about",
                     description: t("discoverMyJourney"),
                 },
-                {
-                    title: t("blog"),
-                    url: "/blog",
-                    description: t("readInsightsAndArticles"),
-                },
+                // {
+                //     title: t("blog"),
+                //     url: "/blog",
+                //     description: t("readInsightsAndArticles"),
+                // },
             ],
         },
         {

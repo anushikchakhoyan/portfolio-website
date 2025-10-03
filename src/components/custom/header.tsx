@@ -9,9 +9,8 @@ import { Button } from "@/components/ui/button";
 import useIsMobile from "@/hooks/custom/use-mobile";
 
 import LanguageSwitcher from "./settings/language-switcher";
-import ColorPicker from "./settings/color-picker";
-import ModeSwitcher from "./settings/mode-switcher";
 import NavMenu from "./nav-menu";
+import Settings from "./settings";
 
 const Header: React.FC = () => {
     const t = useTranslations("Header");
@@ -37,17 +36,8 @@ const Header: React.FC = () => {
                 </Link>
                 <NavMenu toggle={toggle} />
                 <div className="flex items-center gap-1 md:gap-2">
+                    <Settings />
                     <LanguageSwitcher />
-                    <ColorPicker />
-                    <ModeSwitcher />
-                    {/* <Settings /> */}
-                    {!isMobile && (
-                        <Link href="/contact-us">
-                            <Button variant="outline">
-                                {t('getInTouch')}
-                            </Button>
-                        </Link>
-                    )}
                     <Button
                         size="icon"
                         variant="ghost"
