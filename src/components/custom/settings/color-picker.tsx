@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useTranslations } from "next-intl";
 
 import useColorsData from '@/hooks/custom/use-colors-data';
 import { useColor } from '@/contexts/ColorContext';
@@ -7,7 +6,6 @@ import { Color } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 const ColorPicker = () => {
-    const t = useTranslations("Colors");
     const { state, dispatch } = useColor();
     const colorsSet = useColorsData();
 
