@@ -361,7 +361,9 @@
     "byVisiting": "By visiting this page on our website: "
   },
   "Blog": {
-    "title": "Coming Soon...",
-    "readingTime": "min read"
+    "title": "Latest News",
+    "readingTime": "min read",
+    "english": "English",
+    "armenian": "Armenian"
   }
 }

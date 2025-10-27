@@ -1,11 +1,10 @@
 'use client';
 
-import { Locale } from 'next-intl';
-import { useTransition } from 'react';
-import { routing } from '@/i18n/routing';
-import { useParams } from 'next/navigation';
 import { usePathname, useRouter } from '@/i18n/navigation';
-import { useLocale, useTranslations } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { Locale, useLocale, useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
+import { useTransition } from 'react';
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { LANGUAGE } from '@/lib/constants';

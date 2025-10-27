@@ -17,11 +17,11 @@ export default function useNavigationData() {
                     url: "/about",
                     description: t("discoverMyJourney"),
                 },
-                // {
-                //     title: t("blog"),
-                //     url: "/blog",
-                //     description: t("readInsightsAndArticles"),
-                // },
+                {
+                    title: t("blog"),
+                    url: "/blog",
+                    description: t("readInsightsAndArticles"),
+                },
             ],
         },
         {
@@ -33,17 +33,17 @@ export default function useNavigationData() {
             items: [
                 {
                     title: t("websiteCreation"),
-                    url: "/website-creation",
+                    url: "/services/website-creation",
                     description: t("buildProfWebsite"),
                 },
                 {
                     title: t("mentorship"),
-                    url: "/mentorship",
+                    url: "/services/mentorship",
                     description: t("expertGuidance"),
                 },
                 {
                     title: t("collaboration"),
-                    url: "/collaboration",
+                    url: "/services/collaboration",
                     description: t("workTogether"),
                 },
             ],

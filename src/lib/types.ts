@@ -104,3 +104,14 @@ export type PackageType = {
     plan: PlanType[]
     service: Service;
 }
+
+export type Post = {
+    id: number;
+    date: string;
+    title: string;
+    excerpt: string;
+    image: string | StaticImageData;
+    reading: number;
+    url: string,
+    category: string,
+}

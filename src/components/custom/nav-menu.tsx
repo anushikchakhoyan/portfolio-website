@@ -1,5 +1,5 @@
+import { cn } from "@/lib/utils";
 import React from "react";
-import { cn } from "@/lib/utils"
 
 import {
     NavigationMenu,
@@ -10,10 +10,9 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-import useNavigationData from "@/hooks/custom/use-nav-data";
 import useIsMobile from "@/hooks/custom/use-mobile";
+import useNavigationData from "@/hooks/custom/use-nav-data";
 import { NavigationType } from "@/lib/types";
-
 
 const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
     const isMobile = useIsMobile();
@@ -83,8 +82,8 @@ const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
 export default NavMenu;
 
 const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
+    HTMLAnchorElement,
+    React.ComponentPropsWithoutRef<"a"> & { title: string; children?: React.ReactNode }
 >(({ className, title, children, ...props }, ref) => {
     return (
         <li>
@@ -98,10 +97,10 @@ const ListItem = React.forwardRef<
                     )}
                     {...props}
                 >
-                    <p className="text-sm font-medium leading-none dark:text-zinc-200">{title}</p>
-                    <p className="line-clamp-3 text-xs leading-snug text-muted-foreground dark:text-zinc-400">
+                    <span className="text-sm font-medium leading-none dark:text-zinc-200">{title}</span>
+                    <span className="line-clamp-3 text-xs leading-snug text-muted-foreground dark:text-zinc-400">
                         {children}
-                    </p>
+                    </span>
                 </a>
             </NavigationMenuLink>
         </li>

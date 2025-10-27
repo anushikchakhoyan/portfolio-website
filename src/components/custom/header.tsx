@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
 import { Link } from '@/i18n/navigation';
-import { IoMenuOutline } from 'react-icons/io5'
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { IoMenuOutline } from 'react-icons/io5';
 
 import { Button } from "@/components/ui/button";
 import useIsMobile from "@/hooks/custom/use-mobile";
 
-import LanguageSwitcher from "./settings/language-switcher";
 import NavMenu from "./nav-menu";
 import Settings from "./settings";
+import LanguageSwitcher from "./settings/language-switcher";
 
 const Header: React.FC = () => {
     const t = useTranslations("Header");

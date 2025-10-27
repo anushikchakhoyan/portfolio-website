@@ -1,14 +1,25 @@
-import Link from "next/link";
+"use client";
+
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 import useNavigationData from "@/hooks/custom/use-nav-data";
 import { NavigationType } from "@/lib/types";
+import { usePathname } from "next/navigation";
+
 import SocialMedia from "./social-media";
 
 const Footer: React.FC = () => {
   const t = useTranslations("Footer");
   const tHeader = useTranslations("Header");
   const navigations = useNavigationData();
+  const pathname = usePathname();
+
+  const hideFooterRoutes = ["/en", "/hy"];
+
+  if (hideFooterRoutes.includes(pathname)) {
+    return null;
+  }
 
   return (
     <footer className="pt-0 md:pt-12 w-full max-w-8xl mx-auto px-4">
