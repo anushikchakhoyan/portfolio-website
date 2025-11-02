@@ -1,14 +1,15 @@
-import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { Dancing_Script, Josefin_Sans, Italiana, Noto_Serif_Armenian } from "next/font/google";
+import { Dancing_Script, Italiana, Josefin_Sans, Noto_Serif_Armenian } from "next/font/google";
+import { notFound } from 'next/navigation';
 
 import { ColorProvider } from '@/contexts/ColorContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
-import Header from '@/components/custom/header';
 import Footer from '@/components/custom/footer';
+import Header from '@/components/custom/header';
 
+import ColorTrail from '@/components/custom/color-trail';
 import './global.css';
 
 const JosefinSans = Josefin_Sans({
@@ -52,9 +53,12 @@ export default async function LocaleLayout({
                 <NextIntlClientProvider>
                     <ThemeProvider>
                         <ColorProvider>
-                            <Header />
-                            <main className='pt-16'>{children}</main>
-                            <Footer />
+                            <main className='absolute z-10 top-0 left-0 w-full h-full'>
+                                <Header />
+                                <section className='pt-16'>{children}</section>
+                                <Footer />
+                            </main>
+                            <ColorTrail />
                         </ColorProvider>
                     </ThemeProvider>
                 </NextIntlClientProvider>

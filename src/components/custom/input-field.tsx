@@ -23,7 +23,7 @@ const InputField: React.FC<InputProps> = ({ name, label, className, ...props }) 
                 // onValueChange={(value: string) => {
                 //     helpers.setValue(value);
                 // }}
-                className={cn(`h-12`, className, meta.touched && meta.error && "border-red-500")}
+                className={cn(`h-12 border-gray-200`, className, meta.touched && meta.error && "border-red-500")}
             />
             {meta.touched && meta.error && (
                 <div className="text-red-500 text-xs">{meta.error}</div>

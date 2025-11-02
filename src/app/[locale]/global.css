@@ -147,24 +147,24 @@
   100% {
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 45%);
+    background-color: hsl(var(--primary) / 95%);
   }
 
   34% {
     border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
     transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 35%);
+    background-color: hsl(var(--primary) / 95%);
   }
 
   50% {
     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 25%);
+    background-color: hsl(var(--primary) / 95%);
   }
 
   67% {
     border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
     transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 30%);
+    background-color: hsl(var(--primary) / 95%);
   }
 }
 
@@ -321,4 +321,55 @@
 
 .gradient-effect {
   background: radial-gradient(500px circle at bottom left, hsl(var(--primary) / 70%), rgba(0, 0, 0, 0) 35%);
+}
+
+/* .... */
+.circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transition: 500ms;
+  overflow: hidden
+}
+
+.bigCircle {
+  position: absolute;
+  transition: 300ms;
+  border-radius: 50%;
+  animation-name: bubbles-animation;
+  animation-duration: 2s;
+}
+
+@keyframes bubbles-animation {
+  0% {
+    width: 300px;
+    height: 300px;
+  }
+
+  100% {
+    width: 5000px;
+    height: 5000px;
+    left: -2500px;
+    top: -2500px
+  }
+}
+
+.circleMini {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation-name: bubbles-transparency;
+  animation-duration: 0.3s;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes bubbles-transparency {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

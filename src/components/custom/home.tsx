@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { INSTAGRAM_URL, LINKEDIN_URL, MEDIUM_URL, STARTED_CAREER_AT } from "@/lib/constants";
 import ExternalLink from '@/components/custom/external-link';
+import ColorTrail from './color-trail';
 
 type ExternalLink = {
     url: string;
@@ -52,7 +53,7 @@ export default function HomePage() {
                            md:text-9xl whitespace-nowrap bg-clip-text font-italiana relative">
                 {t('name')}
                 <sub className="text-lg sm:text-xl md:text-2xl font-medium animate-title 
-                                font-josefin-sans text-primary absolute top-0 -right-10 md:-right-14">
+                                font-josefin-sans text-zinc-700 dark:text-white  absolute top-0 -right-10 md:-right-14">
                     {yearsExperience}
                 </sub>
             </h1>
@@ -65,7 +66,6 @@ export default function HomePage() {
                     <ExternalLink key={url} to={url} text={text} className='max-w-52 md:max-w-36 w-full' />
                 ))}
             </div>
-
         </div>
     );
 }

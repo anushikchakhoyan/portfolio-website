@@ -22,7 +22,7 @@ export default function BlogPosts() {
     return (
         <div className="py-12 px-4 sm:px-6 lg:px-8">
             <h2 className='text-8xl text-center font-extrabold text-transparent bg-clip-text 
-            bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 w-fit mx-auto'>
+            bg-gradient-to-r from-zinc-700 via-gray-400 to-zinc-700 w-fit mx-auto'>
                 Learn.
             </h2>
             <div className='max-w-2xl w-full mx-auto'>

@@ -11,6 +11,7 @@ import useIsMobile from "@/hooks/custom/use-mobile";
 import NavMenu from "./nav-menu";
 import Settings from "./settings";
 import LanguageSwitcher from "./settings/language-switcher";
+import { CgMenuRight } from 'react-icons/cg';
 
 const Header: React.FC = () => {
     const t = useTranslations("Header");
@@ -29,7 +30,7 @@ const Header: React.FC = () => {
     }, [isMobile]);
 
     return (
-        <header className="fixed z-20 top-0 left-0 right-0 shadow-sm bg-background">
+        <header className="fixed z-[11] top-0 left-0 right-0 shadow-sm bg-background md:bg-background/50 backdrop-blur-sm">
             <div className="w-full max-w-8xl mx-auto px-4 py-3 flex justify-between lg:justify-center">
                 <Link href="/" className="flex items-center font-bold text-xl xl:text-2xl font-italiana">
                     {t('im')}
@@ -38,14 +39,7 @@ const Header: React.FC = () => {
                 <div className="flex items-center gap-1 md:gap-2">
                     <Settings />
                     <LanguageSwitcher />
-                    <Button
-                        size="icon"
-                        variant="ghost"
-                        onClick={toggleMenu}
-                        className="flex lg:hidden bg-white dark:bg-zinc-700 dark:text-white text-gray-800"
-                    >
-                        <IoMenuOutline />
-                    </Button>
+                    <CgMenuRight size={24} className="cursor-pointer" onClick={toggleMenu} />
                 </div>
             </div>
         </header>

@@ -117,7 +117,7 @@ const ContactForm: React.FC = () => {
                 validationSchema={validationSchema}
             >
                 {({ isSubmitting }) => (
-                    <Form className="flex flex-col gap-4 w-full">
+                    <Form className="flex flex-col gap-4 w-full bg-background p-8 rounded-2xl">
                         <InputField name="name" label={t("fullName")} />
                         <InputField name="email" label={t("email")} />
                         <PhoneField name="phone" label={t("phone")} />

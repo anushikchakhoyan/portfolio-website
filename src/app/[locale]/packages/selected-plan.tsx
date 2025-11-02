@@ -41,8 +41,7 @@ const SelectedPlan: React.FC<PlanTypes> = ({ title, service, onSubmit, popular, 
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle className="text-center tracking-wide text-xl md:text-2xl
-                                                 font-italiana font-medium">
+                    <AlertDialogTitle className="text-center tracking-wide text-xl md:text-2xl font-italiana font-medium">
                         {t("choosePlanCta")}
                     </AlertDialogTitle>
                 </AlertDialogHeader>
