@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { TbSettingsSpark } from 'react-icons/tb';
 
 import ModeSwitcher from './mode-switcher';
-import ColorPicker from './color-picker';
 
 const Settings = () => {
     const t = useTranslations("Colors");
