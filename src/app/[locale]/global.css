@@ -59,7 +59,7 @@
   --popover-foreground: oklch(0.13 0.028 261.692);
   --primary: oklch(0.21 0.034 264.665);
   --primary-foreground: oklch(0.985 0.002 247.839);
-  --secondary: oklch(0.967 0.003 264.542);
+  --secondary: oklch(0.91 0 0);
   --secondary-foreground: oklch(0.21 0.034 264.665);
   --muted: oklch(0.967 0.003 264.542);
   --muted-foreground: oklch(0.551 0.027 264.364);
@@ -100,7 +100,7 @@
   /* end */
   --primary: oklch(0.928 0.006 264.531);
   --primary-foreground: oklch(0.21 0.034 264.665);
-  --secondary: oklch(0.278 0.033 256.848);
+  --secondary: oklch(0.54 0.01 17.48);
   --secondary-foreground: oklch(0.985 0.002 247.839);
   --muted: oklch(0.278 0.033 256.848);
   --muted-foreground: oklch(0.707 0.022 261.325);
@@ -147,24 +147,20 @@
   100% {
     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 95%);
   }
 
   34% {
     border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
     transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 95%);
   }
 
   50% {
     transform: translate3d(0, 0, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 95%);
   }
 
   67% {
     border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
     transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
-    background-color: hsl(var(--primary) / 95%);
   }
 }
 

@@ -117,7 +117,7 @@ const ContactForm: React.FC = () => {
                 validationSchema={validationSchema}
             >
                 {({ isSubmitting }) => (
-                    <Form className="flex flex-col gap-4 w-full bg-background p-8 rounded-2xl">
+                    <Form className="flex flex-col gap-4 w-full bg-background rounded-2xl py-8 px-10">
                         <InputField name="name" label={t("fullName")} />
                         <InputField name="email" label={t("email")} />
                         <PhoneField name="phone" label={t("phone")} />
@@ -139,7 +139,7 @@ const ContactForm: React.FC = () => {
                             size="lg"
                             type="submit"
                             disabled={isSubmitting}
-                            className="mt-4 text-lg"
+                            className="mt-4 text-base"
                         >
                             {isSubmitting ? (
                                 <AiOutlineLoading3Quarters className="animate-spin text-2xl" />

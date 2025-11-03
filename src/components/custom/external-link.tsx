@@ -12,7 +12,7 @@ type ExternalLinkProps = {
 const ExternalLink: React.FC<ExternalLinkProps> = ({ text, to, Icon = FiArrowUpRight, className }) => (
   <Button
     variant="link"
-    className={cn(`bg-white dark:bg-background border border-gray-300 dark:border-gray-500 rounded-3xl transition-colors 
+    className={cn(`bg-background border border-gray-300 dark:border-gray-500 rounded-3xl transition-colors 
                group dark:hover:bg-white hover:no-underline`, className)}>
     <a
       href={to}

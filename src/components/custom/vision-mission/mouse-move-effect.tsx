@@ -35,9 +35,9 @@ const MouseMoveEffect: React.FC<MouseMoveEffectProps> = ({ items }) => {
     return (
         <div
             className="px-4 lg:px-8 py-8 lg:py-12 flex flex-col gap-4 lg:gap-6 rounded-xl relative overflow-hidden
-                     bg-white dark:bg-zinc-800/30 shadow-xs border border-primary/20 
+                     bg-zinc-50 dark:bg-zinc-800 shadow-xs border border-primary/20 
                        group hover:bg-primary-200/10 transition-all duration-1000 ease-in-out 
-                       hover:border-primary"
+                       hover:border-primary backdrop-blur-sm"
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -54,7 +54,7 @@ const Content: React.FC<MouseMoveEffectProps> = (({ items }) => {
     const { title, desc, Icon, type } = items;
     return (
         <div className="relative z-10">
-            <div className="flex flex-col items-start gap-1 text-primary dark:text-primary">
+            <div className="flex flex-col items-start gap-1 text-zinc-700 dark:text-zinc-50">
                 {Icon && <Icon className={cn("w-8 h-8",
                     type === PURPOSE.vision && "group-hover:translate-x-5 group-hover:-translate-y-4 transition-all duration-300",
                     type === PURPOSE.mission && "group-hover:scale-125 transition-all duration-300"

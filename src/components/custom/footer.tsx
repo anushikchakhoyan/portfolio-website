@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                 {items.map(({ title, url }) => (
                   <li key={title}>
                     <a href={url}
-                      className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-white">
+                      className="text-sm text-zinc-700 dark:text-zinc-50 hover:text-zinc-700 dark:hover:text-gray-300">
                       {title}
                     </a>
                   </li>

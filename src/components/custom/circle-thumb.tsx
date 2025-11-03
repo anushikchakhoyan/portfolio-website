@@ -20,7 +20,7 @@ const CircleThumb: React.FC<CircleThumbTypes> = ({
 
   return (
     <div
-      className={cn(`absolute top-0 left-0 overflow-hidden z-10 rounded-[62%_47%_82%_35%/45%_45%_80%_66%] animate-slider-shape`,
+      className={cn(`absolute top-0 left-0 overflow-hidden z-10 bg-secondary dark:bg-zinc-800 rounded-[62%_47%_82%_35%/45%_45%_80%_66%] animate-slider-shape`,
         sizeOptions[size], className)}
     >
       {imageSrc && (

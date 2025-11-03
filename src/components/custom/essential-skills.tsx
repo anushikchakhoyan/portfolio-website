@@ -35,7 +35,7 @@ const EssentialSkills: React.FC = () => {
                                 <div
                                     key={`skill-${item}-${index}-${innerIndex}`}
                                     className="text-sm md:text-base px-7 py-3 rounded-xl text-center
-              bg-white hover:bg-primary hover:text-white dark:bg-zinc-800/30 dark:hover:bg-primary
+              bg-white hover:bg-primary hover:text-white dark:bg-zinc-800/85 dark:hover:bg-primary
               active:bg-primary active:text-white
               shadow-xs border border-primary/20 hover:scale-105 transition-all duration-1000 ease-in-out"
                                 >

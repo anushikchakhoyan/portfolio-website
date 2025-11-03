@@ -28,7 +28,7 @@ const SelectField: React.FC<SelectProps> = ({ name, label, options }) => {
                     helpers.setValue(value);
                 }}
             >
-                <SelectTrigger id={name} className={`w-full !h-12 ${meta.touched && meta.error ? "border-red-500" : ""}`}>
+                <SelectTrigger id={name} className={`w-full !bg-background !h-12 ${meta.touched && meta.error ? "border-red-500" : ""}`}>
                     <SelectValue placeholder={label} />
                 </SelectTrigger>
                 <SelectContent>

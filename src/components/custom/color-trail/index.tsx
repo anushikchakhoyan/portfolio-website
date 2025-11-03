@@ -14,21 +14,15 @@ const ColorTrail: React.FC = () => {
     const lightColors = [
         "rgb(240,238,169)", // yellow
         "rgb(231,169,41)", // deep yellow
-        "rgb(176, 137, 104)", //brown
-        "rgb(255,255,255)", // white
-        "rgb(185,137,224)", // pink
-        "rgb(109, 89, 122)", // foletvi
         "rgb(129, 164, 205)", // blue
-        "rgb(141,179,159)", // greenot
+        "rgb(213, 244, 168)", // green
+        "rgb(255,255,255)", // white
     ];
 
     const darkColors = [
-        "rgb(182, 180, 89)", // yellow lightot
-        "rgb(25,55,70)",   // marine blue
-        "rgb(123, 11, 30)",  // red
-        "rgb(50,50,50)", // gray
-        // "rgb(15,15,15)", // black
-        "rgb(95,65,145)",  // deep violet
+        "rgb(30, 74, 97)",
+        "rgb(182, 180, 89)",
+        "rgb(36, 36, 36)",
     ];
 
     useEffect(() => {
