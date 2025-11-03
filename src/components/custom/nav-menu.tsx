@@ -21,7 +21,7 @@ const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
     return (
         <NavigationMenu
             className={cn(`max-w-full py-0`,
-                isMobile && toggle && "p-4 absolute left-0 top-[50px] items-start w-full justify-start bg-white dark:bg-zinc-900",
+                isMobile && toggle && "p-4 absolute left-0 top-[50px] items-start w-full justify-start backdrop-blur-sm bg-background",
                 isMobile && !toggle && 'hidden lg:flex')}>
             <NavigationMenuList className={cn(`flex-row`, isMobile && toggle && "flex-col items-start")}>
                 {navigations.map(({ title, items, intro }: NavigationType) => (

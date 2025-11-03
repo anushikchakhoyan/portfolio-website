@@ -23,14 +23,12 @@ const ColorTrail: React.FC = () => {
     ];
 
     const darkColors = [
-        "rgb(80,70,40)", // brown
-        "rgb(40,70,60)",   // forest green
         "rgb(182, 180, 89)", // yellow lightot
         "rgb(25,55,70)",   // marine blue
         "rgb(123, 11, 30)",  // red
-        "rgb(15,15,15)", // black
-        "rgb(95,65,145)",  // deep violet
         "rgb(50,50,50)", // gray
+        // "rgb(15,15,15)", // black
+        "rgb(95,65,145)",  // deep violet
     ];
 
     useEffect(() => {

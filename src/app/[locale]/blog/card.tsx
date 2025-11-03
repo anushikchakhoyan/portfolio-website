@@ -9,12 +9,11 @@ export const BlogPostCard: FC<{ post: Post }> = ({ post }) => {
         <a
             href={post.url}
             target="_blank"
-            className="overflow-hidden transform transition group hover:scale-105 block my-14">
+            className="overflow-hidden transform transition group hover:scale-105 block">
             <p className="text-gray-500 dark:text-gray-400 text-md">
                 {post.date}
             </p>
-            <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 
-                           group-hover:text-primary group-hover:dark:text-primary py-2">
+            <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 py-2">
                 {post.title}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">

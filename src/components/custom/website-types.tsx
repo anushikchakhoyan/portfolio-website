@@ -26,9 +26,9 @@ const WebsiteTypes: React.FC = () => {
                 pagination={{ clickable: true }}
                 modules={[Mousewheel, Pagination]}
                 className="w-full h-full">
-                <SwiperSlide className="relative !flex items-center justify-center bg-zinc-50 dark:bg-zinc-800 rounded-lg">
+                <SwiperSlide className="relative !flex items-center justify-center bg-background/70 rounded-lg">
                     <div className="text-center px-6 xl:px-8 flex flex-col gap-8 w-full lg:w-4/5 relative z-10">
-                        <h3 className="text-xl md:text-2xl xl:text-4xl font-medium text-primary">{t('websiteTypesTitle')}</h3>
+                        <h3 className="text-xl md:text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{t('websiteTypesTitle')}</h3>
                         <p className="text-lg md:text-xl xl:text-2xl font-medium text-zinc-800 dark:text-gray-200">{t('websiteTypesDescription')}</p>
                     </div>
                 </SwiperSlide>
@@ -36,8 +36,8 @@ const WebsiteTypes: React.FC = () => {
                     <SwiperSlide key={key} className={cn(`px-8 gap-6 xl:gap-4 rounded-lg
                    !flex flex-col-reverse lg:flex-row items-center justify-center`,
                         index % 2 === 0
-                            ? 'bg-gradient-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900'
-                            : 'bg-gradient-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800'
+                            ? 'bg-gradient-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900/10'
+                            : 'bg-gradient-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800/30'
                     )}>
                         <div className="w-4/5 lg:w-5/12 xl:w-1/2">
                             <Image

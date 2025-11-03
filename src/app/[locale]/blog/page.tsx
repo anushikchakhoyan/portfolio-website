@@ -21,13 +21,12 @@ export default function BlogPosts() {
 
     return (
         <div className="py-12 px-4 sm:px-6 lg:px-8">
-            <h2 className='text-8xl text-center font-extrabold text-transparent bg-clip-text 
-            bg-gradient-to-r from-zinc-700 via-gray-400 to-zinc-700 w-fit mx-auto'>
+            <h2 className='text-8xl text-center font-extrabold text-zinc-700 dark:text-white w-fit mx-auto'>
                 Learn.
             </h2>
-            <div className='max-w-2xl w-full mx-auto'>
-                <h2 className="py-5 text-3xl">{t('title')}</h2>
-                <div className="flex justify-start gap-8">
+            <div className='max-w-3xl w-full mx-auto bg-white/75 dark:bg-zinc-700/75 backdrop-blur-sm rounded-2xl py-8 px-10'>
+                {/* <h2 className="py-5 text-3xl">{t('title')}</h2> */}
+                <div className="flex justify-center gap-8  py-8">
                     {tabs.map((tab) => (
                         <button
                             key={tab.key}
@@ -39,18 +38,20 @@ export default function BlogPosts() {
                         </button>
                     ))}
                 </div>
-                {filteredItems.map(post => (
-                    <AnimatePresence mode="wait" key={post.id}>
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <BlogPostCard post={post} />
-                        </motion.div>
-                    </AnimatePresence>
-                ))}
+                <div className='grid gap-20'>
+                    {filteredItems.map(post => (
+                        <AnimatePresence mode="wait" key={post.id}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <BlogPostCard post={post} />
+                            </motion.div>
+                        </AnimatePresence>
+                    ))}
+                </div>
             </div>
         </div>
     );
