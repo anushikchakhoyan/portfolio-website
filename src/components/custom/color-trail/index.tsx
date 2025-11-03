@@ -96,7 +96,7 @@ const ColorTrail: React.FC = () => {
             document.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [theme]);
+    }, [theme, lightColors, darkColors]);
 
     return (
         <div
