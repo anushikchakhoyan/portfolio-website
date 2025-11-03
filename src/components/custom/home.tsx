@@ -2,9 +2,8 @@
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { INSTAGRAM_URL, LINKEDIN_URL, MEDIUM_URL, STARTED_CAREER_AT } from "@/lib/constants";
 import ExternalLink from '@/components/custom/external-link';
-import ColorTrail from './color-trail';
+import { INSTAGRAM_URL, LINKEDIN_URL, MEDIUM_URL, STARTED_CAREER_AT } from "@/lib/constants";
 
 type ExternalLink = {
     url: string;
