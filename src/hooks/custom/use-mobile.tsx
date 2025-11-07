@@ -2,21 +2,16 @@ import { LG_BREAKPOINT } from "@/lib/constants";
 import { useEffect, useState } from "react";
 
 export default function useIsMobile() {
-  const getIsMobile = () => typeof window !== "undefined" && window.innerWidth <= LG_BREAKPOINT;
-  const [isMobile, setIsMobile] = useState(getIsMobile());
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const onResize = () => {
-      setIsMobile(getIsMobile());
-    }
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= LG_BREAKPOINT);
+    };
 
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", onResize);
-    }
-
-    return () => {
-      window.removeEventListener("resize", onResize);
-    }
+    checkIsMobile(); // run immediately after mount
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
   return isMobile;
