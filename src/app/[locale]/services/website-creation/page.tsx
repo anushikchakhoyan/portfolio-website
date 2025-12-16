@@ -1,12 +1,11 @@
-import Link from "next/link";
-import { useTranslations } from "next-intl";
 import { SERVICES_CATEGORY } from "@/lib/constants";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
+import Benefits from "@/components/custom/benefits";
 import GeneralTextBlock from "@/components/custom/general-text-block";
 import ServicesSection from "@/components/custom/services-section";
 import WebsiteTypes from "@/components/custom/website-types";
-import Subscribe from "@/components/custom/subscribe";
-import Benefits from "@/components/custom/benefits";
 import Workflow from "@/components/custom/workflow";
 import { Button } from "@/components/ui/button";
 
@@ -40,7 +39,7 @@ const WebsiteCreationPage = () => {
         </Link>
       </GeneralTextBlock>
       <Benefits type={type} />
-      <Subscribe />
+      {/* <Subscribe /> */}
     </>
   )
 }

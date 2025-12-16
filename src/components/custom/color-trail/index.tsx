@@ -1,105 +1,118 @@
+// 
 "use client";
-import { useTheme } from "@/contexts/ThemeContext";
 import React, { useEffect, useRef } from "react";
+
+import { useTheme } from "@/contexts/ThemeContext";
+import useIsMobile from "@/hooks/custom/use-mobile";
 
 const ColorTrail: React.FC = () => {
     const { theme } = useTheme();
+    const isMobile = useIsMobile();
 
     const containerRef = useRef<HTMLDivElement | null>(null);
-    const bigCircleRef = useRef<HTMLDivElement | null>(null);
     const numRef = useRef(0);
     const colorNumRef = useRef(0);
     const loadingRef = useRef(false);
 
-    const lightColors = [
-        "rgb(240,238,169)", // yellow
-        "rgb(231,169,41)", // deep yellow
-        "rgb(129, 164, 205)", // blue
-        "rgb(213, 244, 168)", // green
-        "rgb(255,255,255)", // white
-    ];
+    const lightColors = ["rgb(251,250,218)", "rgb(255,255,255)"];
+    const darkColors = ["rgb(30, 74, 97)", "rgb(36, 36, 36)"];
 
-    const darkColors = [
-        "rgb(30, 74, 97)",
-        "rgb(182, 180, 89)",
-        "rgb(36, 36, 36)",
-    ];
+    const getColors = () => (theme === "light" ? lightColors : darkColors);
+    const defaultBg = theme === "light" ? "rgb(255,255,255)" : "rgb(36, 36, 36)";
 
     useEffect(() => {
-        const colors = theme === "light" ? lightColors : darkColors;
         const cont = containerRef.current;
         if (!cont) return;
 
-        const handleMouseMove = (e: MouseEvent) => {
-            if (loadingRef.current) return;
+        cont.style.backgroundColor = defaultBg;
+        const colors = getColors();
 
+        const createCircle = (e: MouseEvent) => {
             const circle = document.createElement("div");
-            circle.classList.add("circle");
+            circle.className = "circle";
             circle.style.left = `${e.x - 150}px`;
             circle.style.top = `${e.y - 150}px`;
             circle.style.backgroundColor = colors[colorNumRef.current];
 
             const mini = document.createElement("div");
-            mini.classList.add("circleMini");
+            mini.className = "circleMini";
             circle.appendChild(mini);
-            cont.appendChild(circle);
 
+            return circle;
+        };
+
+        const createBigCircle = (e: MouseEvent) => {
+            const big = document.createElement("div");
+            big.className = "bigCircle";
+            big.style.left = `${e.x - 150}px`;
+            big.style.top = `${e.y - 150}px`;
+            big.style.backgroundColor = colors[colorNumRef.current];
+            big.style.width = "300px";
+            big.style.height = "300px";
+            big.style.borderRadius = "50%";
+            return big;
+        };
+
+        const cycleColor = () => {
+            colorNumRef.current++;
+            if (colorNumRef.current >= colors.length) colorNumRef.current = 0;
+        };
+
+        const handleMouseMove = (e: MouseEvent) => {
+            if (loadingRef.current) return;
+
+            cont.appendChild(createCircle(e));
             numRef.current++;
 
-            if (numRef.current > 200) {
-                loadingRef.current = true;
+            if (numRef.current <= 200) return;
 
-                const bigCircle = document.createElement("div");
-                bigCircle.classList.add("bigCircle");
-                bigCircle.style.left = `${e.x - 150}px`;
-                bigCircle.style.top = `${e.y - 150}px`;
-                bigCircle.style.backgroundColor = colors[colorNumRef.current];
-                bigCircle.style.width = "300px";
-                bigCircle.style.height = "300px";
-                bigCircle.style.borderRadius = "50%";
-                cont.appendChild(bigCircle);
+            // Trigger Big Explosion
+            loadingRef.current = true;
+            const big = createBigCircle(e);
+            cont.appendChild(big);
 
-                setTimeout(() => {
-                    loadingRef.current = false;
-                    cont.style.backgroundColor =
-                        colorNumRef.current === 0
-                            ? colors[colors.length - 1]
-                            : colors[colorNumRef.current - 1];
+            setTimeout(() => {
+                loadingRef.current = false;
 
-                    bigCircle.remove();
-                    document.querySelectorAll(".circle").forEach((el) => el.remove());
-                }, 2000);
+                const prevColor =
+                    colorNumRef.current === 0
+                        ? colors[colors.length - 1]
+                        : colors[colorNumRef.current - 1];
 
-                numRef.current = 0;
-                colorNumRef.current++;
-                if (colorNumRef.current >= colors.length) colorNumRef.current = 0;
-            }
+                cont.style.backgroundColor = prevColor;
+
+                big.remove();
+                document.querySelectorAll(".circle").forEach((el) => el.remove());
+            }, 2000);
+
+            numRef.current = 0;
+            cycleColor();
         };
 
         const handleScroll = () => {
-            const mec = bigCircleRef.current;
-            if (mec) {
-                const scrollPos = window.scrollY;
-                mec.style.transform = `translateY(${scrollPos}px)`;
-            }
+            const scrollY = window.scrollY;
+            const big = document.querySelector(".bigCircle") as HTMLDivElement;
+            if (big) big.style.transform = `translateY(${scrollY}px)`;
         };
 
         document.addEventListener("mousemove", handleMouseMove);
         window.addEventListener("scroll", handleScroll);
+
         return () => {
             document.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("scroll", handleScroll);
         };
     }, [theme]);
 
+    if (isMobile) return null;
+
     return (
         <div
             id="staticbackgroundcont"
             ref={containerRef}
             className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden transition-colors duration-500"
-        ></div>
+        />
     );
 };
 
 export default ColorTrail;
-

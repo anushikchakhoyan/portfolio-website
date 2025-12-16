@@ -3,11 +3,10 @@ import { useTranslations } from "next-intl";
 
 import { SERVICES_CATEGORY } from "@/lib/constants";
 
+import Benefits from "@/components/custom/benefits";
 import GeneralTextBlock from "@/components/custom/general-text-block";
 import ServicesSection from "@/components/custom/services-section";
 import WhyChooseUs from "@/components/custom/why-choose-us";
-import Subscribe from "@/components/custom/subscribe";
-import Benefits from "@/components/custom/benefits";
 import Workflow from "@/components/custom/workflow";
 
 const CollaborationPage: React.FC = () => {
@@ -27,7 +26,7 @@ const CollaborationPage: React.FC = () => {
       <Workflow type={type} />
       <WhyChooseUs />
       <Benefits type={type} />
-      <Subscribe />
+      {/* <Subscribe /> */}
     </>
   )
 }

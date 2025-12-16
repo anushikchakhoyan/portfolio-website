@@ -97,7 +97,9 @@ const ListItem = React.forwardRef<
                     )}
                     {...props}
                 >
-                    <span className="text-sm font-medium leading-none dark:text-zinc-200">{title}</span>
+                    <span className="text-sm lowercase font-medium leading-none dark:text-zinc-200">
+                        &lt;{title} /&gt;
+                    </span>
                     <span className="line-clamp-3 text-xs leading-snug text-muted-foreground dark:text-zinc-400">
                         {children}
                     </span>

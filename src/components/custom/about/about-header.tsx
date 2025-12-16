@@ -27,7 +27,7 @@ const AboutHeader: React.FC = () => {
     return (
         <PageLayout id="about-what-we-do" className="flex px-4 max-w-5xl mx-auto relative py-32 lg:py-20">
             <CircleThumb
-                className="w-60 lg:w-[500px] h-60 lg:h-[500px] static bg-secondary"
+                className="w-60 lg:w-[500px] h-60 lg:h-[500px] static bg-primary/60 dark:bg-primary/40"
                 size={isMobile ? "md" : "lg"}
             />
             <div className="grid gap-10 px-6 absolute w-full max-w-xs lg:max-w-3xl z-10 translate-y-10 md:translate-y-1/2 translate-x-16 md:translate-x-52">

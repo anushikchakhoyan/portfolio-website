@@ -9,7 +9,6 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import Footer from '@/components/custom/footer';
 import Header from '@/components/custom/header';
 
-import ColorTrail from '@/components/custom/color-trail';
 import './global.css';
 
 const JosefinSans = Josefin_Sans({
@@ -58,7 +57,6 @@ export default async function LocaleLayout({
                                 <section className='pt-16'>{children}</section>
                                 <Footer />
                             </main>
-                            <ColorTrail />
                         </ColorProvider>
                     </ThemeProvider>
                 </NextIntlClientProvider>

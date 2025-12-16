@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { TbSettingsSpark } from 'react-icons/tb';
 
 import ModeSwitcher from './mode-switcher';
+import ColorPicker from './color-picker';
 
 const Settings = () => {
     const t = useTranslations("Colors");
@@ -15,12 +16,12 @@ const Settings = () => {
                 <TbSettingsSpark size={24} className="cursor-pointer" />
             </PopoverTrigger>
             <PopoverContent>
-                {/* <p className="pt-2 pb-5">{t('chooseColorPallete')}</p> */}
+                <p className="pt-2 pb-5">{t('chooseColorPallete')}</p>
                 <ul>
-                    {/* <li>
+                    <li>
                         <ColorPicker />
                     </li>
-                    <li className='my-5 h-[0.5px] w-full bg-gray-200 dark:bg-gray-600'></li> */}
+                    <li className='my-5 h-[0.5px] w-full bg-gray-200 dark:bg-gray-600'></li>
                     <li>
                         <ModeSwitcher />
                     </li>

@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
 import ExternalLink from '@/components/custom/external-link';
-import { INSTAGRAM_URL, LINKEDIN_URL, MEDIUM_URL, STARTED_CAREER_AT } from "@/lib/constants";
+import { LINKEDIN_URL, MEDIUM_URL, STARTED_CAREER_AT, GITHUB_URL } from "@/lib/constants";
 
 type ExternalLink = {
     url: string;
@@ -12,7 +12,7 @@ type ExternalLink = {
 
 const externalLinks: ExternalLink[] = [
     { url: LINKEDIN_URL, text: "Linkedin" },
-    { url: INSTAGRAM_URL, text: "Instagram" },
+    { url: GITHUB_URL, text: "Github" },
     { url: MEDIUM_URL, text: "Medium" },
 ]
 
