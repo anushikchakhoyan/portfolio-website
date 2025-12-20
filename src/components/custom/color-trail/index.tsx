@@ -102,7 +102,7 @@ const ColorTrail: React.FC = () => {
             document.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [theme]);
+    }, [theme, defaultBg, getColors]);
 
     if (isMobile) return null;
 
