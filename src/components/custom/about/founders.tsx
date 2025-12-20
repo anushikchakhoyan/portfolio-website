@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 import { LINKEDIN_URL } from "@/lib/constants";
 import PageLayout from "../page-layout";
@@ -26,7 +26,7 @@ const OurFounders: React.FC = () => {
         }
     ];
 
-    const fadeInUp = {
+    const fadeInUp: Variants = {
         hidden: { opacity: 0, y: 30 },
         visible: (i: number) => ({
             opacity: 1,

@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import Link from "next/link";
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { AiFillMessage } from "react-icons/ai";
 import { Service, ServiceType } from "@/lib/types";
 import useServicesData from "@/hooks/custom/use-services-data";
@@ -24,7 +24,7 @@ const ServicesSection: React.FC<{ type: Service }> = ({ type }) => {
 
 export default ServicesSection;
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -33,7 +33,7 @@ const containerVariants = {
   },
 };
 
-const childVariants = {
+const childVariants: Variants = {
   hidden: { opacity: 0, y: 15 },
   visible: { opacity: 1, y: 0 },
 };

@@ -1,12 +1,12 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { LANGUAGE } from "@/lib/constants";
 import PageLayout from "../page-layout";
 import { cn } from "@/lib/utils";
 
-const fadeUpVariant = {
+const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
         opacity: 1,

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Service } from "@/lib/types";
@@ -10,7 +10,7 @@ import PageLayout from "../page-layout";
 import Title from "../title";
 import { cn } from "@/lib/utils";
 
-const containerVariants = {
+const containerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
         opacity: 1,
