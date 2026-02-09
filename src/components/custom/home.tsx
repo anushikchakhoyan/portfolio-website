@@ -44,7 +44,7 @@ export default function HomePage() {
 
     return (
         <div className="flex flex-col items-center justify-center overflow-hidden h-[calc(100vh-120px)]">
-            <div className="hidden w-screen h-px md:block animate-fade-left bg-gradient-to-r from-zinc-700/0
+            <div className="hidden w-screen h-px md:block animate-fade-left bg-linear-to-r from-zinc-700/0
              via-zinc-700/50 to-zinc-700/0" />
 
             <h1 className="z-10 text-transparent duration-1000 bg-zinc-700 dark:bg-white 
@@ -52,12 +52,12 @@ export default function HomePage() {
                            md:text-9xl whitespace-nowrap bg-clip-text font-italiana relative">
                 {t('name')}
                 <sub className="text-lg sm:text-xl md:text-2xl font-medium animate-title 
-                                font-josefin-sans text-zinc-700 dark:text-white  absolute top-0 -right-10 md:-right-14">
+                                font-josefin-sans text-primary absolute top-0 -right-10 md:-right-14">
                     {yearsExperience}
                 </sub>
             </h1>
 
-            <div className="hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-700/0
+            <div className="hidden w-screen h-px md:block animate-fade-right bg-linear-to-r from-zinc-700/0
              via-zinc-700/50 to-zinc-700/0" />
 
             <div className="my-6 animate-fade-in duration-500 flex flex-col w-full md:flex-row items-center justify-center gap-4">

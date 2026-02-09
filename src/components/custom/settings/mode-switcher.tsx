@@ -17,7 +17,7 @@ const ModeSwitcher: React.FC = () => {
             <button
                 onClick={toggleTheme}
                 className="relative flex h-8 w-16 items-center rounded-full transition-all cursor-pointer
-                border-1 border-gray-50 dark:border-gray-600 bg-gray-100 dark:bg-zinc-800"
+                border border-gray-50 dark:border-gray-600 bg-gray-100 dark:bg-zinc-800"
             >
                 <div
                     className={`flex h-5 w-5 items-center justify-center rounded-full bg-white
@@ -37,9 +37,9 @@ const ModeSwitcher: React.FC = () => {
                     </div>
                 )}
             </button>
-            <p>
+            {/* <p>
                 {t('modeSelector', { theme: theme })}
-            </p>
+            </p> */}
         </div>
 
     );

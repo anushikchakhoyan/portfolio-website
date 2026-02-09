@@ -12,9 +12,11 @@ import SocialMedia from "./social-media";
 const Footer: React.FC = () => {
   const t = useTranslations("Footer");
   const tHeader = useTranslations("Header");
-  const navigations = useNavigationData();
   const pathname = usePathname();
 
+  const navigations = useNavigationData().filter(
+    n => n.placement === "footer" || n.placement === "both"
+  );
   const hideFooterRoutes = ["/en", "/hy"];
 
   if (hideFooterRoutes.includes(pathname)) {
@@ -37,7 +39,7 @@ const Footer: React.FC = () => {
             <div key={title}>
               <h4 className="text-base md:text-lg font-medium mb-2 text-zinc-700 dark:text-zinc-200">{title}</h4>
               <ul>
-                {items.map(({ title, url }) => (
+                {items?.map(({ title, url }) => (
                   <li key={title}>
                     <a href={url}
                       className="text-sm text-zinc-700 dark:text-zinc-50 hover:text-zinc-700 dark:hover:text-gray-300">

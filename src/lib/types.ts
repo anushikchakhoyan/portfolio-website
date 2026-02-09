@@ -19,12 +19,13 @@ export type IntroType = {
 export type NavigationType = {
     title: string,
     intro?: IntroType,
-    items: {
+    url?: string,
+    items?: {
         title: string;
         url: string;
         description?: string;
     }[],
-    onlyInFooter?: boolean
+    placement?: "header" | "footer" | "both";
 }
 
 export type ServiceType = {
@@ -63,18 +64,15 @@ export type Hsl = {
 }
 
 export const DEFAULT_COLOR: Hsl = {
-    // hue: 345,
-    // saturation: 60,
-    // lightness: 35,
-    hue: 0,
-    saturation: 0,
-    lightness: 29.41,
+    hue: 224.76,
+    saturation: 58.76,
+    lightness: 57.57,
 };
 
 export const DEFAULT_SECONDARY_COLOR: Hsl = {
-    hue: 45,
-    saturation: 20,
-    lightness: 90,
+    hue: 209.27,
+    saturation: 100,
+    lightness: 94.02,
 };
 
 export type Color = {

@@ -5,7 +5,7 @@ import ContactTitle from "@/components/custom/contact/title";
 import PageLayout from "@/components/custom/page-layout";
 
 const ContactUs = () => (
-  <PageLayout id="contact" className="!py-0">
+  <PageLayout id="contact" className="py-0!">
     <ContactHeader />
     <div className="py-10 w-full flex flex-col items-center justify-center gap-10 max-w-6xl mx-auto">
       <ContactTitle />

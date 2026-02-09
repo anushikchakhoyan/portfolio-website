@@ -16,19 +16,21 @@ import { NavigationType } from "@/lib/types";
 
 const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
     const isMobile = useIsMobile();
-    const navigations = useNavigationData().filter(section => !section.onlyInFooter);
+    const navigations = useNavigationData().filter(
+        n => n.placement === "header" || n.placement === "both"
+    );
 
     return (
         <NavigationMenu
             className={cn(`max-w-full py-0`,
-                isMobile && toggle && "p-4 absolute left-0 top-[50px] items-start w-full justify-start backdrop-blur-sm bg-background",
+                isMobile && toggle && "p-4 absolute left-0 top-12.5 items-start w-full justify-start backdrop-blur-sm bg-background",
                 isMobile && !toggle && 'hidden lg:flex')}>
             <NavigationMenuList className={cn(`flex-row`, isMobile && toggle && "flex-col items-start")}>
-                {navigations.map(({ title, items, intro }: NavigationType) => (
+                {navigations.map(({ title, items, intro, url }: NavigationType) => (
                     <NavigationMenuItem key={title}>
                         {toggle ? (
                             <ul>
-                                {items.map((item) => (
+                                {items && items.map((item) => (
                                     <ListItem
                                         key={item.title}
                                         title={item.title}
@@ -38,39 +40,53 @@ const NavMenu: React.FC<{ toggle: boolean }> = ({ toggle }) => {
                             </ul>
                         ) : (
                             <>
-                                <NavigationMenuTrigger className="dark:text-zinc-200 bg-transparent hover:bg-popover">{title}</NavigationMenuTrigger>
-                                <NavigationMenuContent className="!p-0">
-                                    <ul className="grid gap-1 p-3 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                                        {intro && (
-                                            <li className="row-span-3">
-                                                <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-end rounded-md 
+                                {items && items?.length ? (
+                                    <>
+                                        <NavigationMenuTrigger className="dark:text-zinc-200 bg-transparent hover:bg-popover">{title}</NavigationMenuTrigger>
+                                        <NavigationMenuContent className="p-0!">
+                                            <ul className="grid gap-1 p-3 md:w-100 lg:w-125 lg:grid-cols-[.75fr_1fr]">
+                                                {intro && (
+                                                    <li className="row-span-3">
+                                                        <NavigationMenuLink className="flex h-full w-full select-none flex-col justify-end rounded-md 
                                                         bg-primary/90 hover:bg-primary/85 dark:bg-primary/50 hover:dark:bg-primary/45
                                                         p-6 no-underline outline-hidden focus:shadow-md transition-colors"
-                                                    href="/"
-                                                >
-                                                    <span className="pt-5 font-italiana text-2xl text-white font-bold uppercase tracking-widest">
-                                                        Anush
-                                                    </span>
-                                                    <div className="pb-1 pt-4 text-sm font-medium text-white">
-                                                        {intro.abbr}
-                                                    </div>
-                                                    <p className="text-xs leading-tight text-white">
-                                                        {intro.content}
-                                                    </p>
-                                                </NavigationMenuLink>
-                                            </li>
-                                        )}
-                                        {items.map((item) => (
-                                            <ListItem
-                                                key={item.title}
-                                                title={item.title}
-                                                href={item.url}
-                                            >
-                                                {item.description}
-                                            </ListItem>
-                                        ))}
+                                                            href="/"
+                                                        >
+                                                            <span className="pt-5 font-italiana text-2xl text-white font-bold uppercase tracking-widest">
+                                                                Anush
+                                                            </span>
+                                                            <div className="pb-1 pt-4 text-sm font-medium text-white">
+                                                                {intro.abbr}
+                                                            </div>
+                                                            <p className="text-xs leading-tight text-white">
+                                                                {intro.content}
+                                                            </p>
+                                                        </NavigationMenuLink>
+                                                    </li>
+                                                )}
+                                                {items.map((item) => (
+                                                    <ListItem
+                                                        key={item.title}
+                                                        title={item.title}
+                                                        href={item.url}
+                                                    >
+                                                        {item.description}
+                                                    </ListItem>
+                                                ))}
+                                            </ul>
+                                        </NavigationMenuContent>
+                                    </>
+                                ) : (
+                                    <ul>
+                                        <MenuItem
+                                            key={title}
+                                            title={title}
+                                            href={url}
+                                        >
+                                            {title}
+                                        </MenuItem>
                                     </ul>
-                                </NavigationMenuContent>
+                                )}
                             </>
                         )}
                     </NavigationMenuItem>
@@ -92,7 +108,7 @@ const ListItem = React.forwardRef<
                     ref={ref}
                     className={cn(
                         `select-none flex flex-col gap-1 rounded-md p-3 leading-none no-underline
-                        outline-hidden transition-colors hover:bg-gray-50 hover:dark:bg-zinc-700/30`,
+                        outline-hidden transition-colors hover:bg-accent`,
                         className
                     )}
                     {...props}
@@ -109,3 +125,30 @@ const ListItem = React.forwardRef<
     )
 })
 ListItem.displayName = "ListItem"
+
+
+const MenuItem = React.forwardRef<
+    HTMLAnchorElement,
+    React.ComponentPropsWithoutRef<"a"> & { title: string; url?: string }
+>(({ title, className, url, ...props }, ref) => {
+    return (
+        <li>
+            <NavigationMenuLink asChild>
+                <a
+                    ref={ref}
+                    className={cn(
+                        `select-none flex flex-col gap-1 hover:rounded-md p-3 leading-none no-underline
+                        outline-hidden transition-colors hover:bg-accent`,
+                        className
+                    )}
+                    {...props}
+                >
+                    <span className="text-sm capitalize font-medium leading-none dark:text-zinc-200">
+                        {title}
+                    </span>
+                </a>
+            </NavigationMenuLink>
+        </li>
+    )
+})
+MenuItem.displayName = "MenuItem"

@@ -6,6 +6,7 @@ export default function useNavigationData() {
 
     const navigations: NavigationType[] = [
         {
+            placement: "both",
             title: t("general"),
             intro: {
                 abbr: 'frontend/dev',
@@ -25,6 +26,7 @@ export default function useNavigationData() {
             ],
         },
         {
+            placement: "both",
             title: t("services"),
             intro: {
                 abbr: "process/steps",
@@ -49,7 +51,7 @@ export default function useNavigationData() {
             ],
         },
         {
-            onlyInFooter: true,
+            placement: "footer",
             title: t("legal"),
             items: [
                 {
@@ -68,6 +70,7 @@ export default function useNavigationData() {
             ],
         },
         {
+            placement: "footer",
             title: t("connect"),
             intro: {
                 abbr: 'guide/offer',
@@ -86,6 +89,16 @@ export default function useNavigationData() {
                 },
             ],
         },
+        {
+            placement: "header",
+            title: t("contact"),
+            url: "/contact-us",
+        },
+        {
+            placement: "header",
+            title: t("packages"),
+            url: "/packages",
+        }
     ];
 
     return navigations;
