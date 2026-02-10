@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
 import PageLayout from "../page-layout";
-import about1 from "@/images/about/about-1.jpg";
-import about2 from "@/images/about/about-2.jpg";
+import about1 from "@/images/about/5.jpg";
+import about2 from "@/images/about/6.jpg";
 
 const AboutMe: React.FC = () => {
     const t = useTranslations("About");

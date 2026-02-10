@@ -1,10 +1,12 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
-import { motion, Variants } from "framer-motion";
 import { LANGUAGE } from "@/lib/constants";
-import PageLayout from "../page-layout";
 import { cn } from "@/lib/utils";
+
+import { motion, Variants } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
+
+import PageLayout from "../page-layout";
 
 const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -45,7 +47,7 @@ const AboutWebSite: React.FC = () => {
     ];
 
     return (
-        <PageLayout id="about" className="!px-0 grid gap-20">
+        <PageLayout id="about" className="px-0! grid gap-20">
             {sectionsData.map((section) => (
                 <motion.div
                     key={section.id}

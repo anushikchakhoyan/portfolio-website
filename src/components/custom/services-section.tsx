@@ -1,22 +1,23 @@
 'use client'
-import Image from 'next/image';
-import Link from "next/link";
+
+import useServicesData from "@/hooks/custom/use-services-data";
+import { Service, ServiceType } from "@/lib/types";
 import { motion, Variants } from 'framer-motion';
 import { AiFillMessage } from "react-icons/ai";
-import { Service, ServiceType } from "@/lib/types";
-import useServicesData from "@/hooks/custom/use-services-data";
+import Image from 'next/image';
+import Link from "next/link";
 
 import AnimatedCircleEffect from './animated-circle-effect';
 import UnderlineText from "./underline-text";
-import { Button } from "../ui/button";
 import PageLayout from "./page-layout";
+import { Button } from "../ui/button";
 import Title from "./title";
 
 const ServicesSection: React.FC<{ type: Service }> = ({ type }) => {
   const data = useServicesData(type);
 
   return (
-    <PageLayout id="services" className='!py-0 px-8 bg-gradient-to-r from-transparent via-secondary/5 to-transparent'>
+    <PageLayout id="services" className='py-0! px-8 bg-linear-to-r from-transparent via-secondary/1 to-transparent'>
       <ServicesContent {...data} />
     </PageLayout>
   )
@@ -71,7 +72,7 @@ const ServicesContent: React.FC<ServiceType> = (
             asChild
             className="
               relative overflow-hidden group
-              bg-gradient-to-r from-primary to-primary/90
+              bg-linear-to-r from-primary to-primary/90
               text-white px-8 py-5 rounded-full
               shadow-md hover:shadow-lg
               transition-all duration-300

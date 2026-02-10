@@ -1,18 +1,19 @@
 "use client"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import { GoDotFill } from "react-icons/go";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import useInfoData from "@/hooks/custom/use-info-data";
 import { Service } from "@/lib/types";
+
 import PageLayout from "../page-layout";
 
 const InfoBlock: React.FC<{ type: Service }> = ({ type }) => {
     const data = useInfoData(type);
 
     return (
-        <PageLayout id="mentorship-info" className="h-[500px] md:h-[800px]">
+        <PageLayout id="mentorship-info" className="h-125 md:h-200">
             <Swiper
                 direction="vertical"
                 spaceBetween={0}
@@ -29,10 +30,10 @@ const InfoBlock: React.FC<{ type: Service }> = ({ type }) => {
                     <SwiperSlide
                         key={title}
                         className={cn(
-                            `px-2 lg:px-8 gap-6 xl:gap-4 rounded-lg !flex flex-col-reverse lg:flex-row items-center justify-center`,
+                            `px-2 lg:px-8 gap-6 xl:gap-4 rounded-lg flex! flex-col-reverse lg:flex-row items-center justify-center`,
                             index % 2 === 0
-                                ? 'bg-gradient-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900'
-                                : 'bg-gradient-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800'
+                                ? 'bg-linear-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900'
+                                : 'bg-linear-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800'
                         )}
                     >
                         <div className="xl:px-8 flex flex-col gap-8 w-full lg:w-3/5 z-10">

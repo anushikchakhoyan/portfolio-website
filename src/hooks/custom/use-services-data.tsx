@@ -2,9 +2,9 @@ import { SERVICES_CATEGORY } from "@/lib/constants";
 import { Service, ServiceType } from "@/lib/types";
 import { useTranslations } from "next-intl";
 
-import websiteImage from "@/images/services/cover1.jpg";
-import mentorImage from "@/images/services/cover3.jpg";
-import collabImage from "@/images/services/cover.jpg";
+import websiteImage from "@/images/services/website.jpg";
+import mentorImage from "@/images/services/mentor.jpg";
+import collabImage from "@/images/services/collab.jpg";
 
 export default function useServicesData(type: Service) {
   const t = useTranslations("WhatWeOffer");

@@ -1,14 +1,14 @@
 "use client";
-import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
-import { Service } from "@/lib/types";
 import useBenefitsData from "@/hooks/custom/use-benefits-data";
+import { Service } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 import PageLayout from "../page-layout";
 import Title from "../title";
-import { cn } from "@/lib/utils";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
@@ -51,7 +51,7 @@ const Benefits: React.FC<{ type: Service }> = ({ type }) => {
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: false }}
-                                className="w-[250px] h-full block max-h-60 md:max-h-[30rem]"
+                                className="w-62.5 h-full block max-h-60 md:max-h-120"
                             >
                                 <Image
                                     src={item.image ?? ""}
