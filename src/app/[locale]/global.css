@@ -5,7 +5,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@import "./_styles/swiper.css";
 @import "./_styles/circles.css";
 
 @custom-variant dark (&:is(.dark *));
