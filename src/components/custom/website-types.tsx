@@ -38,7 +38,7 @@ const WebsiteTypes: React.FC = () => {
                     {websites.map(({ key, descKey, img }, index) => {
                         const bgColor = SLIDE_COLORS[index % SLIDE_COLORS.length];
                         return (
-                            <SwiperSlide key={key} style={{
+                            <SwiperSlide key={key} className="flex! items-center justify-center rounded-2xl" style={{
                                 backgroundColor: bgColor
                             }}>
                                 <div className="text-center px-8 xl:px-8 flex flex-col gap-4 md:gap-8 w-full">
