@@ -1,58 +1,55 @@
 
 "use client"
-import { cn } from "@/lib/utils"
-import Image from 'next/image';
+
 import { useTranslations } from "next-intl";
+import { EffectCards } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination } from "swiper/modules";
 
 import useWebsiteTypeaData from "@/hooks/custom/use-website-types-data";
 import PageLayout from "./page-layout";
+
+const SLIDE_COLORS = [
+    "#003366",
+    "#174978",
+    "#2F5F8A",
+    "#46769B",
+    "#5E8CAD",
+    "#75A2BF",
+];
 
 const WebsiteTypes: React.FC = () => {
     const t = useTranslations("WebsiteTypes");
     const websites = useWebsiteTypeaData();
 
     return (
-        <PageLayout id="website-types" className="h-[600px] md:h-[800px]">
-            <Swiper
-                direction="vertical"
-                spaceBetween={0}
-                mousewheel={{
-                    forceToAxis: true,
-                    thresholdDelta: 8,
-                    thresholdTime: 300,
-                }}
-                pagination={{ clickable: true }}
-                modules={[Mousewheel, Pagination]}
-                className="w-full h-full">
-                <SwiperSlide className="relative !flex items-center justify-center bg-background/70 rounded-lg">
-                    <div className="text-center px-6 xl:px-8 flex flex-col gap-8 w-full lg:w-4/5 relative z-10">
-                        <h3 className="text-xl md:text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{t('websiteTypesTitle')}</h3>
-                        <p className="text-lg md:text-xl xl:text-2xl font-medium text-zinc-800 dark:text-gray-200">{t('websiteTypesDescription')}</p>
-                    </div>
-                </SwiperSlide>
-                {websites.map(({ key, descKey, img }, index) => (
-                    <SwiperSlide key={key} className={cn(`px-8 gap-6 xl:gap-4 rounded-lg
-                   !flex flex-col-reverse lg:flex-row items-center justify-center`,
-                        index % 2 === 0
-                            ? 'bg-gradient-to-r from-white to-primary/10 dark:from-zinc-800 dark:to-zinc-900/10'
-                            : 'bg-gradient-to-r from-white to-secondary/30 dark:from-zinc-900 dark:to-zinc-800/30'
-                    )}>
-                        <div className="w-4/5 lg:w-5/12 xl:w-1/2">
-                            <Image
-                                src={img ?? ""}
-                                alt={key}
-                                className="w-full h-full rounded-lg shadow-lg bg-secondary"
-                            />
-                        </div>
-                        <div className="text-center xl:px-8 flex flex-col gap-4 md:gap-8 w-full lg:w-5/12 xl:w-1/2">
-                            <h3 className="text-lg md:text-2xl xl:text-4xl font-medium text-zinc-800 dark:text-white">{key}</h3>
-                            <p className="text-base md:text-xl xl:text-2xl font-medium text-gray-700 dark:text-gray-200">{descKey}</p>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+        <PageLayout id="website-types" className="flex items-center flex-col gap-10">
+            <div className="flex-1 text-center px-8 flex flex-col gap-6 lg:gap-8 w-full max-w-2xl">
+                <h3 className="text-xl md:text-2xl xl:text-3xl font-medium text-zinc-800 dark:text-white">{t('websiteTypesTitle')}</h3>
+                <p className="text-lg md:text-xl font-medium text-zinc-800 dark:text-gray-200">{t('websiteTypesDescription')}</p>
+            </div>
+
+            <div className="flex-1 w-full">
+                <Swiper
+                    effect={'cards'}
+                    grabCursor={true}
+                    modules={[EffectCards]}
+                    className="w-60 h-75 md:w-87.5 md:h-100 lg:w-100 lg:h-100"
+                >
+                    {websites.map(({ key, descKey, img }, index) => {
+                        const bgColor = SLIDE_COLORS[index % SLIDE_COLORS.length];
+                        return (
+                            <SwiperSlide key={key} style={{
+                                backgroundColor: bgColor
+                            }}>
+                                <div className="text-center px-8 xl:px-8 flex flex-col gap-4 md:gap-8 w-full">
+                                    <h3 className="text-base lg:text-xl font-medium text-white">{key}</h3>
+                                    <p className="text-sm lg:text-base font-medium text-white">{descKey}</p>
+                                </div>
+                            </SwiperSlide>
+                        )
+                    })}
+                </Swiper>
+            </div>
         </PageLayout>
     );
 };

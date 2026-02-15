@@ -1,0 +1,49 @@
+.circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transition: 500ms;
+    overflow: hidden
+}
+
+.bigCircle {
+    position: absolute;
+    transition: 300ms;
+    border-radius: 50%;
+    animation-name: bubbles-animation;
+    animation-duration: 2s;
+}
+
+.circleMini {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation-name: bubbles-transparency;
+    animation-duration: 0.3s;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes bubbles-animation {
+    0% {
+        width: 300px;
+        height: 300px;
+    }
+
+    100% {
+        width: 5000px;
+        height: 5000px;
+        left: -2500px;
+        top: -2500px
+    }
+}
+
+@keyframes bubbles-transparency {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
